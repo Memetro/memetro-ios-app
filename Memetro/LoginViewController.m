@@ -31,8 +31,6 @@
         t.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:0.49f green:0.49f blue:0.49f alpha:1.00f],NSFontAttributeName:[UIFont fontWithName:@"Roboto-Light" size:16] }];
     }
 
-
-
     self.username.placeholder = NSLocalizedString(@"username",@"");
     self.password.placeholder = NSLocalizedString(@"password",@"");
     self.forgottenPassword.font = [UIFont fontWithName:@"Roboto-Light" size:12];

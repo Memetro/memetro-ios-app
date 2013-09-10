@@ -19,9 +19,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self initViewController];
     [self setupLoginLogic];
-    [self login];
     [self appearence];
     [self.window makeKeyAndVisible];
+    [self login];
     return YES;
 }
 
@@ -30,6 +30,7 @@
     self.viewController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[[AlertsViewController alloc] initWithNibName:@"AlertsViewController" bundle:nil]];
     self.viewController.leftPanel = [[LeftViewController alloc] initWithNibName:@"LeftViewController" bundle:nil];
     self.viewController.leftFixedWidth = 285;
+    self.window.rootViewController = self.viewController;
 }
 
 -(void) login{
@@ -37,13 +38,14 @@
     NSString *identifier = [prefs stringForKey:@"accountidentifier"];
     if(identifier != nil){
         NXOAuth2Account *account = [[NXOAuth2AccountStore sharedStore] accountWithIdentifier:identifier];
-        self.window.rootViewController = self.viewController;
-        NSLog(@"usuario logueado con account %@",account);
-    }else{
-        LoginViewController *login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        self.window.rootViewController = login;
-
+        if(account != nil){
+            NSLog(@"usuario logueado con account %@",account);
+            return;
+        }
     }
+    LoginViewController *login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    login.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.viewController presentViewController:login animated:NO completion:nil];
 }
 
 -(void) setupLoginLogic{
@@ -60,20 +62,14 @@
      object:[NXOAuth2AccountStore sharedStore]
      queue:nil
      usingBlock:^(NSNotification *aNotification){
-         
          if(aNotification.userInfo != nil){
              NSLog(@"Login correcto. Guardamos el identificador de la cuenta en user defaults");
-             NXOAuth2Account *a= [aNotification.userInfo objectForKey:NXOAuth2AccountStoreNewAccountUserInfoKey];
+             NXOAuth2Account *a = [aNotification.userInfo objectForKey:NXOAuth2AccountStoreNewAccountUserInfoKey];
              NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
              [prefs setObject:a.identifier forKey:@"accountidentifier"];
              [prefs synchronize];
-             
              [[CBProgressPanel sharedInstance] hide];
-             [UIView transitionWithView:self.window
-                               duration:0.3
-                                options:UIViewAnimationOptionTransitionFlipFromRight
-                             animations:^{ self.window.rootViewController = self.viewController; }
-                             completion:nil];
+             [self.viewController dismissViewControllerAnimated:YES completion:nil];
          }
 
      }];
@@ -89,12 +85,20 @@
 }
 
 -(void) logout{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs removeObjectForKey:@"accountidentifier"];
+    [prefs synchronize];
+    for (NXOAuth2Account * a in [[NXOAuth2AccountStore sharedStore] accounts] ){
+        [[NXOAuth2AccountStore sharedStore] removeAccount:a];
+    }
     LoginViewController *login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    [UIView transitionWithView:self.window
-                      duration:0.3
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                    animations:^{ self.window.rootViewController = login; }
-                    completion:nil];
+    login.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.viewController presentViewController:login animated:YES completion:^{
+        [self initViewController];
+        LoginViewController *login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        login.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self.viewController presentViewController:login animated:NO completion:nil];
+    }];
 }
 
 

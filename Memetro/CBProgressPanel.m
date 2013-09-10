@@ -34,12 +34,13 @@
     animationView.animationRepeatCount = 0;
     [animationView startAnimating];
     self.animationView = animationView;
-    [self setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:.3f]];
+    [self setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:.4f]];
     return self;
 }
 
 
 -(void) displayInView:(UIView *) view{
+    self.frame = view.frame;
     self.animationView.frame = CGRectMake(0, 0, view.frame.size.width, 3.0f);
     [self addSubview:self.animationView];
     [view addSubview:self];

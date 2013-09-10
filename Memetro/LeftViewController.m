@@ -63,9 +63,6 @@
             break;
         }
         case 7:{
-            for (NXOAuth2Account * a in [[NXOAuth2AccountStore sharedStore] accounts] ){
-                [[NXOAuth2AccountStore sharedStore] removeAccount:a];
-            }
             [((AppDelegate *)[[UIApplication sharedApplication] delegate]) logout];
             break;
         }
