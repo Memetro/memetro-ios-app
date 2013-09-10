@@ -1,4 +1,4 @@
 memetro-ios-app
 ===============
 
-Memetro iOS app
+Memetro iOS APP
