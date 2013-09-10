@@ -40,7 +40,7 @@
 
 
 -(void) displayInView:(UIView *) view{
-    self.frame = view.frame;
+    self.frame = [[UIScreen mainScreen] bounds];
     self.animationView.frame = CGRectMake(0, 0, view.frame.size.width, 3.0f);
     [self addSubview:self.animationView];
     [view addSubview:self];

@@ -16,6 +16,10 @@
 "menualertlabel" = "Alertas";
 "menulevellabel" = "Nivel";
 
+/* REGISTER */
+"passwordconfirm" = "Confirmar contraseña";
+"nextstep" = "Siguiente paso";
+
 /* MENU */
 "menualerts" = "ALERTAS";
 "menuparticipants" = "PARTICIPANTES";
@@ -23,3 +27,10 @@
 "menusettings" = "CONFIGURACIÓN";
 "menuappinfo" = "INFO APP";
 "menulogout" = "DESCONECTAR";
+
+/* MODALS */
+"incorrectdatatitle" = "Campos vacíos";
+"loginemptypassuser" = "El nombre de usuario y la contraseña son campos obligatorios!";
+"okbutton" = "Ok";
+"passmissmatch" = "Las contraseñas no coinciden";
+"passmissmatchextended" = "Comprueba tu contraseña y vuelve a intentarlo!";

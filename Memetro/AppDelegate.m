@@ -11,7 +11,7 @@
 #import "JASidePanelController.h"
 #import "AlertsViewController.h"
 #import "LeftViewController.h"
-#import "CBProgressPanel.h"
+
 
 @implementation AppDelegate
 
@@ -103,6 +103,7 @@
 
 
 -(void) appearence{
+    self.window.backgroundColor = [UIColor colorWithRed:0.96f green:0.95f blue:0.95f alpha:1.00f];
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
     [[UIBarButtonItem appearance]setTitleTextAttributes:@{UITextAttributeFont:[UIFont fontWithName:@"Roboto-Light" size:12],UITextAttributeTextColor:[UIColor blackColor],UITextAttributeTextShadowColor:[UIColor blackColor], UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0,0.0)]} forState:UIControlStateNormal];
     [[UIBarButtonItem appearance]setTitleTextAttributes:@{UITextAttributeFont:[UIFont fontWithName:@"Roboto-Light" size:12],UITextAttributeTextColor:[UIColor blackColor],UITextAttributeTextShadowColor:[UIColor blackColor], UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0,0.0)]} forState:UIControlStateHighlighted];
@@ -115,6 +116,28 @@
     [[UINavigationBar appearance] setShadowImage:[UIImage alloc]];
     //UIImage *image = [UIImage imageNamed:@"nav-bar-nobadge"];
     //[[UIToolbar appearance] setBackgroundImage:image forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+    
+    
+    [[SIAlertView appearance] setMessageFont:[UIFont fontWithName:@"Roboto-Regular" size:14]];
+    [[SIAlertView appearance] setTitleColor:[UIColor blackColor]];
+    [[SIAlertView appearance] setMessageColor:[UIColor colorWithRed:0.56f green:0.56f blue:0.56f alpha:1.00f]];
+    [[SIAlertView appearance] setTitleFont:[UIFont fontWithName:@"Roboto-Regular" size:18]];
+    [[SIAlertView appearance] setCornerRadius:5];
+    [[SIAlertView appearance] setShadowRadius:20];
+    [[SIAlertView appearance] setViewBackgroundColor:[UIColor whiteColor]];
+    [[SIAlertView appearance] setButtonColor:[UIColor whiteColor]];
+    [[SIAlertView appearance] setButtonFont:BUTTON_FONT];
+    
+    [[SIAlertView appearance] setCancelButtonColor:[UIColor whiteColor]];
+    [[SIAlertView appearance] setDestructiveButtonColor:[UIColor whiteColor]];
+    
+    [[SIAlertView appearance] setDefaultButtonImage:[[UIImage imageNamed:@"button-default"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateNormal];
+    [[SIAlertView appearance] setDefaultButtonImage:[[UIImage imageNamed:@"button-default-d"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
+    [[SIAlertView appearance] setCancelButtonImage:[[UIImage imageNamed:@"button-cancel"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateNormal];
+    [[SIAlertView appearance] setCancelButtonImage:[[UIImage imageNamed:@"button-cancel-d"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
+    [[SIAlertView appearance] setDestructiveButtonImage:[[UIImage imageNamed:@"button-destructive"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateNormal];
+    [[SIAlertView appearance] setDestructiveButtonImage:[[UIImage imageNamed:@"button-destructive-d"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application{

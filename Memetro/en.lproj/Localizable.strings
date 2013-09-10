@@ -16,6 +16,10 @@
 "menualertlabel" = "Alerts";
 "menulevellabel" = "Level";
 
+/* REGISTER */
+"passwordconfirm" = "Confirm password";
+"nextstep" = "Next step";
+
 /* MENU */
 "menualerts" = "ALERTS";
 "menuparticipants" = "RANKING";
@@ -23,3 +27,12 @@
 "menusettings" = "SETTINGS";
 "menuappinfo" = "ABOUT";
 "menulogout" = "LOGOUT";
+
+
+/* MODALS */
+
+"incorrectdatatitle" = "Empty fields";
+"loginemptypassuser" = "Username and password can't be empty!";
+"okbutton" = "Ok";
+"passmissmatch" = "Password missmatch";
+"passmissmatchextended" = "Please check your password and try again!";

@@ -12,6 +12,26 @@
 		AA7D4DB917C11F1300A70ED1 /* AlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7D4DB717C11F1300A70ED1 /* AlertsViewController.xib */; };
 		AA8ECC3D17D7E4D400F36061 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8ECC3C17D7E4D400F36061 /* appicon.png */; };
 		AA8ECC3F17D7E4D900F36061 /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8ECC3E17D7E4D900F36061 /* appicon@2x.png */; };
+		AA9D44F517DFB84500C0CCE9 /* RegisterStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9D44F317DFB84500C0CCE9 /* RegisterStepOneViewController.m */; };
+		AA9D44F617DFB84500C0CCE9 /* RegisterStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9D44F417DFB84500C0CCE9 /* RegisterStepOneViewController.xib */; };
+		AA9D44FD17DFB87600C0CCE9 /* RegisterStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9D44FB17DFB87600C0CCE9 /* RegisterStepTwoViewController.m */; };
+		AA9D44FE17DFB87600C0CCE9 /* RegisterStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9D44FC17DFB87600C0CCE9 /* RegisterStepTwoViewController.xib */; };
+		AA9D450217DFBBBE00C0CCE9 /* input.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D450017DFBBBE00C0CCE9 /* input.png */; };
+		AA9D450317DFBBBE00C0CCE9 /* input@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D450117DFBBBE00C0CCE9 /* input@2x.png */; };
+		AA9D450717DFC3B200C0CCE9 /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9D450617DFC3B200C0CCE9 /* SIAlertView.m */; };
+		AA9D451517DFC3C400C0CCE9 /* button-cancel-d.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D450917DFC3C400C0CCE9 /* button-cancel-d.png */; };
+		AA9D451617DFC3C400C0CCE9 /* button-cancel-d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D450A17DFC3C400C0CCE9 /* button-cancel-d@2x.png */; };
+		AA9D451717DFC3C400C0CCE9 /* button-cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D450B17DFC3C400C0CCE9 /* button-cancel.png */; };
+		AA9D451817DFC3C400C0CCE9 /* button-cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D450C17DFC3C400C0CCE9 /* button-cancel@2x.png */; };
+		AA9D451917DFC3C400C0CCE9 /* button-default-d.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D450D17DFC3C400C0CCE9 /* button-default-d.png */; };
+		AA9D451A17DFC3C400C0CCE9 /* button-default-d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D450E17DFC3C400C0CCE9 /* button-default-d@2x.png */; };
+		AA9D451B17DFC3C400C0CCE9 /* button-default.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D450F17DFC3C400C0CCE9 /* button-default.png */; };
+		AA9D451C17DFC3C400C0CCE9 /* button-default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D451017DFC3C400C0CCE9 /* button-default@2x.png */; };
+		AA9D451D17DFC3C400C0CCE9 /* button-destructive-d.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D451117DFC3C400C0CCE9 /* button-destructive-d.png */; };
+		AA9D451E17DFC3C400C0CCE9 /* button-destructive-d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D451217DFC3C400C0CCE9 /* button-destructive-d@2x.png */; };
+		AA9D451F17DFC3C400C0CCE9 /* button-destructive.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D451317DFC3C400C0CCE9 /* button-destructive.png */; };
+		AA9D452017DFC3C400C0CCE9 /* button-destructive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D451417DFC3C400C0CCE9 /* button-destructive@2x.png */; };
+		AA9D452417DFC9EB00C0CCE9 /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9D452317DFC9EA00C0CCE9 /* CommonFunctions.m */; };
 		AAB71D4617BEAEAF001B16CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB71D4517BEAEAF001B16CF /* UIKit.framework */; };
 		AAB71D4817BEAEAF001B16CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB71D4717BEAEAF001B16CF /* Foundation.framework */; };
 		AAB71D4A17BEAEAF001B16CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB71D4917BEAEAF001B16CF /* CoreGraphics.framework */; };
@@ -152,6 +172,31 @@
 		AA7D4DB717C11F1300A70ED1 /* AlertsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertsViewController.xib; sourceTree = "<group>"; };
 		AA8ECC3C17D7E4D400F36061 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appicon.png; path = ../appicon.png; sourceTree = "<group>"; };
 		AA8ECC3E17D7E4D900F36061 /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon@2x.png"; path = "../appicon@2x.png"; sourceTree = "<group>"; };
+		AA9D44F217DFB84500C0CCE9 /* RegisterStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterStepOneViewController.h; sourceTree = "<group>"; };
+		AA9D44F317DFB84500C0CCE9 /* RegisterStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterStepOneViewController.m; sourceTree = "<group>"; };
+		AA9D44F417DFB84500C0CCE9 /* RegisterStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterStepOneViewController.xib; sourceTree = "<group>"; };
+		AA9D44FA17DFB87600C0CCE9 /* RegisterStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterStepTwoViewController.h; sourceTree = "<group>"; };
+		AA9D44FB17DFB87600C0CCE9 /* RegisterStepTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterStepTwoViewController.m; sourceTree = "<group>"; };
+		AA9D44FC17DFB87600C0CCE9 /* RegisterStepTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterStepTwoViewController.xib; sourceTree = "<group>"; };
+		AA9D450017DFBBBE00C0CCE9 /* input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input.png; sourceTree = "<group>"; };
+		AA9D450117DFBBBE00C0CCE9 /* input@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input@2x.png"; sourceTree = "<group>"; };
+		AA9D450417DFBE4400C0CCE9 /* Memetro-FCsettings.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Memetro-FCsettings.pch"; sourceTree = "<group>"; };
+		AA9D450517DFC3B200C0CCE9 /* SIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIAlertView.h; sourceTree = "<group>"; };
+		AA9D450617DFC3B200C0CCE9 /* SIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAlertView.m; sourceTree = "<group>"; };
+		AA9D450917DFC3C400C0CCE9 /* button-cancel-d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-cancel-d.png"; sourceTree = "<group>"; };
+		AA9D450A17DFC3C400C0CCE9 /* button-cancel-d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-cancel-d@2x.png"; sourceTree = "<group>"; };
+		AA9D450B17DFC3C400C0CCE9 /* button-cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-cancel.png"; sourceTree = "<group>"; };
+		AA9D450C17DFC3C400C0CCE9 /* button-cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-cancel@2x.png"; sourceTree = "<group>"; };
+		AA9D450D17DFC3C400C0CCE9 /* button-default-d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-default-d.png"; sourceTree = "<group>"; };
+		AA9D450E17DFC3C400C0CCE9 /* button-default-d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-default-d@2x.png"; sourceTree = "<group>"; };
+		AA9D450F17DFC3C400C0CCE9 /* button-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-default.png"; sourceTree = "<group>"; };
+		AA9D451017DFC3C400C0CCE9 /* button-default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-default@2x.png"; sourceTree = "<group>"; };
+		AA9D451117DFC3C400C0CCE9 /* button-destructive-d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-destructive-d.png"; sourceTree = "<group>"; };
+		AA9D451217DFC3C400C0CCE9 /* button-destructive-d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-destructive-d@2x.png"; sourceTree = "<group>"; };
+		AA9D451317DFC3C400C0CCE9 /* button-destructive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-destructive.png"; sourceTree = "<group>"; };
+		AA9D451417DFC3C400C0CCE9 /* button-destructive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-destructive@2x.png"; sourceTree = "<group>"; };
+		AA9D452217DFC9EA00C0CCE9 /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
+		AA9D452317DFC9EA00C0CCE9 /* CommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunctions.m; sourceTree = "<group>"; };
 		AAB71D4217BEAEAF001B16CF /* Memetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB71D4517BEAEAF001B16CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAB71D4717BEAEAF001B16CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -316,6 +361,7 @@
 				AAB71D5117BEAEAF001B16CF /* main.m */,
 				AAB71D5317BEAEAF001B16CF /* Memetro-Prefix.pch */,
 				AAB71DBF17BFF6D7001B16CF /* Localizable.strings */,
+				AA9D450417DFBE4400C0CCE9 /* Memetro-FCsettings.pch */,
 			);
 			name = other;
 			sourceTree = "<group>";
@@ -338,6 +384,73 @@
 				AAF53F8517D7ABCD0039F1D4 /* Container */,
 			);
 			name = Alerts;
+			sourceTree = "<group>";
+		};
+		AA9D44F717DFB84C00C0CCE9 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				AA9D44F917DFB85E00C0CCE9 /* StepTwo */,
+				AA9D44F817DFB85300C0CCE9 /* StepOne */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		AA9D44F817DFB85300C0CCE9 /* StepOne */ = {
+			isa = PBXGroup;
+			children = (
+				AA9D44F217DFB84500C0CCE9 /* RegisterStepOneViewController.h */,
+				AA9D44F317DFB84500C0CCE9 /* RegisterStepOneViewController.m */,
+				AA9D44F417DFB84500C0CCE9 /* RegisterStepOneViewController.xib */,
+			);
+			name = StepOne;
+			sourceTree = "<group>";
+		};
+		AA9D44F917DFB85E00C0CCE9 /* StepTwo */ = {
+			isa = PBXGroup;
+			children = (
+				AA9D44FA17DFB87600C0CCE9 /* RegisterStepTwoViewController.h */,
+				AA9D44FB17DFB87600C0CCE9 /* RegisterStepTwoViewController.m */,
+				AA9D44FC17DFB87600C0CCE9 /* RegisterStepTwoViewController.xib */,
+			);
+			name = StepTwo;
+			sourceTree = "<group>";
+		};
+		AA9D44FF17DFBB8700C0CCE9 /* inputs */ = {
+			isa = PBXGroup;
+			children = (
+				AA9D450017DFBBBE00C0CCE9 /* input.png */,
+				AA9D450117DFBBBE00C0CCE9 /* input@2x.png */,
+			);
+			name = inputs;
+			sourceTree = "<group>";
+		};
+		AA9D450817DFC3B500C0CCE9 /* SIAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				AA9D452117DFC3CA00C0CCE9 /* btnimages */,
+				AA9D450517DFC3B200C0CCE9 /* SIAlertView.h */,
+				AA9D450617DFC3B200C0CCE9 /* SIAlertView.m */,
+			);
+			name = SIAlertView;
+			sourceTree = "<group>";
+		};
+		AA9D452117DFC3CA00C0CCE9 /* btnimages */ = {
+			isa = PBXGroup;
+			children = (
+				AA9D450917DFC3C400C0CCE9 /* button-cancel-d.png */,
+				AA9D450A17DFC3C400C0CCE9 /* button-cancel-d@2x.png */,
+				AA9D450B17DFC3C400C0CCE9 /* button-cancel.png */,
+				AA9D450C17DFC3C400C0CCE9 /* button-cancel@2x.png */,
+				AA9D450D17DFC3C400C0CCE9 /* button-default-d.png */,
+				AA9D450E17DFC3C400C0CCE9 /* button-default-d@2x.png */,
+				AA9D450F17DFC3C400C0CCE9 /* button-default.png */,
+				AA9D451017DFC3C400C0CCE9 /* button-default@2x.png */,
+				AA9D451117DFC3C400C0CCE9 /* button-destructive-d.png */,
+				AA9D451217DFC3C400C0CCE9 /* button-destructive-d@2x.png */,
+				AA9D451317DFC3C400C0CCE9 /* button-destructive.png */,
+				AA9D451417DFC3C400C0CCE9 /* button-destructive@2x.png */,
+			);
+			name = btnimages;
 			sourceTree = "<group>";
 		};
 		AAB71D3917BEAEAF001B16CF = {
@@ -421,6 +534,7 @@
 		AAB71D7817BFE95B001B16CF /* common */ = {
 			isa = PBXGroup;
 			children = (
+				AA9D44FF17DFBB8700C0CCE9 /* inputs */,
 				AAF53F8017D7A9120039F1D4 /* navbar */,
 				AAB71D8517BFEA77001B16CF /* buttons */,
 				AAB71D7917BFE976001B16CF /* color-bar.png */,
@@ -487,6 +601,7 @@
 				AA7D4DB417C11EFE00A70ED1 /* Alerts */,
 				AA7D4D9C17C11BDB00A70ED1 /* AppDelegate */,
 				AA7D4D9D17C11BE200A70ED1 /* Login */,
+				AA9D44F717DFB84C00C0CCE9 /* Register */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -494,8 +609,11 @@
 		AAF53F6C17D7A3100039F1D4 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				AA9D450817DFC3B500C0CCE9 /* SIAlertView */,
 				AAC8D52117DE690E0051CE77 /* CBProgressPanel */,
 				AAF53F7317D7A4040039F1D4 /* JASidePanel */,
+				AA9D452217DFC9EA00C0CCE9 /* CommonFunctions.h */,
+				AA9D452317DFC9EA00C0CCE9 /* CommonFunctions.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -812,6 +930,22 @@
 				AAC8D54E17DE89B30051CE77 /* appinfo-menu-icon@2x.png in Resources */,
 				AAC8D54F17DE89B30051CE77 /* appinfo-menu-icon.png in Resources */,
 				AAC8D55017DE89B30051CE77 /* logout-menu-icon.png in Resources */,
+				AA9D44F617DFB84500C0CCE9 /* RegisterStepOneViewController.xib in Resources */,
+				AA9D44FE17DFB87600C0CCE9 /* RegisterStepTwoViewController.xib in Resources */,
+				AA9D450217DFBBBE00C0CCE9 /* input.png in Resources */,
+				AA9D450317DFBBBE00C0CCE9 /* input@2x.png in Resources */,
+				AA9D451517DFC3C400C0CCE9 /* button-cancel-d.png in Resources */,
+				AA9D451617DFC3C400C0CCE9 /* button-cancel-d@2x.png in Resources */,
+				AA9D451717DFC3C400C0CCE9 /* button-cancel.png in Resources */,
+				AA9D451817DFC3C400C0CCE9 /* button-cancel@2x.png in Resources */,
+				AA9D451917DFC3C400C0CCE9 /* button-default-d.png in Resources */,
+				AA9D451A17DFC3C400C0CCE9 /* button-default-d@2x.png in Resources */,
+				AA9D451B17DFC3C400C0CCE9 /* button-default.png in Resources */,
+				AA9D451C17DFC3C400C0CCE9 /* button-default@2x.png in Resources */,
+				AA9D451D17DFC3C400C0CCE9 /* button-destructive-d.png in Resources */,
+				AA9D451E17DFC3C400C0CCE9 /* button-destructive-d@2x.png in Resources */,
+				AA9D451F17DFC3C400C0CCE9 /* button-destructive.png in Resources */,
+				AA9D452017DFC3C400C0CCE9 /* button-destructive@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,6 +969,10 @@
 				AAF53FB417D7CBA10039F1D4 /* NormalMenuCell.m in Sources */,
 				AAF53FBA17D7CD570039F1D4 /* ProfileMenuCell.m in Sources */,
 				AAC8D52417DE69280051CE77 /* CBProgressPanel.m in Sources */,
+				AA9D44F517DFB84500C0CCE9 /* RegisterStepOneViewController.m in Sources */,
+				AA9D44FD17DFB87600C0CCE9 /* RegisterStepTwoViewController.m in Sources */,
+				AA9D450717DFC3B200C0CCE9 /* SIAlertView.m in Sources */,
+				AA9D452417DFC9EB00C0CCE9 /* CommonFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

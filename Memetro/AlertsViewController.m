@@ -38,9 +38,9 @@
 -(void) initNavbar{
     NSMutableArray *rightButtons = [[NSMutableArray alloc]init];
     
-    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 140, 44)];
     
-    UIButton *b3 = [[UIButton alloc] initWithFrame:CGRectMake(70, 12, 19, 23)];
+    UIButton *b3 = [[UIButton alloc] initWithFrame:CGRectMake(110, 12, 19, 23)];
     [b3 setBackgroundImage:[UIImage imageNamed:@"map-navbar-icon"] forState:UIControlStateNormal];
     [b3 setBackgroundImage:[UIImage imageNamed:@"map-navbar-icon-active"] forState:UIControlStateHighlighted];
     [b3 setBackgroundImage:[UIImage imageNamed:@"map-navbar-icon-active"] forState:UIControlStateSelected];
@@ -48,7 +48,7 @@
     self.mapButton = b3;
     [v addSubview:b3];
     
-    UIButton *b2 = [[UIButton alloc] initWithFrame:CGRectMake(37, 12, 16, 23)];
+    UIButton *b2 = [[UIButton alloc] initWithFrame:CGRectMake(60, 12, 16, 23)];
     [b2 setBackgroundImage:[UIImage imageNamed:@"twitter-navbar-icon"] forState:UIControlStateNormal];
     [b2 setBackgroundImage:[UIImage imageNamed:@"twitter-navbar-icon-active"] forState:UIControlStateHighlighted];
         [b2 setBackgroundImage:[UIImage imageNamed:@"twitter-navbar-icon-active"] forState:UIControlStateSelected];

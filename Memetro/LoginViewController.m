@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "CBProgressPanel.h"
+#import "RegisterStepOneViewController.h"
 @interface LoginViewController ()
 
 @end
@@ -26,9 +27,9 @@
 
 -(void) setupLayout{
     for(UITextField *t in self.textfields){
-        t.font = [UIFont fontWithName:@"Roboto-Light" size:16];
-        t.textColor = [UIColor colorWithRed:0.49f green:0.49f blue:0.49f alpha:1.00f];
-        t.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:0.49f green:0.49f blue:0.49f alpha:1.00f],NSFontAttributeName:[UIFont fontWithName:@"Roboto-Light" size:16] }];
+        t.font = TEXTFIELD_FONT;
+        t.textColor = TEXTFIELD_COLOR;
+        t.attributedPlaceholder = TEXTFIELD_PLACEHOLDER;
     }
 
     self.username.placeholder = NSLocalizedString(@"username",@"");
@@ -37,7 +38,7 @@
     self.forgottenPassword.text = NSLocalizedString(@"forgottenpassword", @"contraseña olvidada");
     
     for (UIButton *b in self.buttons){
-        b.titleLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:16];
+        b.titleLabel.font = BUTTON_FONT;
     }
     
     [self.loginButton setTitle: NSLocalizedString(@"loginbutton", @"boton login") forState:UIControlStateNormal];
@@ -56,9 +57,25 @@
 }
 
 - (IBAction)login:(id)sender {
+    if([self.username.text isEqualToString:@""]|| [self.password.text isEqualToString:@""]){
+        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"incorrectdatatitle", @"") andMessage:NSLocalizedString(@"loginemptypassuser", @"")];
+        [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
+                                 type:SIAlertViewButtonTypeCancel
+                              handler:nil];
+        alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
+        [alertView show];
+        return;
+    }
     [[CBProgressPanel sharedInstance] displayInView:self.view];
     [[NXOAuth2AccountStore sharedStore] requestAccessToAccountWithType:@"memetro"
                                                               username:self.username.text
                                                               password:self.password.text];
 }
+
+- (IBAction)createAccount:(id)sender {
+    UINavigationController *n = [[UINavigationController alloc] initWithRootViewController:[[RegisterStepOneViewController alloc] initWithNibName:@"RegisterStepOneViewController" bundle:nil]];
+    [n setNavigationBarHidden:YES];
+    [self presentViewController:n animated:YES completion:nil];
+}
+
 @end
