@@ -30,11 +30,37 @@
                                      [UIImage imageNamed:@"anim-4"],
                                      [UIImage imageNamed:@"anim-5"],
                                      nil];
+
     animationView.animationDuration = 0.8f;
     animationView.animationRepeatCount = 0;
     [animationView startAnimating];
     self.animationView = animationView;
-    [self setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:.4f]];
+    UIImageView * anim2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"memetro-anim-0"]];
+    anim2.animationImages = [NSArray arrayWithObjects:
+                             [UIImage imageNamed:@"memetro-anim-0"],
+                             [UIImage imageNamed:@"memetro-anim-1"],
+                             [UIImage imageNamed:@"memetro-anim-2"],
+                             [UIImage imageNamed:@"memetro-anim-3"],
+                             [UIImage imageNamed:@"memetro-anim-4"],
+                             [UIImage imageNamed:@"memetro-anim-5"],
+                             [UIImage imageNamed:@"memetro-anim-6"],
+                             [UIImage imageNamed:@"memetro-anim-7"],
+                             [UIImage imageNamed:@"memetro-anim-8"],
+                             [UIImage imageNamed:@"memetro-anim-7"],
+                             [UIImage imageNamed:@"memetro-anim-6"],
+                             [UIImage imageNamed:@"memetro-anim-5"],
+                             [UIImage imageNamed:@"memetro-anim-4"],
+                             [UIImage imageNamed:@"memetro-anim-3"],
+                             [UIImage imageNamed:@"memetro-anim-2"],
+                             [UIImage imageNamed:@"memetro-anim-1"],
+                             [UIImage imageNamed:@"memetro-anim-0"],
+                             nil
+                            ];
+    anim2.animationRepeatCount = 0;
+    anim2.animationDuration= .6f;
+    [anim2 startAnimating];
+    self.memetroAnimationView = anim2;
+    [self setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:.7f]];
     return self;
 }
 
@@ -42,9 +68,17 @@
 -(void) displayInView:(UIView *) view{
     self.frame = [[UIScreen mainScreen] bounds];
     self.animationView.frame = CGRectMake(0, 0, view.frame.size.width, 3.0f);
+    if(IS_IPHONE_5){
+        self.memetroAnimationView.frame = CGRectMake(130, 200, 59, 63);
+    }else{
+        self.memetroAnimationView.frame = CGRectMake(130, 200, 59, 63);
+    }
+    [self addSubview:self.memetroAnimationView];
     [self addSubview:self.animationView];
     [view addSubview:self];
 }
+
+
 
 -(void) hide{
     [self.animationView removeFromSuperview];

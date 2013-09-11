@@ -19,6 +19,14 @@
 /* REGISTER */
 "passwordconfirm" = "Confirm password";
 "nextstep" = "Next step";
+"omitbutton" = "Skip this step";
+"registername" = "Name";
+"registertwitter" = "Twitter username";
+"registeremail" = "Email";
+"registeraboutme"= "Biography";
+"registerbutton"= "Create account";
+"cancelbutton"= "Cancel";
+"backbutton" = "Back";
 
 /* MENU */
 "menualerts" = "ALERTS";

@@ -12,7 +12,10 @@
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *inputs;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 - (IBAction)goToStepTwo:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextField *username;
-@property (weak, nonatomic) IBOutlet UITextField *password;
-@property (weak, nonatomic) IBOutlet UITextField *passwordConfirm;
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *twittername;
+@property (weak, nonatomic) IBOutlet UITextField *aboutme;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+- (IBAction)cancel:(id)sender;
 @end

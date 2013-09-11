@@ -50,10 +50,10 @@
 
 -(void) setupLoginLogic{
     [[NXOAuth2AccountStore sharedStore]
-     setClientID:@"NTFmMDU3YmY2ZDFkMDFl"
-     secret:@"2cb128799bb3886281c6b7a89b7ac0047c06b876"
-     authorizationURL:[NSURL URLWithString:@"http://memetro.bongardt.co/oauth/token"]
-     tokenURL:[NSURL URLWithString:@"http://memetro.bongardt.co/oauth/token"]
+     setClientID:CLIENT_ID
+     secret:CLIENT_SECRET
+     authorizationURL:[NSURL URLWithString:[BASE_URL stringByAppendingString:@"oauth/token"]]
+     tokenURL:[NSURL URLWithString:[BASE_URL stringByAppendingString:@"oauth/token"]]
      redirectURL:[NSURL URLWithString:@"localhost"]
      forAccountType:@"memetro"];
     

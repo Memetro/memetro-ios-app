@@ -8,7 +8,7 @@
 
 #import "RegisterStepOneViewController.h"
 #import "RegisterStepTwoViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 
 @implementation RegisterStepOneViewController
 
@@ -33,72 +33,94 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)goToStepTwo:(id)sender {
-    if([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""] || [self.passwordConfirm.text isEqualToString:@""]){
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"incorrectdatatitle", @"") andMessage:NSLocalizedString(@"loginemptypassuser", @"")];
-        [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
-                                 type:SIAlertViewButtonTypeCancel
-                              handler:nil];
-        alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
-        [alertView show];
-        return;
-    }
-    if(![self.passwordConfirm.text isEqualToString:self.password.text]){
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"passmissmatch", @"") andMessage:NSLocalizedString(@"passmissmatchextended", @"")];
-        [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
-                                 type:SIAlertViewButtonTypeCancel
-                              handler:nil];
-        alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
-        [alertView show];
-        alertView.willDismissHandler = ^(SIAlertView *alertView) {
-            self.password.text = @"";
-            self.passwordConfirm.text = @"";
-        };
-        return;
-        
-    }
-    [self.navigationController pushViewController:[[RegisterStepTwoViewController alloc] initWithNibName:@"RegisterStepTwoViewController" bundle:nil] animated:YES];
+- (IBAction)goToStepTwo:(id)sender{
+    RegisterStepTwoViewController *r = [[RegisterStepTwoViewController alloc] initWithNibName:@"RegisterStepTwoViewController" bundle:nil];
+    r.name = self.name.text;
+    r.twitter = self.twittername.text;
+    r.email = self.email.text;
+    r.aboutme = self.aboutme.text;
+    [self.navigationController pushViewController:r animated:YES];
 }
 
 -(void) setupLayout{
     self.nextButton.titleLabel.font = BUTTON_FONT;
+    self.cancelButton.titleLabel.font = BUTTON_FONT;
     for (UITextField *t in self.inputs){
         t.font = TEXTFIELD_FONT;
         t.textColor = TEXTFIELD_COLOR;
         t.attributedPlaceholder = TEXTFIELD_PLACEHOLDER;
     }
-    self.username.placeholder = NSLocalizedString(@"username",@"");
-    self.password.placeholder = NSLocalizedString(@"password",@"");
-    self.passwordConfirm.placeholder = NSLocalizedString(@"passwordconfirm",@"");
+    self.name.placeholder = NSLocalizedString(@"registername", @"");
+    self.twittername.placeholder = NSLocalizedString(@"registertwitter", @"");
+    self.email.placeholder =NSLocalizedString(@"registeremail", @"");
+    self.aboutme.placeholder = NSLocalizedString(@"registeraboutme", @"");
+    [self.nextButton setTitle:NSLocalizedString(@"omitbutton",@"") forState:UIControlStateNormal];
+    [self.nextButton setTitle:NSLocalizedString(@"omitbutton",@"") forState:UIControlStateHighlighted];
+    
+    [self.cancelButton setTitle:NSLocalizedString(@"cancelbutton", @"") forState:UIControlStateNormal];
+    [self.cancelButton setTitle:NSLocalizedString(@"cancelbutton", @"") forState:UIControlStateHighlighted];
 
-    [self.nextButton setTitle:NSLocalizedString(@"nextstep",@"") forState:UIControlStateNormal];
-    [self.nextButton setTitle:NSLocalizedString(@"nextstep",@"") forState:UIControlStateHighlighted];
+}
+
+-(void) textFieldDidBeginEditing:(UITextField *)textField{
+    if(IS_IPHONE_5){
+        if(textField == self.aboutme){
+            [CommonFunctions animateView:self.view withHeight:25 up:YES];
+        }
+        
+    }else{
+        if(textField == self.email){
+            [CommonFunctions animateView:self.view withHeight:15 up:YES];
+        }
+        if(textField == self.twittername){
+            [CommonFunctions animateView:self.view withHeight:65 up:YES];
+        }
+        if(textField == self.aboutme){
+            [CommonFunctions animateView:self.view withHeight:115 up:YES];
+        }
+    }
+
+}
+
+-(void) textFieldDidEndEditing:(UITextField *)textField{
+    if(![textField.text isEqualToString:@""]){
+        [self.nextButton setTitle:NSLocalizedString(@"nextstep",@"") forState:UIControlStateNormal];
+        [self.nextButton setTitle:NSLocalizedString(@"nextstep",@"") forState:UIControlStateHighlighted];
+    }
+    if(IS_IPHONE_5){
+        if(textField == self.aboutme){
+            [CommonFunctions animateView:self.view withHeight:25 up:NO];
+        }
+    }else{
+        if(textField == self.email){
+            [CommonFunctions animateView:self.view withHeight:15 up:NO];
+        }
+        if(textField == self.twittername){
+            [CommonFunctions animateView:self.view withHeight:65 up:NO];
+        }
+        if(textField == self.aboutme){
+            [CommonFunctions animateView:self.view withHeight:115 up:NO];
+        }
+    }
+
 }
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    if (textField == self.username){
-        [self.password becomeFirstResponder];
-    }else if (textField == self.password){
-        [self.passwordConfirm becomeFirstResponder];
+    if(textField == self.name){
+        [self.email becomeFirstResponder];
+    }
+    if(textField == self.email){
+        [self.twittername becomeFirstResponder];
+    }
+    if (textField == self.twittername){
+        [self.aboutme becomeFirstResponder];
     }else{
         [textField resignFirstResponder];
     }
     return YES;
 }
 
--(void) textFieldDidBeginEditing:(UITextField *)textField{
-    if(!IS_IPHONE_5){
-        if(textField == self.passwordConfirm){
-            [CommonFunctions animateView:self.view withHeight:70 up:YES];
-        }
-    }
-}
--(void) textFieldDidEndEditing:(UITextField *)textField{
-    if(!IS_IPHONE_5){
-        if(textField == self.passwordConfirm){
-            [CommonFunctions animateView:self.view withHeight:70 up:NO];
-        }
-    }
-    
-}
 
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

@@ -4,6 +4,7 @@
 
 #import <Availability.h>
 #import "Memetro-FCsettings.pch"
+#import "AppAuth.pch"
 #import "SIAlertView.h"
 #import "CBProgressPanel.h"
 #import "CommonFunctions.h"

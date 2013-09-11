@@ -10,8 +10,9 @@
 
 @interface CBProgressPanel : UIView
 @property (strong,nonatomic) UIView *animationView;
-
+@property (strong,nonatomic) UIImageView *memetroAnimationView;
 + (instancetype)sharedInstance;
 -(void) displayInView:(UIView *) view;
 -(void) hide;
+
 @end

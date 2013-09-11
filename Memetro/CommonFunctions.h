@@ -10,4 +10,5 @@
 
 @interface CommonFunctions : NSObject
 + (void) animateView: (UIView *)view withHeight:(int) height up: (BOOL) up;
++(NSURL *) generateUrlWithParams:(NSString *)string;
 @end

@@ -86,6 +86,24 @@
 		AAC8D54E17DE89B30051CE77 /* appinfo-menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC8D54A17DE89B20051CE77 /* appinfo-menu-icon@2x.png */; };
 		AAC8D54F17DE89B30051CE77 /* appinfo-menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC8D54B17DE89B30051CE77 /* appinfo-menu-icon.png */; };
 		AAC8D55017DE89B30051CE77 /* logout-menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC8D54C17DE89B30051CE77 /* logout-menu-icon.png */; };
+		AACEA75917E0E923009E8826 /* memetro-anim-7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA74717E0E923009E8826 /* memetro-anim-7@2x.png */; };
+		AACEA75A17E0E923009E8826 /* memetro-anim-5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA74817E0E923009E8826 /* memetro-anim-5@2x.png */; };
+		AACEA75B17E0E923009E8826 /* memetro-anim-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA74917E0E923009E8826 /* memetro-anim-4@2x.png */; };
+		AACEA75C17E0E923009E8826 /* memetro-anim-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA74A17E0E923009E8826 /* memetro-anim-2@2x.png */; };
+		AACEA75D17E0E923009E8826 /* memetro-anim-0.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA74B17E0E923009E8826 /* memetro-anim-0.png */; };
+		AACEA75E17E0E923009E8826 /* memetro-anim-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA74C17E0E923009E8826 /* memetro-anim-1@2x.png */; };
+		AACEA75F17E0E923009E8826 /* memetro-anim-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA74D17E0E923009E8826 /* memetro-anim-2.png */; };
+		AACEA76017E0E923009E8826 /* memetro-anim-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA74E17E0E923009E8826 /* memetro-anim-3.png */; };
+		AACEA76117E0E923009E8826 /* memetro-anim-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA74F17E0E923009E8826 /* memetro-anim-1.png */; };
+		AACEA76217E0E923009E8826 /* memetro-anim-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA75017E0E923009E8826 /* memetro-anim-0@2x.png */; };
+		AACEA76317E0E923009E8826 /* memetro-anim-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA75117E0E923009E8826 /* memetro-anim-3@2x.png */; };
+		AACEA76417E0E923009E8826 /* memetro-anim-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA75217E0E923009E8826 /* memetro-anim-4.png */; };
+		AACEA76517E0E923009E8826 /* memetro-anim-7.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA75317E0E923009E8826 /* memetro-anim-7.png */; };
+		AACEA76617E0E923009E8826 /* memetro-anim-6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA75417E0E923009E8826 /* memetro-anim-6@2x.png */; };
+		AACEA76717E0E923009E8826 /* memetro-anim-6.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA75517E0E923009E8826 /* memetro-anim-6.png */; };
+		AACEA76817E0E923009E8826 /* memetro-anim-5.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA75617E0E923009E8826 /* memetro-anim-5.png */; };
+		AACEA76917E0E923009E8826 /* memetro-anim-8.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA75717E0E923009E8826 /* memetro-anim-8.png */; };
+		AACEA76A17E0E923009E8826 /* memetro-anim-8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACEA75817E0E923009E8826 /* memetro-anim-8@2x.png */; };
 		AAF53F7117D7A3FC0039F1D4 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF53F6E17D7A3FC0039F1D4 /* JASidePanelController.m */; };
 		AAF53F7217D7A3FC0039F1D4 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF53F7017D7A3FC0039F1D4 /* UIViewController+JASidePanel.m */; };
 		AAF53F7817D7A4990039F1D4 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF53F7617D7A4990039F1D4 /* LeftViewController.m */; };
@@ -259,6 +277,25 @@
 		AAC8D54A17DE89B20051CE77 /* appinfo-menu-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appinfo-menu-icon@2x.png"; sourceTree = "<group>"; };
 		AAC8D54B17DE89B30051CE77 /* appinfo-menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appinfo-menu-icon.png"; sourceTree = "<group>"; };
 		AAC8D54C17DE89B30051CE77 /* logout-menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-menu-icon.png"; sourceTree = "<group>"; };
+		AACEA74717E0E923009E8826 /* memetro-anim-7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-7@2x.png"; sourceTree = "<group>"; };
+		AACEA74817E0E923009E8826 /* memetro-anim-5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-5@2x.png"; sourceTree = "<group>"; };
+		AACEA74917E0E923009E8826 /* memetro-anim-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-4@2x.png"; sourceTree = "<group>"; };
+		AACEA74A17E0E923009E8826 /* memetro-anim-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-2@2x.png"; sourceTree = "<group>"; };
+		AACEA74B17E0E923009E8826 /* memetro-anim-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-0.png"; sourceTree = "<group>"; };
+		AACEA74C17E0E923009E8826 /* memetro-anim-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-1@2x.png"; sourceTree = "<group>"; };
+		AACEA74D17E0E923009E8826 /* memetro-anim-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-2.png"; sourceTree = "<group>"; };
+		AACEA74E17E0E923009E8826 /* memetro-anim-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-3.png"; sourceTree = "<group>"; };
+		AACEA74F17E0E923009E8826 /* memetro-anim-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-1.png"; sourceTree = "<group>"; };
+		AACEA75017E0E923009E8826 /* memetro-anim-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-0@2x.png"; sourceTree = "<group>"; };
+		AACEA75117E0E923009E8826 /* memetro-anim-3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-3@2x.png"; sourceTree = "<group>"; };
+		AACEA75217E0E923009E8826 /* memetro-anim-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-4.png"; sourceTree = "<group>"; };
+		AACEA75317E0E923009E8826 /* memetro-anim-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-7.png"; sourceTree = "<group>"; };
+		AACEA75417E0E923009E8826 /* memetro-anim-6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-6@2x.png"; sourceTree = "<group>"; };
+		AACEA75517E0E923009E8826 /* memetro-anim-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-6.png"; sourceTree = "<group>"; };
+		AACEA75617E0E923009E8826 /* memetro-anim-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-5.png"; sourceTree = "<group>"; };
+		AACEA75717E0E923009E8826 /* memetro-anim-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-8.png"; sourceTree = "<group>"; };
+		AACEA75817E0E923009E8826 /* memetro-anim-8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetro-anim-8@2x.png"; sourceTree = "<group>"; };
+		AACEA76B17E10E79009E8826 /* AppAuth.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppAuth.pch; sourceTree = "<group>"; };
 		AAF53F6D17D7A3FC0039F1D4 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
 		AAF53F6E17D7A3FC0039F1D4 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
 		AAF53F6F17D7A3FC0039F1D4 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
@@ -362,6 +399,7 @@
 				AAB71D5317BEAEAF001B16CF /* Memetro-Prefix.pch */,
 				AAB71DBF17BFF6D7001B16CF /* Localizable.strings */,
 				AA9D450417DFBE4400C0CCE9 /* Memetro-FCsettings.pch */,
+				AACEA76B17E10E79009E8826 /* AppAuth.pch */,
 			);
 			name = other;
 			sourceTree = "<group>";
@@ -509,6 +547,7 @@
 		AAB71D7617BFE943001B16CF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				AACEA74217E0E0F2009E8826 /* memetor-animation */,
 				AAC8D4E417DE5C810051CE77 /* animated-bar */,
 				AAF53FBD17D7D00F0039F1D4 /* menu */,
 				AAB71D7817BFE95B001B16CF /* common */,
@@ -593,6 +632,31 @@
 				AAC8D52317DE69280051CE77 /* CBProgressPanel.m */,
 			);
 			name = CBProgressPanel;
+			sourceTree = "<group>";
+		};
+		AACEA74217E0E0F2009E8826 /* memetor-animation */ = {
+			isa = PBXGroup;
+			children = (
+				AACEA74717E0E923009E8826 /* memetro-anim-7@2x.png */,
+				AACEA74817E0E923009E8826 /* memetro-anim-5@2x.png */,
+				AACEA74917E0E923009E8826 /* memetro-anim-4@2x.png */,
+				AACEA74A17E0E923009E8826 /* memetro-anim-2@2x.png */,
+				AACEA74B17E0E923009E8826 /* memetro-anim-0.png */,
+				AACEA74C17E0E923009E8826 /* memetro-anim-1@2x.png */,
+				AACEA74D17E0E923009E8826 /* memetro-anim-2.png */,
+				AACEA74E17E0E923009E8826 /* memetro-anim-3.png */,
+				AACEA74F17E0E923009E8826 /* memetro-anim-1.png */,
+				AACEA75017E0E923009E8826 /* memetro-anim-0@2x.png */,
+				AACEA75117E0E923009E8826 /* memetro-anim-3@2x.png */,
+				AACEA75217E0E923009E8826 /* memetro-anim-4.png */,
+				AACEA75317E0E923009E8826 /* memetro-anim-7.png */,
+				AACEA75417E0E923009E8826 /* memetro-anim-6@2x.png */,
+				AACEA75517E0E923009E8826 /* memetro-anim-6.png */,
+				AACEA75617E0E923009E8826 /* memetro-anim-5.png */,
+				AACEA75717E0E923009E8826 /* memetro-anim-8.png */,
+				AACEA75817E0E923009E8826 /* memetro-anim-8@2x.png */,
+			);
+			name = "memetor-animation";
 			sourceTree = "<group>";
 		};
 		AAF53F6B17D7A2FA0039F1D4 /* Controllers */ = {
@@ -946,6 +1010,24 @@
 				AA9D451E17DFC3C400C0CCE9 /* button-destructive-d@2x.png in Resources */,
 				AA9D451F17DFC3C400C0CCE9 /* button-destructive.png in Resources */,
 				AA9D452017DFC3C400C0CCE9 /* button-destructive@2x.png in Resources */,
+				AACEA75917E0E923009E8826 /* memetro-anim-7@2x.png in Resources */,
+				AACEA75A17E0E923009E8826 /* memetro-anim-5@2x.png in Resources */,
+				AACEA75B17E0E923009E8826 /* memetro-anim-4@2x.png in Resources */,
+				AACEA75C17E0E923009E8826 /* memetro-anim-2@2x.png in Resources */,
+				AACEA75D17E0E923009E8826 /* memetro-anim-0.png in Resources */,
+				AACEA75E17E0E923009E8826 /* memetro-anim-1@2x.png in Resources */,
+				AACEA75F17E0E923009E8826 /* memetro-anim-2.png in Resources */,
+				AACEA76017E0E923009E8826 /* memetro-anim-3.png in Resources */,
+				AACEA76117E0E923009E8826 /* memetro-anim-1.png in Resources */,
+				AACEA76217E0E923009E8826 /* memetro-anim-0@2x.png in Resources */,
+				AACEA76317E0E923009E8826 /* memetro-anim-3@2x.png in Resources */,
+				AACEA76417E0E923009E8826 /* memetro-anim-4.png in Resources */,
+				AACEA76517E0E923009E8826 /* memetro-anim-7.png in Resources */,
+				AACEA76617E0E923009E8826 /* memetro-anim-6@2x.png in Resources */,
+				AACEA76717E0E923009E8826 /* memetro-anim-6.png in Resources */,
+				AACEA76817E0E923009E8826 /* memetro-anim-5.png in Resources */,
+				AACEA76917E0E923009E8826 /* memetro-anim-8.png in Resources */,
+				AACEA76A17E0E923009E8826 /* memetro-anim-8@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
