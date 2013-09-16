@@ -66,6 +66,7 @@
         [alertView show];
         return;
     }
+    [self.view endEditing:YES];
     [[CBProgressPanel sharedInstance] displayInView:self.view];
     [[NXOAuth2AccountStore sharedStore] requestAccessToAccountWithType:@"memetro"
                                                               username:self.username.text

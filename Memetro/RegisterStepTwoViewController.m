@@ -10,6 +10,7 @@
 
 
 #import "RegisterStepTwoViewController.h"
+#import "CBProgressPanel.h"
 
 @interface RegisterStepTwoViewController ()
 

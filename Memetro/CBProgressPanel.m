@@ -22,13 +22,20 @@
 
 -(id) init{
     self = [super init];
+
+
     UIImageView* animationView = [[UIImageView alloc] init];
     animationView.animationImages = [NSArray arrayWithObjects:
-                                     [UIImage imageNamed:@"anim-1"],
-                                     [UIImage imageNamed:@"anim-2"],
-                                     [UIImage imageNamed:@"anim-3"],
-                                     [UIImage imageNamed:@"anim-4"],
-                                     [UIImage imageNamed:@"anim-5"],
+                                     [UIImage imageNamed:@"anim-bar-0"],
+                                     [UIImage imageNamed:@"anim-bar-1"],
+                                     [UIImage imageNamed:@"anim-bar-2"],
+                                     [UIImage imageNamed:@"anim-bar-3"],
+                                     [UIImage imageNamed:@"anim-bar-4"],
+                                     [UIImage imageNamed:@"anim-bar-5"],
+                                     [UIImage imageNamed:@"anim-bar-6"],
+                                     [UIImage imageNamed:@"anim-bar-7"],
+                                     [UIImage imageNamed:@"anim-bar-8"],
+                                     [UIImage imageNamed:@"anim-bar-9"],
                                      nil];
 
     animationView.animationDuration = 0.8f;
@@ -67,15 +74,20 @@
 
 -(void) displayInView:(UIView *) view{
     self.frame = [[UIScreen mainScreen] bounds];
-    self.animationView.frame = CGRectMake(0, 0, view.frame.size.width, 3.0f);
+    self.animationView.frame = CGRectMake(0, 0, view.frame.size.width, 2.0f);
     if(IS_IPHONE_5){
-        self.memetroAnimationView.frame = CGRectMake(130, 200, 59, 63);
+        self.memetroAnimationView.frame = CGRectMake(-20, 200, 59, 63);
     }else{
-        self.memetroAnimationView.frame = CGRectMake(130, 200, 59, 63);
+        self.memetroAnimationView.frame = CGRectMake(-20, 200, 59, 63);
     }
     [self addSubview:self.memetroAnimationView];
     [self addSubview:self.animationView];
     [view addSubview:self];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.03f
+                                                  target:self
+                                                selector:@selector(increasePosition)
+                                                userInfo:nil
+                                                 repeats:YES];
 }
 
 
@@ -83,6 +95,16 @@
 -(void) hide{
     [self.animationView removeFromSuperview];
     [self removeFromSuperview];
+}
+
+-(void) increasePosition{
+    CGRect  f = self.memetroAnimationView.frame;
+    if(f.origin.x > 330){
+        f.origin.x = -20;
+    }else{
+        f.origin.x = f.origin.x + 2;
+    }
+    self.memetroAnimationView.frame = f;
 }
 
 

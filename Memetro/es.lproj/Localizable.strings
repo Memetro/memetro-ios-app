@@ -42,3 +42,7 @@
 "okbutton" = "Ok";
 "passmissmatch" = "Las contraseñas no coinciden";
 "passmissmatchextended" = "Comprueba tu contraseña y vuelve a intentarlo!";
+"wrongpasstitle" = "Login incorrecto";
+"wrongpassdescription" = "El usuario y/o la contraseña son incorrectos. Vuelve a intentarlo.";
+"offlinetitle"= "Sin conexión";
+"offlinedescription"= "Tu dispositivo actualmente no tiene conexión a internet. Vuelve a intentarlo en un rato.";

@@ -80,7 +80,25 @@
     usingBlock:^(NSNotification *aNotification){
         NSError *error = [aNotification.userInfo objectForKey:NXOAuth2AccountStoreErrorKey];
         NSLog(@"error %@",error);
-        [[CBProgressPanel sharedInstance] hide];
+        if([error code] == -1009){
+            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"offlinetitle", @"") andMessage:NSLocalizedString(@"offlinedescription", @"")];
+            [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
+                                     type:SIAlertViewButtonTypeCancel
+                                  handler:nil];
+            alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
+            [alertView show];
+            [[CBProgressPanel sharedInstance] hide];
+            
+        }else{
+            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"wrongpasstitle", @"") andMessage:NSLocalizedString(@"wrongpassdescription", @"")];
+            [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
+                                     type:SIAlertViewButtonTypeCancel
+                                  handler:nil];
+            alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
+            [alertView show];
+            [[CBProgressPanel sharedInstance] hide];
+        }
+
     }];
 }
 

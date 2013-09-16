@@ -44,3 +44,7 @@
 "okbutton" = "Ok";
 "passmissmatch" = "Password missmatch";
 "passmissmatchextended" = "Please check your password and try again!";
+"wrongpasstitle" = "Invalid login";
+"wrongpassdescription" = "The username and/or password does not match. Please try again.";
+"offlinetitle"= "Device offline";
+"offlinedescription"= "Your device seems to be offline. Please try again later.";
