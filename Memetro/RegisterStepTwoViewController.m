@@ -92,27 +92,17 @@
 
 - (IBAction)register:(id)sender {
     if([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""] || [self.passwordConfirm.text isEqualToString:@""]){
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"incorrectdatatitle", @"") andMessage:NSLocalizedString(@"loginemptypassuser", @"")];
-        [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
-                                 type:SIAlertViewButtonTypeCancel
-                              handler:nil];
-        alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
-        [alertView show];
+        [CommonFunctions showError:NSLocalizedString(@"loginemptypassuser", @"") withTitle:NSLocalizedString(@"incorrectdatatitle", @"") withDismissHandler:nil];
         return;
     }
     if(![self.passwordConfirm.text isEqualToString:self.password.text]){
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"passmissmatch", @"") andMessage:NSLocalizedString(@"passmissmatchextended", @"")];
-        [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
-                                 type:SIAlertViewButtonTypeCancel
-                              handler:nil];
-        alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
-        [alertView show];
-        alertView.willDismissHandler = ^(SIAlertView *alertView) {
+        [CommonFunctions showError:NSLocalizedString(@"passmissmatchextended", @"") withTitle:NSLocalizedString(@"passmissmatch", @"") withDismissHandler:^(SIAlertView *alertView){
             self.password.text = @"";
             self.passwordConfirm.text = @"";
-        };
+        }];
         return;
     }
+    NSString *lan = [[NSLocale preferredLanguages] objectAtIndex:0];
     NSMutableDictionary *postData = [NSMutableDictionary new];
     [postData setObject:CLIENT_ID forKey:@"client_id"];
     [postData setObject:CLIENT_SECRET forKey:@"client_secret"];
@@ -123,18 +113,42 @@
     [postData setObject:self.email forKey:@"email"];
     [postData setObject:self.twitter forKey:@"twittername"];
     [postData setObject:self.aboutme forKey:@"aboutme"];
-    
+    [postData setObject:lan forKey:@"locale"];
+    [[CBProgressPanel sharedInstance] displayInView:self.view];
     [NXOAuth2Request performMethod:@"POST"
                         onResource:[CommonFunctions generateUrlWithParams:@"register"]
                    usingParameters:postData
                        withAccount:nil
                sendProgressHandler:nil
                responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
-                   NSLog(@"url response: %@",response);
-                   NSLog(@"error: %@",error);
-                   NSLog(@"error user info: %@",[error userInfo]);
-                   NSLog(@"full response %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
-
+                   [[CBProgressPanel sharedInstance] hide];
+                   if(error !=nil){
+                       NSLog(@"error user info: %@",[error userInfo]);
+                       NSLog(@"full response %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+                       if([error code] == -1009){
+                           [CommonFunctions showNoInternetError];
+                       }else{
+                           [CommonFunctions showGenericFetchError];
+                       }
+                   }else{
+                       NSError *parseError = nil;
+                       NSDictionary *parsedResponse = [NSJSONSerialization
+                                          JSONObjectWithData:responseData
+                                          options:0
+                                          error:&error];
+                       if(parseError){
+                           [CommonFunctions showGenericFetchError];
+                       }else{
+                           NSLog(@"Parsed response: %@",parsedResponse);
+                           if([[parsedResponse objectForKey:@"success"] boolValue]){
+                               [CommonFunctions showError:NSLocalizedString(@"registercompleted", @"") withTitle:NSLocalizedString(@"registercompletedtitle", @"")  withDismissHandler:^(SIAlertView * alertView){
+                                   [self dismissViewControllerAnimated:YES completion:nil];
+                               }];
+                           }else{
+                               [CommonFunctions showError:[parsedResponse objectForKey:@"message"] withTitle:[parsedResponse objectForKey:@"error_code"] withDismissHandler:nil];
+                           }
+                       }
+                   }
                }];
 }
 - (IBAction)back:(id)sender {

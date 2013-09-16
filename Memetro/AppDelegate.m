@@ -78,27 +78,14 @@
     object:[NXOAuth2AccountStore sharedStore]
     queue:nil
     usingBlock:^(NSNotification *aNotification){
+        [[CBProgressPanel sharedInstance] hide];
         NSError *error = [aNotification.userInfo objectForKey:NXOAuth2AccountStoreErrorKey];
         NSLog(@"error %@",error);
         if([error code] == -1009){
-            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"offlinetitle", @"") andMessage:NSLocalizedString(@"offlinedescription", @"")];
-            [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
-                                     type:SIAlertViewButtonTypeCancel
-                                  handler:nil];
-            alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
-            [alertView show];
-            [[CBProgressPanel sharedInstance] hide];
-            
+            [CommonFunctions showNoInternetError];
         }else{
-            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"wrongpasstitle", @"") andMessage:NSLocalizedString(@"wrongpassdescription", @"")];
-            [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
-                                     type:SIAlertViewButtonTypeCancel
-                                  handler:nil];
-            alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
-            [alertView show];
-            [[CBProgressPanel sharedInstance] hide];
+            [CommonFunctions showError:NSLocalizedString(@"wrongpassdescription", @"") withTitle:NSLocalizedString(@"wrongpasstitle", @"") withDismissHandler:nil];
         }
-
     }];
 }
 

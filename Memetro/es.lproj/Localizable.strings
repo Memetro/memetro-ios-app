@@ -46,3 +46,7 @@
 "wrongpassdescription" = "El usuario y/o la contraseña son incorrectos. Vuelve a intentarlo.";
 "offlinetitle"= "Sin conexión";
 "offlinedescription"= "Tu dispositivo actualmente no tiene conexión a internet. Vuelve a intentarlo en un rato.";
+"genericfetcherrortitle"="Sobrecarga";
+"genericfetcherror"="Actualmente nuestros servidores están teniendo problemas para hacer frente a todas vuestras peticiones. Intentalo de nuevo más tarde.";
+"registercompletedtitle"="Registro completado";
+"registercompleted"= "Ya puedes empezar a usar la APP memetro!";

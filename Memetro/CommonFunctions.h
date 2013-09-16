@@ -11,4 +11,7 @@
 @interface CommonFunctions : NSObject
 + (void) animateView: (UIView *)view withHeight:(int) height up: (BOOL) up;
 +(NSURL *) generateUrlWithParams:(NSString *)string;
++(void) showNoInternetError;
++(void) showError:(NSString *) error withTitle:(NSString *)title withDismissHandler:(SIAlertViewHandler)handler;
++(void) showGenericFetchError;
 @end

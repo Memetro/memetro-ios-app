@@ -48,3 +48,7 @@
 "wrongpassdescription" = "The username and/or password does not match. Please try again.";
 "offlinetitle"= "Device offline";
 "offlinedescription"= "Your device seems to be offline. Please try again later.";
+"genericfetcherrortitle"="Servers overloaded";
+"genericfetcherror"="Currently our server are having trouble to process your request. Please try again later.";
+"registercompletedtitle"="Registration completed";
+"registercompleted"= "Congrats! You will now be redirected to the login screen.";

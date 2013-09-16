@@ -58,12 +58,7 @@
 
 - (IBAction)login:(id)sender {
     if([self.username.text isEqualToString:@""]|| [self.password.text isEqualToString:@""]){
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"incorrectdatatitle", @"") andMessage:NSLocalizedString(@"loginemptypassuser", @"")];
-        [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
-                                 type:SIAlertViewButtonTypeCancel
-                              handler:nil];
-        alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
-        [alertView show];
+        [CommonFunctions showError:NSLocalizedString(@"loginemptypassuser", @"") withTitle:NSLocalizedString(@"incorrectdatatitle", @"") withDismissHandler:nil];
         return;
     }
     [self.view endEditing:YES];

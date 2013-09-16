@@ -24,4 +24,34 @@
     return [NSURL URLWithString:urlstring];
 }
 
+
++(void) showNoInternetError{
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"offlinetitle", @"") andMessage:NSLocalizedString(@"offlinedescription", @"")];
+    [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
+                             type:SIAlertViewButtonTypeCancel
+                          handler:nil];
+    alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
+    [alertView show];
+}
+
++(void) showError:(NSString *) error withTitle:(NSString *)title withDismissHandler:(SIAlertViewHandler)handler{
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:title andMessage:error];
+    [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
+                             type:SIAlertViewButtonTypeCancel
+                          handler:nil];
+    alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
+    alertView.willDismissHandler = handler;
+    [alertView show];
+}
+
++(void) showGenericFetchError{
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"genericfetcherrortitle", @"") andMessage:NSLocalizedString(@"genericfetcherror", @"")];
+    [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
+                             type:SIAlertViewButtonTypeCancel
+                          handler:nil];
+    alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
+    [alertView show];
+}
+
+
 @end
