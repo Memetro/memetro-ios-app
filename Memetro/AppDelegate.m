@@ -40,6 +40,7 @@
         NXOAuth2Account *account = [[NXOAuth2AccountStore sharedStore] accountWithIdentifier:identifier];
         if(account != nil){
             NSLog(@"usuario logueado con account %@",account);
+            [self synchronize:NO];
             return;
         }
     }
@@ -68,8 +69,9 @@
              NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
              [prefs setObject:a.identifier forKey:@"accountidentifier"];
              [prefs synchronize];
-             [[CBProgressPanel sharedInstance] hide];
-             [self.viewController dismissViewControllerAnimated:YES completion:nil];
+             [self synchronize:YES];
+
+
          }
 
      }];
@@ -159,6 +161,62 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application{
+}
+
+-(void) synchronize:(BOOL) afterLogin{
+    [NXOAuth2Request performMethod:@"GET"
+                        onResource:[CommonFunctions generateUrlWithParams:@"synchronize"]
+                   usingParameters:nil
+                       withAccount:[CommonFunctions useraccount]
+               sendProgressHandler:nil
+               responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
+                   if(error !=nil){
+                       NSLog(@"error user info: %@",[error userInfo]);
+                       NSLog(@"full response %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+                       if(afterLogin){
+                           [[CBProgressPanel sharedInstance] hide];
+                           if([error code] == -1009){
+                               [CommonFunctions showNoInternetError];
+                           }else{
+                               [CommonFunctions showGenericFetchError];
+                           }
+                       }
+
+                   }else{
+                       NSError *parseError = nil;
+                       NSDictionary *parsedResponse = [NSJSONSerialization
+                                                       JSONObjectWithData:responseData
+                                                       options:0
+                                                       error:&error];
+                       if(parseError){
+                           if(afterLogin){
+                               [[CBProgressPanel sharedInstance] hide];
+                               [CommonFunctions showGenericFetchError];
+                           }
+                       }else{
+                           NSLog(@"Parsed response: %@",parsedResponse);
+                           if([[parsedResponse objectForKey:@"success"] boolValue]){
+                               
+                                                              
+                               
+                               if(afterLogin){
+                                   [[CBProgressPanel sharedInstance] hide];
+                                   [self.viewController dismissViewControllerAnimated:YES completion:nil];
+                               }
+
+                           }else{
+                               if(afterLogin){
+                                  [[CBProgressPanel sharedInstance] hide];
+                                  [CommonFunctions showError:[parsedResponse objectForKey:@"message"] withTitle:[parsedResponse objectForKey:@"error_code"] withDismissHandler:nil];
+                               }
+                           }
+                       }
+                   }
+
+                   
+               }];
+    
+
 }
 
 @end

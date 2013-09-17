@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NXOAuth2.h"
 
 @interface CommonFunctions : NSObject
 + (void) animateView: (UIView *)view withHeight:(int) height up: (BOOL) up;
@@ -14,4 +15,5 @@
 +(void) showNoInternetError;
 +(void) showError:(NSString *) error withTitle:(NSString *)title withDismissHandler:(SIAlertViewHandler)handler;
 +(void) showGenericFetchError;
++(NXOAuth2Account *) useraccount;
 @end

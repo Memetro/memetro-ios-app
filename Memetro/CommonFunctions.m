@@ -53,5 +53,14 @@
     [alertView show];
 }
 
++(NXOAuth2Account *) useraccount{
+    static NXOAuth2Account* account = nil;
+    if(account == nil){
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        NSString *identifier = [prefs stringForKey:@"accountidentifier"];
+        account = [[NXOAuth2AccountStore sharedStore] accountWithIdentifier:identifier];
+    }
+    return account;
+}
 
 @end
