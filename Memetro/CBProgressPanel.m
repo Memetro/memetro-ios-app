@@ -83,7 +83,7 @@
     [self addSubview:self.memetroAnimationView];
     [self addSubview:self.animationView];
     [view addSubview:self];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.03f
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f
                                                   target:self
                                                 selector:@selector(increasePosition)
                                                 userInfo:nil

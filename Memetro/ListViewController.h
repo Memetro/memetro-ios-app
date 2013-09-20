@@ -10,4 +10,6 @@
 
 @interface ListViewController : UIViewController
 
+- (IBAction)sync:(id)sender;
+
 @end

@@ -32,6 +32,10 @@
 		AA9D451F17DFC3C400C0CCE9 /* button-destructive.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D451317DFC3C400C0CCE9 /* button-destructive.png */; };
 		AA9D452017DFC3C400C0CCE9 /* button-destructive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9D451417DFC3C400C0CCE9 /* button-destructive@2x.png */; };
 		AA9D452417DFC9EB00C0CCE9 /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9D452317DFC9EA00C0CCE9 /* CommonFunctions.m */; };
+		AAAB3F6F17EB848900290E68 /* Memetro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAAB3F6D17EB848900290E68 /* Memetro.xcdatamodeld */; };
+		AAAB3F7217EB890700290E68 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAB3F7117EB890700290E68 /* CoreData.framework */; };
+		AAAB3F7717EB8A3000290E68 /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAB3F7617EB8A3000290E68 /* DataParser.m */; };
+		AAAB3F7A17EB907700290E68 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAB3F7917EB907700290E68 /* User.m */; };
 		AAB664E217E78BAC00FFEE7F /* anim-bar-9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB664CE17E78BAC00FFEE7F /* anim-bar-9@2x.png */; };
 		AAB664E317E78BAC00FFEE7F /* anim-bar-6.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB664CF17E78BAC00FFEE7F /* anim-bar-6.png */; };
 		AAB664E417E78BAC00FFEE7F /* anim-bar-7.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB664D017E78BAC00FFEE7F /* anim-bar-7.png */; };
@@ -225,6 +229,13 @@
 		AA9D451417DFC3C400C0CCE9 /* button-destructive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-destructive@2x.png"; sourceTree = "<group>"; };
 		AA9D452217DFC9EA00C0CCE9 /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
 		AA9D452317DFC9EA00C0CCE9 /* CommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunctions.m; sourceTree = "<group>"; };
+		AAAB3F6E17EB848900290E68 /* Memetro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memetro.xcdatamodel; sourceTree = "<group>"; };
+		AAAB3F7017EB849900290E68 /* Memetro 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Memetro 1.xcdatamodel"; sourceTree = "<group>"; };
+		AAAB3F7117EB890700290E68 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AAAB3F7517EB8A3000290E68 /* DataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataParser.h; sourceTree = "<group>"; };
+		AAAB3F7617EB8A3000290E68 /* DataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataParser.m; sourceTree = "<group>"; };
+		AAAB3F7817EB907700290E68 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		AAAB3F7917EB907700290E68 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		AAB664CE17E78BAC00FFEE7F /* anim-bar-9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anim-bar-9@2x.png"; sourceTree = "<group>"; };
 		AAB664CF17E78BAC00FFEE7F /* anim-bar-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anim-bar-6.png"; sourceTree = "<group>"; };
 		AAB664D017E78BAC00FFEE7F /* anim-bar-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anim-bar-7.png"; sourceTree = "<group>"; };
@@ -378,6 +389,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAB3F7217EB890700290E68 /* CoreData.framework in Frameworks */,
 				AAF53F7B17D7A5950039F1D4 /* QuartzCore.framework in Frameworks */,
 				AA7D4DB317C11CFA00A70ED1 /* libOAuth2Client.a in Frameworks */,
 				AAB71DD017C10A4C001B16CF /* Security.framework in Frameworks */,
@@ -511,6 +523,42 @@
 			name = btnimages;
 			sourceTree = "<group>";
 		};
+		AAAB3F6C17EB844600290E68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB3F6D17EB848900290E68 /* Memetro.xcdatamodeld */,
+				AAAB3F7B17EB907B00290E68 /* User */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AAAB3F7317EB89F200290E68 /* CommonFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				AA9D452217DFC9EA00C0CCE9 /* CommonFunctions.h */,
+				AA9D452317DFC9EA00C0CCE9 /* CommonFunctions.m */,
+			);
+			name = CommonFunctions;
+			sourceTree = "<group>";
+		};
+		AAAB3F7417EB8A1200290E68 /* DataParser */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB3F7517EB8A3000290E68 /* DataParser.h */,
+				AAAB3F7617EB8A3000290E68 /* DataParser.m */,
+			);
+			name = DataParser;
+			sourceTree = "<group>";
+		};
+		AAAB3F7B17EB907B00290E68 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB3F7817EB907700290E68 /* User.h */,
+				AAAB3F7917EB907700290E68 /* User.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		AAB71D3917BEAEAF001B16CF = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +579,7 @@
 		AAB71D4417BEAEAF001B16CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AAAB3F7117EB890700290E68 /* CoreData.framework */,
 				AAF53F7A17D7A5940039F1D4 /* QuartzCore.framework */,
 				AAB71DCF17C10A4C001B16CF /* Security.framework */,
 				AAB71D6817BEAEEA001B16CF /* MapKit.framework */,
@@ -544,6 +593,7 @@
 		AAB71D4B17BEAEAF001B16CF /* Memetro */ = {
 			isa = PBXGroup;
 			children = (
+				AAAB3F6C17EB844600290E68 /* Model */,
 				AAF53F6C17D7A3100039F1D4 /* Lib */,
 				AAF53F6B17D7A2FA0039F1D4 /* Controllers */,
 				AAB71D4C17BEAEAF001B16CF /* Supporting Files */,
@@ -703,11 +753,11 @@
 		AAF53F6C17D7A3100039F1D4 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				AAAB3F7417EB8A1200290E68 /* DataParser */,
 				AA9D450817DFC3B500C0CCE9 /* SIAlertView */,
 				AAC8D52117DE690E0051CE77 /* CBProgressPanel */,
 				AAF53F7317D7A4040039F1D4 /* JASidePanel */,
-				AA9D452217DFC9EA00C0CCE9 /* CommonFunctions.h */,
-				AA9D452317DFC9EA00C0CCE9 /* CommonFunctions.m */,
+				AAAB3F7317EB89F200290E68 /* CommonFunctions */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -1095,6 +1145,9 @@
 				AA9D44FD17DFB87600C0CCE9 /* RegisterStepTwoViewController.m in Sources */,
 				AA9D450717DFC3B200C0CCE9 /* SIAlertView.m in Sources */,
 				AA9D452417DFC9EB00C0CCE9 /* CommonFunctions.m in Sources */,
+				AAAB3F6F17EB848900290E68 /* Memetro.xcdatamodeld in Sources */,
+				AAAB3F7717EB8A3000290E68 /* DataParser.m in Sources */,
+				AAAB3F7A17EB907700290E68 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1246,6 +1299,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AAAB3F6D17EB848900290E68 /* Memetro.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AAAB3F7017EB849900290E68 /* Memetro 1.xcdatamodel */,
+				AAAB3F6E17EB848900290E68 /* Memetro.xcdatamodel */,
+			);
+			currentVersion = AAAB3F6E17EB848900290E68 /* Memetro.xcdatamodel */;
+			path = Memetro.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AAB71D3A17BEAEAF001B16CF /* Project object */;
 }

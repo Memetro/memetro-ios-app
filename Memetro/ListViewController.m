@@ -7,6 +7,7 @@
 //
 
 #import "ListViewController.h"
+#import "AppDelegate.h"
 
 @interface ListViewController ()
 
@@ -35,4 +36,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)sync:(id)sender {
+    [ ( (AppDelegate *) [[UIApplication sharedApplication] delegate]) synchronize:NO];
+}
 @end
