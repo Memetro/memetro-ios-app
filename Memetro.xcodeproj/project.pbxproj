@@ -92,6 +92,8 @@
 		AAB71DC117BFF7E9001B16CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAB71DBF17BFF6D7001B16CF /* Localizable.strings */; };
 		AAB71DD017C10A4C001B16CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB71DCF17C10A4C001B16CF /* Security.framework */; };
 		AABF71F317F219FE003D277C /* LeftViewControlleriOS6.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF71F217F219FE003D277C /* LeftViewControlleriOS6.xib */; };
+		AABF71FC17F22422003D277C /* LinesStations.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF71FB17F22422003D277C /* LinesStations.m */; };
+		AABF71FF17F22422003D277C /* CitiesTransports.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF71FE17F22422003D277C /* CitiesTransports.m */; };
 		AAC8D52417DE69280051CE77 /* CBProgressPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC8D52317DE69280051CE77 /* CBProgressPanel.m */; };
 		AAC8D53B17DE86C90051CE77 /* alert-menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC8D53917DE86C80051CE77 /* alert-menu-icon.png */; };
 		AAC8D53C17DE86C90051CE77 /* alert-menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC8D53A17DE86C80051CE77 /* alert-menu-icon@2x.png */; };
@@ -304,6 +306,14 @@
 		AAB71DC317C1098C001B16CF /* OAuth2Client.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuth2Client.xcodeproj; path = ../OAuth2Client/OAuth2Client.xcodeproj; sourceTree = "<group>"; };
 		AAB71DCF17C10A4C001B16CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AABF71F217F219FE003D277C /* LeftViewControlleriOS6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftViewControlleriOS6.xib; sourceTree = "<group>"; };
+		AABF71F617F21FC5003D277C /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon.png"; path = "../app-icon.png"; sourceTree = "<group>"; };
+		AABF71F717F22019003D277C /* spotlight-no-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spotlight-no-retina.png"; path = "../spotlight-no-retina.png"; sourceTree = "<group>"; };
+		AABF71F817F22028003D277C /* spotlight-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spotlight-retina.png"; path = "../spotlight-retina.png"; sourceTree = "<group>"; };
+		AABF71F917F22034003D277C /* spotlight-retina-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spotlight-retina-7.png"; path = "../spotlight-retina-7.png"; sourceTree = "<group>"; };
+		AABF71FA17F22422003D277C /* LinesStations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinesStations.h; path = ../LinesStations.h; sourceTree = "<group>"; };
+		AABF71FB17F22422003D277C /* LinesStations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinesStations.m; path = ../LinesStations.m; sourceTree = "<group>"; };
+		AABF71FD17F22422003D277C /* CitiesTransports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CitiesTransports.h; path = ../CitiesTransports.h; sourceTree = "<group>"; };
+		AABF71FE17F22422003D277C /* CitiesTransports.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CitiesTransports.m; path = ../CitiesTransports.m; sourceTree = "<group>"; };
 		AAC8D52217DE69280051CE77 /* CBProgressPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBProgressPanel.h; sourceTree = "<group>"; };
 		AAC8D52317DE69280051CE77 /* CBProgressPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBProgressPanel.m; sourceTree = "<group>"; };
 		AAC8D53917DE86C80051CE77 /* alert-menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-menu-icon.png"; sourceTree = "<group>"; };
@@ -536,6 +546,8 @@
 		AAAB3F6C17EB844600290E68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AABF720017F2242D003D277C /* CitiesTransports */,
+				AABF720117F2243A003D277C /* LinesStations */,
 				AAAB3F6D17EB848900290E68 /* Memetro.xcdatamodeld */,
 				AAAB3F7B17EB907B00290E68 /* User */,
 			);
@@ -632,6 +644,10 @@
 				AAF53FBD17D7D00F0039F1D4 /* menu */,
 				AAB71D7817BFE95B001B16CF /* common */,
 				AAB71D7417BEB963001B16CF /* Default-568h@2x.png */,
+				AABF71F917F22034003D277C /* spotlight-retina-7.png */,
+				AABF71F817F22028003D277C /* spotlight-retina.png */,
+				AABF71F717F22019003D277C /* spotlight-no-retina.png */,
+				AABF71F617F21FC5003D277C /* app-icon.png */,
 				AAB71D7217BEB960001B16CF /* Default@2x.png */,
 				AAB71D7017BEB95C001B16CF /* Default.png */,
 				AAB71D7717BFE949001B16CF /* login */,
@@ -686,6 +702,24 @@
 				AAB71D9917BFF032001B16CF /* Roboto-Regular.ttf */,
 			);
 			name = fonts;
+			sourceTree = "<group>";
+		};
+		AABF720017F2242D003D277C /* CitiesTransports */ = {
+			isa = PBXGroup;
+			children = (
+				AABF71FD17F22422003D277C /* CitiesTransports.h */,
+				AABF71FE17F22422003D277C /* CitiesTransports.m */,
+			);
+			name = CitiesTransports;
+			sourceTree = "<group>";
+		};
+		AABF720117F2243A003D277C /* LinesStations */ = {
+			isa = PBXGroup;
+			children = (
+				AABF71FA17F22422003D277C /* LinesStations.h */,
+				AABF71FB17F22422003D277C /* LinesStations.m */,
+			);
+			name = LinesStations;
 			sourceTree = "<group>";
 		};
 		AAC8D4E417DE5C810051CE77 /* animated-bar */ = {
@@ -1148,6 +1182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABF71FF17F22422003D277C /* CitiesTransports.m in Sources */,
 				AAB71D5217BEAEAF001B16CF /* main.m in Sources */,
 				AAB71D5617BEAEAF001B16CF /* AppDelegate.m in Sources */,
 				AAB71DBA17BFF6AE001B16CF /* LoginViewController.m in Sources */,
@@ -1164,6 +1199,7 @@
 				AA9D44F517DFB84500C0CCE9 /* RegisterStepOneViewController.m in Sources */,
 				AA9D44FD17DFB87600C0CCE9 /* RegisterStepTwoViewController.m in Sources */,
 				AA9D450717DFC3B200C0CCE9 /* SIAlertView.m in Sources */,
+				AABF71FC17F22422003D277C /* LinesStations.m in Sources */,
 				AA9D452417DFC9EB00C0CCE9 /* CommonFunctions.m in Sources */,
 				AAAB3F6F17EB848900290E68 /* Memetro.xcdatamodeld in Sources */,
 				AAAB3F7717EB8A3000290E68 /* DataParser.m in Sources */,

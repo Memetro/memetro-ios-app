@@ -14,6 +14,10 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>spotlight-retina-7</string>
+				<string>spotlight-retina</string>
+				<string>spotlight-no-retina</string>
+				<string>app-icon</string>
 				<string>appicon.png</string>
 				<string>appicon@2x.png</string>
 			</array>
@@ -52,7 +56,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarHidden</key>
-	<false/>
+	<true/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleBlackOpaque</string>
 	<key>UISupportedInterfaceOrientations</key>

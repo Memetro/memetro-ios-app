@@ -8,7 +8,8 @@
 
 #import "ListViewController.h"
 #import "AppDelegate.h"
-
+#import "DataParser.h"
+#import "User.h"
 @interface ListViewController ()
 
 @end

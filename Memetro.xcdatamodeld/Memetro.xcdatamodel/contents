@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CitiesTransports" representedClassName="CitiesTransports" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="transport" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="City" syncable="YES"/>
+    <entity name="Country" syncable="YES"/>
+    <entity name="Line" syncable="YES"/>
+    <entity name="LinesStations" representedClassName="LinesStations" syncable="YES">
+        <attribute name="line" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="station" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Station" syncable="YES"/>
+    <entity name="Transport" syncable="YES"/>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="aboutme" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="avatar" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -9,6 +22,13 @@
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CitiesTransports" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="LinesStations" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Line" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Station" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Transport" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="City" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Country" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
