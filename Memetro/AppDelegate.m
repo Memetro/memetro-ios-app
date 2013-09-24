@@ -230,6 +230,8 @@
         _managedObjectContext = [[NSManagedObjectContext alloc] init];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
+    NSLog(@"caca");
+
     return _managedObjectContext;
 }
 
