@@ -18,9 +18,14 @@
 
 @implementation LeftViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(SYSTEM_VERSION_LESS_THAN(@"7.0")){
+        self = [super initWithNibName:@"LeftViewControlleriOS6" bundle:nil];
+    }else{
+        self = [super initWithNibName:@"LeftViewController" bundle:nil];
+    }
+
     if (self) {
         // Custom initialization
     }

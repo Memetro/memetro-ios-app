@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA65E24117F2139400BBDBE9 /* top-sidebar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65E23D17F2139400BBDBE9 /* top-sidebar@2x.png */; };
+		AA65E24217F2139400BBDBE9 /* navbar-ios6.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65E23E17F2139400BBDBE9 /* navbar-ios6.png */; };
+		AA65E24317F2139400BBDBE9 /* top-sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65E23F17F2139400BBDBE9 /* top-sidebar.png */; };
+		AA65E24417F2139400BBDBE9 /* navbar-ios6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65E24017F2139400BBDBE9 /* navbar-ios6@2x.png */; };
 		AA7D4DB317C11CFA00A70ED1 /* libOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7D4DAE17C11C2500A70ED1 /* libOAuth2Client.a */; };
 		AA7D4DB817C11F1300A70ED1 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7D4DB617C11F1300A70ED1 /* AlertsViewController.m */; };
 		AA7D4DB917C11F1300A70ED1 /* AlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7D4DB717C11F1300A70ED1 /* AlertsViewController.xib */; };
@@ -87,6 +91,7 @@
 		AAB71DBA17BFF6AE001B16CF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB71DB917BFF6AD001B16CF /* LoginViewController.m */; };
 		AAB71DC117BFF7E9001B16CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAB71DBF17BFF6D7001B16CF /* Localizable.strings */; };
 		AAB71DD017C10A4C001B16CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB71DCF17C10A4C001B16CF /* Security.framework */; };
+		AABF71F317F219FE003D277C /* LeftViewControlleriOS6.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF71F217F219FE003D277C /* LeftViewControlleriOS6.xib */; };
 		AAC8D52417DE69280051CE77 /* CBProgressPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC8D52317DE69280051CE77 /* CBProgressPanel.m */; };
 		AAC8D53B17DE86C90051CE77 /* alert-menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC8D53917DE86C80051CE77 /* alert-menu-icon.png */; };
 		AAC8D53C17DE86C90051CE77 /* alert-menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC8D53A17DE86C80051CE77 /* alert-menu-icon@2x.png */; };
@@ -199,6 +204,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA65E23D17F2139400BBDBE9 /* top-sidebar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-sidebar@2x.png"; sourceTree = "<group>"; };
+		AA65E23E17F2139400BBDBE9 /* navbar-ios6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar-ios6.png"; sourceTree = "<group>"; };
+		AA65E23F17F2139400BBDBE9 /* top-sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-sidebar.png"; sourceTree = "<group>"; };
+		AA65E24017F2139400BBDBE9 /* navbar-ios6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar-ios6@2x.png"; sourceTree = "<group>"; };
 		AA7D4DB517C11F1300A70ED1 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
 		AA7D4DB617C11F1300A70ED1 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
 		AA7D4DB717C11F1300A70ED1 /* AlertsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertsViewController.xib; sourceTree = "<group>"; };
@@ -230,7 +239,7 @@
 		AA9D452217DFC9EA00C0CCE9 /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
 		AA9D452317DFC9EA00C0CCE9 /* CommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunctions.m; sourceTree = "<group>"; };
 		AAAB3F6E17EB848900290E68 /* Memetro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memetro.xcdatamodel; sourceTree = "<group>"; };
-		AAAB3F7017EB849900290E68 /* Memetro 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Memetro 1.xcdatamodel"; sourceTree = "<group>"; };
+		AAAB3F7017EB849900290E68 /* Memetro 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Memetro 1.xcdatamodel"; sourceTree = "<group>"; };
 		AAAB3F7117EB890700290E68 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AAAB3F7517EB8A3000290E68 /* DataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataParser.h; sourceTree = "<group>"; };
 		AAAB3F7617EB8A3000290E68 /* DataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataParser.m; sourceTree = "<group>"; };
@@ -294,6 +303,7 @@
 		AAB71DC017BFF6DC001B16CF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AAB71DC317C1098C001B16CF /* OAuth2Client.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuth2Client.xcodeproj; path = ../OAuth2Client/OAuth2Client.xcodeproj; sourceTree = "<group>"; };
 		AAB71DCF17C10A4C001B16CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AABF71F217F219FE003D277C /* LeftViewControlleriOS6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftViewControlleriOS6.xib; sourceTree = "<group>"; };
 		AAC8D52217DE69280051CE77 /* CBProgressPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBProgressPanel.h; sourceTree = "<group>"; };
 		AAC8D52317DE69280051CE77 /* CBProgressPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBProgressPanel.m; sourceTree = "<group>"; };
 		AAC8D53917DE86C80051CE77 /* alert-menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-menu-icon.png"; sourceTree = "<group>"; };
@@ -780,6 +790,7 @@
 				AAF53F7517D7A4990039F1D4 /* LeftViewController.h */,
 				AAF53F7617D7A4990039F1D4 /* LeftViewController.m */,
 				AAF53F7717D7A4990039F1D4 /* LeftViewController.xib */,
+				AABF71F217F219FE003D277C /* LeftViewControlleriOS6.xib */,
 			);
 			name = LeftController;
 			sourceTree = "<group>";
@@ -798,6 +809,10 @@
 				AAF53FAD17D7C6E90039F1D4 /* twitter-navbar-icon-active@2x.png */,
 				AAF53FA417D7C6420039F1D4 /* map-navbar-icon-active.png */,
 				AAF53FA517D7C6430039F1D4 /* list-navbbar-icon-active@2x.png */,
+				AA65E23D17F2139400BBDBE9 /* top-sidebar@2x.png */,
+				AA65E23E17F2139400BBDBE9 /* navbar-ios6.png */,
+				AA65E23F17F2139400BBDBE9 /* top-sidebar.png */,
+				AA65E24017F2139400BBDBE9 /* navbar-ios6@2x.png */,
 				AAF53FA617D7C6440039F1D4 /* map-navbar-icon-active@2x.png */,
 				AAF53FA717D7C6440039F1D4 /* list-navbbar-icon-active.png */,
 				AAF53F8117D7A91D0039F1D4 /* left-navbar-icon@2x.png */,
@@ -1017,6 +1032,7 @@
 				AAF53F7F17D7A90C0039F1D4 /* navbar.png in Resources */,
 				AAF53F8317D7A91D0039F1D4 /* left-navbar-icon@2x.png in Resources */,
 				AAF53F8417D7A91D0039F1D4 /* left-navbar-icon.png in Resources */,
+				AA65E24117F2139400BBDBE9 /* top-sidebar@2x.png in Resources */,
 				AAF53F8D17D7AC050039F1D4 /* MapViewController.xib in Resources */,
 				AAF53F9217D7AC1E0039F1D4 /* ListViewController.xib in Resources */,
 				AAF53F9717D7AC2F0039F1D4 /* TweetViewController.xib in Resources */,
@@ -1032,6 +1048,7 @@
 				AAF53FAB17D7C6460039F1D4 /* list-navbbar-icon-active.png in Resources */,
 				AAF53FAE17D7C6EB0039F1D4 /* twitter-navbar-icon-active.png in Resources */,
 				AAF53FAF17D7C6EB0039F1D4 /* twitter-navbar-icon-active@2x.png in Resources */,
+				AA65E24417F2139400BBDBE9 /* navbar-ios6@2x.png in Resources */,
 				AAF53FB617D7CBB20039F1D4 /* NormalMenuCell.xib in Resources */,
 				AAF53FBC17D7CD670039F1D4 /* ProfileMenuCell.xib in Resources */,
 				AAF53FCE17D7D01A0039F1D4 /* houdini-menu-icon@2x.png in Resources */,
@@ -1043,7 +1060,9 @@
 				AAF53FD417D7D01A0039F1D4 /* cat-menu-icon.png in Resources */,
 				AAF53FD517D7D01A0039F1D4 /* ninja-menu-icon.png in Resources */,
 				AAF53FD617D7D01A0039F1D4 /* ninja-menu-icon@2x.png in Resources */,
+				AABF71F317F219FE003D277C /* LeftViewControlleriOS6.xib in Resources */,
 				AAF53FD717D7D01A0039F1D4 /* alert-icon.png in Resources */,
+				AA65E24317F2139400BBDBE9 /* top-sidebar.png in Resources */,
 				AAF53FD817D7D01A0039F1D4 /* houdini-menu-icon.png in Resources */,
 				AAF53FD917D7D01A0039F1D4 /* invisible-menu-icon.png in Resources */,
 				AAF53FDA17D7D01A0039F1D4 /* alert-icon@2x.png in Resources */,
@@ -1065,6 +1084,7 @@
 				AAC8D54F17DE89B30051CE77 /* appinfo-menu-icon.png in Resources */,
 				AAC8D55017DE89B30051CE77 /* logout-menu-icon.png in Resources */,
 				AA9D44F617DFB84500C0CCE9 /* RegisterStepOneViewController.xib in Resources */,
+				AA65E24217F2139400BBDBE9 /* navbar-ios6.png in Resources */,
 				AA9D44FE17DFB87600C0CCE9 /* RegisterStepTwoViewController.xib in Resources */,
 				AA9D450217DFBBBE00C0CCE9 /* input.png in Resources */,
 				AA9D450317DFBBBE00C0CCE9 /* input@2x.png in Resources */,
@@ -1244,7 +1264,7 @@
 		AAB71D6617BEAEAF001B16CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christian Bongardt (5D6E2XP9JK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Bongardt (5D6E2XP9JK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memetro/Memetro-Prefix.pch";
@@ -1254,6 +1274,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4F5B482C-4D46-4A2C-99B3-41CDF10532CC";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4F5B482C-4D46-4A2C-99B3-41CDF10532CC";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/OAuth2Client/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1262,7 +1283,7 @@
 		AAB71D6717BEAEAF001B16CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christian Bongardt (5D6E2XP9JK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Bongardt (5D6E2XP9JK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memetro/Memetro-Prefix.pch";
@@ -1272,6 +1293,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4F5B482C-4D46-4A2C-99B3-41CDF10532CC";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4F5B482C-4D46-4A2C-99B3-41CDF10532CC";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/OAuth2Client/**";
 				WRAPPER_EXTENSION = app;
 			};

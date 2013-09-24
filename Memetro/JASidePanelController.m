@@ -260,6 +260,7 @@ static char ja_kvoContext;
 }
 
 - (void)styleContainer:(UIView *)container animate:(BOOL)animate duration:(NSTimeInterval)duration {
+    return;
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRoundedRect:container.bounds cornerRadius:0.0f];
     if (animate) {
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"shadowPath"];
@@ -276,7 +277,7 @@ static char ja_kvoContext;
 }
 
 - (void)stylePanel:(UIView *)panel {
-    panel.layer.cornerRadius = 6.0f;
+    //panel.layer.cornerRadius = 6.0f;
     panel.clipsToBounds = YES;
 }
 

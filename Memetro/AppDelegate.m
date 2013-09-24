@@ -33,8 +33,8 @@
 -(void) initViewController{
     self.viewController = [[JASidePanelController alloc] init];
     self.viewController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[[AlertsViewController alloc] initWithNibName:@"AlertsViewController" bundle:nil]];
-    self.viewController.leftPanel = [[LeftViewController alloc] initWithNibName:@"LeftViewController" bundle:nil];
-    self.viewController.leftFixedWidth = 285;
+    self.viewController.leftPanel = [[LeftViewController alloc] init];
+    self.viewController.leftFixedWidth = 280;
     self.window.rootViewController = self.viewController;
 }
 
@@ -115,11 +115,19 @@
 
 
 -(void) appearence{
-    self.window.backgroundColor = [UIColor colorWithRed:0.96f green:0.95f blue:0.95f alpha:1.00f];
+    //self.window.backgroundColor = [UIColor colorWithRed:0.96f green:0.95f blue:0.95f alpha:1.00f];
+    
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
     [[UIBarButtonItem appearance]setTitleTextAttributes:@{UITextAttributeFont:[UIFont fontWithName:@"Roboto-Light" size:12],UITextAttributeTextColor:[UIColor blackColor],UITextAttributeTextShadowColor:[UIColor blackColor], UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0,0.0)]} forState:UIControlStateNormal];
     [[UIBarButtonItem appearance]setTitleTextAttributes:@{UITextAttributeFont:[UIFont fontWithName:@"Roboto-Light" size:12],UITextAttributeTextColor:[UIColor blackColor],UITextAttributeTextShadowColor:[UIColor blackColor], UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0,0.0)]} forState:UIControlStateHighlighted];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarMetrics:UIBarMetricsDefault];
+    
+    if(SYSTEM_VERSION_LESS_THAN(@"7.0")){
+            [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar-ios6"] forBarMetrics:UIBarMetricsDefault];
+        
+    }else{
+            [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarMetrics:UIBarMetricsDefault];
+    }
+
     [[UINavigationBar appearance] setTitleTextAttributes: @{
                                 UITextAttributeTextColor: [UIColor blackColor],
                                      UITextAttributeFont: [UIFont fontWithName:@"Roboto-Regular" size:15.0f],
