@@ -54,7 +54,7 @@
             return NO;
         }
         
-        if([self save]){
+        if(![self save]){
             return NO;
         }
         return YES;
