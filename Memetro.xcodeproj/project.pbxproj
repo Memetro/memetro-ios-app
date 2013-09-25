@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA5FF08217F37F0500F7F73D /* Transport.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FF08117F37F0500F7F73D /* Transport.m */; };
+		AA5FF08817F37F0500F7F73D /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FF08717F37F0500F7F73D /* Line.m */; };
+		AA5FF08E17F37F0500F7F73D /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FF08D17F37F0500F7F73D /* City.m */; };
+		AA5FF09117F37F0500F7F73D /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FF09017F37F0500F7F73D /* Station.m */; };
+		AA5FF09417F37F0600F7F73D /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FF09317F37F0600F7F73D /* Country.m */; };
 		AA65E24117F2139400BBDBE9 /* top-sidebar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65E23D17F2139400BBDBE9 /* top-sidebar@2x.png */; };
 		AA65E24217F2139400BBDBE9 /* navbar-ios6.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65E23E17F2139400BBDBE9 /* navbar-ios6.png */; };
 		AA65E24317F2139400BBDBE9 /* top-sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = AA65E23F17F2139400BBDBE9 /* top-sidebar.png */; };
@@ -206,6 +211,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA5FF08017F37F0500F7F73D /* Transport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transport.h; sourceTree = "<group>"; };
+		AA5FF08117F37F0500F7F73D /* Transport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transport.m; sourceTree = "<group>"; };
+		AA5FF08617F37F0500F7F73D /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		AA5FF08717F37F0500F7F73D /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		AA5FF08C17F37F0500F7F73D /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		AA5FF08D17F37F0500F7F73D /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		AA5FF08F17F37F0500F7F73D /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
+		AA5FF09017F37F0500F7F73D /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
+		AA5FF09217F37F0600F7F73D /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		AA5FF09317F37F0600F7F73D /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
 		AA65E23D17F2139400BBDBE9 /* top-sidebar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-sidebar@2x.png"; sourceTree = "<group>"; };
 		AA65E23E17F2139400BBDBE9 /* navbar-ios6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar-ios6.png"; sourceTree = "<group>"; };
 		AA65E23F17F2139400BBDBE9 /* top-sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-sidebar.png"; sourceTree = "<group>"; };
@@ -423,6 +438,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA5FF09817F37F2C00F7F73D /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				AA5FF09217F37F0600F7F73D /* Country.h */,
+				AA5FF09317F37F0600F7F73D /* Country.m */,
+			);
+			name = Country;
+			sourceTree = "<group>";
+		};
+		AA5FF09917F37F3300F7F73D /* Station */ = {
+			isa = PBXGroup;
+			children = (
+				AA5FF08F17F37F0500F7F73D /* Station.h */,
+				AA5FF09017F37F0500F7F73D /* Station.m */,
+			);
+			name = Station;
+			sourceTree = "<group>";
+		};
+		AA5FF09A17F37F3B00F7F73D /* City */ = {
+			isa = PBXGroup;
+			children = (
+				AA5FF08C17F37F0500F7F73D /* City.h */,
+				AA5FF08D17F37F0500F7F73D /* City.m */,
+			);
+			name = City;
+			sourceTree = "<group>";
+		};
+		AA5FF09B17F37F4100F7F73D /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				AA5FF08617F37F0500F7F73D /* Line.h */,
+				AA5FF08717F37F0500F7F73D /* Line.m */,
+			);
+			name = Line;
+			sourceTree = "<group>";
+		};
+		AA5FF09C17F37F4600F7F73D /* Transport */ = {
+			isa = PBXGroup;
+			children = (
+				AA5FF08017F37F0500F7F73D /* Transport.h */,
+				AA5FF08117F37F0500F7F73D /* Transport.m */,
+			);
+			name = Transport;
+			sourceTree = "<group>";
+		};
 		AA7D4D9C17C11BDB00A70ED1 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,6 +606,11 @@
 		AAAB3F6C17EB844600290E68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA5FF09817F37F2C00F7F73D /* Country */,
+				AA5FF09917F37F3300F7F73D /* Station */,
+				AA5FF09A17F37F3B00F7F73D /* City */,
+				AA5FF09B17F37F4100F7F73D /* Line */,
+				AA5FF09C17F37F4600F7F73D /* Transport */,
 				AABF720017F2242D003D277C /* CitiesTransports */,
 				AABF720117F2243A003D277C /* LinesStations */,
 				AAAB3F6D17EB848900290E68 /* Memetro.xcdatamodeld */,
@@ -1187,15 +1252,19 @@
 				AAB71D5617BEAEAF001B16CF /* AppDelegate.m in Sources */,
 				AAB71DBA17BFF6AE001B16CF /* LoginViewController.m in Sources */,
 				AA7D4DB817C11F1300A70ED1 /* AlertsViewController.m in Sources */,
+				AA5FF08817F37F0500F7F73D /* Line.m in Sources */,
 				AAF53F7117D7A3FC0039F1D4 /* JASidePanelController.m in Sources */,
 				AAF53F7217D7A3FC0039F1D4 /* UIViewController+JASidePanel.m in Sources */,
 				AAF53F7817D7A4990039F1D4 /* LeftViewController.m in Sources */,
+				AA5FF08217F37F0500F7F73D /* Transport.m in Sources */,
+				AA5FF09417F37F0600F7F73D /* Country.m in Sources */,
 				AAF53F8C17D7AC050039F1D4 /* MapViewController.m in Sources */,
 				AAF53F9117D7AC1E0039F1D4 /* ListViewController.m in Sources */,
 				AAF53F9617D7AC2F0039F1D4 /* TweetViewController.m in Sources */,
 				AAF53FB417D7CBA10039F1D4 /* NormalMenuCell.m in Sources */,
 				AAF53FBA17D7CD570039F1D4 /* ProfileMenuCell.m in Sources */,
 				AAC8D52417DE69280051CE77 /* CBProgressPanel.m in Sources */,
+				AA5FF08E17F37F0500F7F73D /* City.m in Sources */,
 				AA9D44F517DFB84500C0CCE9 /* RegisterStepOneViewController.m in Sources */,
 				AA9D44FD17DFB87600C0CCE9 /* RegisterStepTwoViewController.m in Sources */,
 				AA9D450717DFC3B200C0CCE9 /* SIAlertView.m in Sources */,
@@ -1203,6 +1272,7 @@
 				AA9D452417DFC9EB00C0CCE9 /* CommonFunctions.m in Sources */,
 				AAAB3F6F17EB848900290E68 /* Memetro.xcdatamodeld in Sources */,
 				AAAB3F7717EB8A3000290E68 /* DataParser.m in Sources */,
+				AA5FF09117F37F0500F7F73D /* Station.m in Sources */,
 				AAAB3F7A17EB907700290E68 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

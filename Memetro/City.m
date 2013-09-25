@@ -1,21 +1,18 @@
 //
-//  User.m
+//  City.m
 //  Memetro
 //
 //  Created by Christian Bongardt on 25/09/13.
 //  Copyright (c) 2013 memetro. All rights reserved.
 //
 
-#import "User.h"
+#import "City.h"
 
 
-@implementation User
+@implementation City
 
-@dynamic aboutme;
-@dynamic avatar;
-@dynamic email;
 @dynamic name;
-@dynamic twittername;
-@dynamic username;
+@dynamic id;
+@dynamic country_id;
 
 @end

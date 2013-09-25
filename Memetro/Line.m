@@ -1,21 +1,19 @@
 //
-//  User.m
+//  Line.m
 //  Memetro
 //
 //  Created by Christian Bongardt on 25/09/13.
 //  Copyright (c) 2013 memetro. All rights reserved.
 //
 
-#import "User.h"
+#import "Line.h"
 
 
-@implementation User
+@implementation Line
 
-@dynamic aboutme;
-@dynamic avatar;
-@dynamic email;
+@dynamic transport_id;
+@dynamic number;
 @dynamic name;
-@dynamic twittername;
-@dynamic username;
+@dynamic id;
 
 @end

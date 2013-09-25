@@ -1,21 +1,19 @@
 //
-//  User.m
+//  Station.m
 //  Memetro
 //
 //  Created by Christian Bongardt on 25/09/13.
 //  Copyright (c) 2013 memetro. All rights reserved.
 //
 
-#import "User.h"
+#import "Station.h"
 
 
-@implementation User
+@implementation Station
 
-@dynamic aboutme;
-@dynamic avatar;
-@dynamic email;
+@dynamic id;
 @dynamic name;
-@dynamic twittername;
-@dynamic username;
+@dynamic latitude;
+@dynamic longitude;
 
 @end
