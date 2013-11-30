@@ -3,12 +3,12 @@
 //
 
 #import <Availability.h>
-#import "Memetro-FCsettings.pch"
 #import "AppAuth.pch"
 #import "SIAlertView.h"
 #import "CBProgressPanel.h"
 #import "CommonFunctions.h"
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define NULL_TO_NIL(obj) ({ __typeof__ (obj) __obj = (obj); __obj == [NSNull null] ? nil : obj; })
 #ifndef __IPHONE_4_0
 #warning "This project uses features only available in iOS SDK 4.0 and later."
 #endif

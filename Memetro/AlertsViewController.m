@@ -192,13 +192,16 @@
                                            views:views]];
     [self.view addConstraints:self.constraints];
     [UIView animateWithDuration:.5 animations:^{
+                [self.view bringSubviewToFront:self.createAlertViewButton];
         [oldC.view layoutIfNeeded];
         [newC.view layoutIfNeeded];
         
     }completion:^(BOOL finised){
+
         [oldC willMoveToParentViewController:nil];
         [oldC.view removeFromSuperview];
         [oldC removeFromParentViewController];
+
         [self.view  removeConstraints:oldViewEndConstraints];
     }];
 }

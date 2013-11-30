@@ -25,6 +25,7 @@
 {
     [super viewDidLoad];
     [self setupLayout];
+    [self registerForKeyboardNotifications];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,13 +44,13 @@
 }
 
 -(void) setupLayout{
-    self.nextButton.titleLabel.font = BUTTON_FONT;
-    self.cancelButton.titleLabel.font = BUTTON_FONT;
-    for (UITextField *t in self.inputs){
-        t.font = TEXTFIELD_FONT;
-        t.textColor = TEXTFIELD_COLOR;
-        t.attributedPlaceholder = TEXTFIELD_PLACEHOLDER;
+    if(IS_IPHONE_5){
+        self.formContainerHeightConstraint.constant = 566;
+    }else{
+        self.formContainerHeightConstraint.constant = 478;
     }
+
+
     self.name.placeholder = NSLocalizedString(@"registername", @"");
     self.twittername.placeholder = NSLocalizedString(@"registertwitter", @"");
     self.email.placeholder =NSLocalizedString(@"registeremail", @"");
@@ -62,65 +63,71 @@
 
 }
 
--(void) textFieldDidBeginEditing:(UITextField *)textField{
-    if(IS_IPHONE_5){
-        if(textField == self.aboutme){
-            [CommonFunctions animateView:self.view withHeight:25 up:YES];
-        }
-        
-    }else{
-        if(textField == self.email){
-            [CommonFunctions animateView:self.view withHeight:15 up:YES];
-        }
-        if(textField == self.twittername){
-            [CommonFunctions animateView:self.view withHeight:65 up:YES];
-        }
-        if(textField == self.aboutme){
-            [CommonFunctions animateView:self.view withHeight:115 up:YES];
-        }
-    }
 
-}
-
--(void) textFieldDidEndEditing:(UITextField *)textField{
-    if(![textField.text isEqualToString:@""]){
-        [self.nextButton setTitle:NSLocalizedString(@"nextstep",@"") forState:UIControlStateNormal];
-        [self.nextButton setTitle:NSLocalizedString(@"nextstep",@"") forState:UIControlStateHighlighted];
-    }
-    if(IS_IPHONE_5){
-        if(textField == self.aboutme){
-            [CommonFunctions animateView:self.view withHeight:25 up:NO];
-        }
-    }else{
-        if(textField == self.email){
-            [CommonFunctions animateView:self.view withHeight:15 up:NO];
-        }
-        if(textField == self.twittername){
-            [CommonFunctions animateView:self.view withHeight:65 up:NO];
-        }
-        if(textField == self.aboutme){
-            [CommonFunctions animateView:self.view withHeight:115 up:NO];
-        }
-    }
-
-}
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    if(textField == self.name){
-        [self.email becomeFirstResponder];
-    }
-    if(textField == self.email){
-        [self.twittername becomeFirstResponder];
-    }
-    if (textField == self.twittername){
-        [self.aboutme becomeFirstResponder];
-    }else{
-        [textField resignFirstResponder];
-    }
-    return YES;
-}
 
 
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    _scrollView.contentInset = contentInsets;
+    _scrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your app might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, _activeField.frame.origin) ) {
+        [self.scrollView scrollRectToVisible:_activeField.frame animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    _scrollView.contentInset = contentInsets;
+    _scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+
+#pragma mark - TextfieldDelegate
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    _activeField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    _activeField = nil;
+}
+
+
+
 @end

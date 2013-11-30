@@ -27,9 +27,14 @@
     [self setupLoginLogic];
     [self appearence];
     [self.window makeKeyAndVisible];
-    [self login];
     return YES;
 }
+- (void)applicationDidBecomeActive:(UIApplication *)application{
+    [self login];
+    [self getStaticData];
+    
+}
+
 
 -(void) initViewController{
     self.viewController = [[JASidePanelController alloc] init];
@@ -45,7 +50,6 @@
     if(identifier != nil){
         NXOAuth2Account *account = [[NXOAuth2AccountStore sharedStore] accountWithIdentifier:identifier];
         if(account != nil){
-            NSLog(@"usuario logueado con account %@",account);
             [self synchronize:NO];
             return;
         }
@@ -76,8 +80,6 @@
              [prefs setObject:a.identifier forKey:@"accountidentifier"];
              [prefs synchronize];
              [self synchronize:YES];
-
-
          }
 
      }];
@@ -95,6 +97,15 @@
             [CommonFunctions showError:NSLocalizedString(@"wrongpassdescription", @"") withTitle:NSLocalizedString(@"wrongpasstitle", @"") withDismissHandler:nil];
         }
     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:NXOAuth2AccountDidFailToGetAccessTokenNotification
+                                                      object:[CommonFunctions useraccount ]
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *aNotification){
+                                                      [CommonFunctions showError:NSLocalizedString(@"You have been logged out. Please login again using your credentials", @"") withTitle:NSLocalizedString(@"Error!", @"") withDismissHandler:^(SIAlertView *alertView) {
+                                                          [self logout];
+                                                      }];
+                                                  }];
 }
 
 -(void) logout{
@@ -147,7 +158,7 @@
     [[SIAlertView appearance] setShadowRadius:20];
     [[SIAlertView appearance] setViewBackgroundColor:[UIColor whiteColor]];
     [[SIAlertView appearance] setButtonColor:[UIColor whiteColor]];
-    [[SIAlertView appearance] setButtonFont:BUTTON_FONT];
+    [[SIAlertView appearance] setButtonFont:[UIFont fontWithName:@"Roboto-Regular" size:16]];
     
     [[SIAlertView appearance] setCancelButtonColor:[UIColor whiteColor]];
     [[SIAlertView appearance] setDestructiveButtonColor:[UIColor whiteColor]];
@@ -171,22 +182,21 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application{
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application{
-}
+
 
 - (void)applicationWillTerminate:(UIApplication *)application{
 }
 
 -(void) synchronize:(BOOL) afterLogin{
+    NSLog(@"LOGIIIN SYNCHRONIZE");
     [NXOAuth2Request performMethod:@"GET"
                         onResource:[CommonFunctions generateUrlWithParams:@"synchronize"]
                    usingParameters:nil
                        withAccount:[CommonFunctions useraccount]
                sendProgressHandler:nil
                responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
-                   if(error !=nil){
-                       NSLog(@"error user info: %@",[error userInfo]);
-                       NSLog(@"full response %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+                   NSLog(@"error %@",error);
+                   if(error != nil){
                        if(afterLogin){
                            [[CBProgressPanel sharedInstance] hide];
                            if([error code] == -1009){
@@ -195,7 +205,6 @@
                                [CommonFunctions showGenericFetchError];
                            }
                        }
-
                    }else{
                        if([[DataParser sharedInstance] parseSync:responseData]){
                            if(afterLogin){
@@ -210,8 +219,24 @@
                        }
                    }
                }];
-    
 
+}
+-(void) getStaticData{
+    [NXOAuth2Request performMethod:@"POST"
+                        onResource:[CommonFunctions generateUrlWithParams:@"staticData"]
+                   usingParameters:@{@"client_id":CLIENT_ID,@"client_secret":CLIENT_SECRET}
+                       withAccount:nil
+               sendProgressHandler:nil
+                   responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
+                           NSLog(@"full response %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+                       if(error != nil){
+                           
+                       }else{
+                           [[DataParser sharedInstance] parseStaticData:responseData];
+                       }
+                   }];
+    
+    
 }
 
 - (void)saveContext{

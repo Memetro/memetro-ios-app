@@ -8,19 +8,32 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterStepTwoViewController : UIViewController
-@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *inputs;
-@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+#import "CountryPickerViewController.h"
+#import "CityPickerViewController.h"
+
+@interface RegisterStepTwoViewController : UIViewController <UITextFieldDelegate,CountryPickerDelegate,CityPickerDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
-- (IBAction)register:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *passwordConfirm;
-@property (weak, nonatomic) IBOutlet UIButton *backbutton;
-- (IBAction)back:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *country;
+@property (weak, nonatomic) IBOutlet UITextField *city;
 
+@property (weak, nonatomic) IBOutlet UIButton *backbutton;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *formContainerHeightConstraint;
+
+@property (strong,nonatomic) UITextField *activeField;
+
+- (IBAction)back:(id)sender;
+- (IBAction)register:(id)sender;
 @property (strong,nonatomic) NSString *name;
 @property (strong,nonatomic) NSString *twitter;
 @property (strong,nonatomic) NSString *email;
 @property (strong,nonatomic) NSString *aboutme;
+@property (strong,nonatomic) NSNumber *countryID;
+@property (strong,nonatomic) NSNumber *cityID;
 
 @end

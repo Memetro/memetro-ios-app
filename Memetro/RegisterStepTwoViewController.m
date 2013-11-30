@@ -11,6 +11,9 @@
 
 #import "RegisterStepTwoViewController.h"
 #import "CBProgressPanel.h"
+#import "Country.h"
+#import "City.h"
+#import "DataParser.h"
 
 @interface RegisterStepTwoViewController ()
 
@@ -31,6 +34,7 @@
 {
     [super viewDidLoad];
     [self setupLayout];
+    [self registerForKeyboardNotifications];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -40,54 +44,22 @@
 
 
 -(void) setupLayout{
-    self.nextButton.titleLabel.font = BUTTON_FONT;
-    self.backbutton.titleLabel.font = BUTTON_FONT;
-    for (UITextField *t in self.inputs){
-        t.font = TEXTFIELD_FONT;
-        t.textColor = TEXTFIELD_COLOR;
-        t.attributedPlaceholder = TEXTFIELD_PLACEHOLDER;
+    if(IS_IPHONE_5){
+        self.formContainerHeightConstraint.constant = 566;
+    }else{
+        self.formContainerHeightConstraint.constant = 478;
     }
     self.username.placeholder = NSLocalizedString(@"username",@"");
     self.password.placeholder = NSLocalizedString(@"password",@"");
     self.passwordConfirm.placeholder = NSLocalizedString(@"passwordconfirm",@"");
+    self.country.placeholder = NSLocalizedString(@"Chose a country", @"");
+    self.city.placeholder = NSLocalizedString(@"Chose a city", @"");
     
     [self.nextButton setTitle:NSLocalizedString(@"registerbutton",@"") forState:UIControlStateNormal];
     [self.nextButton setTitle:NSLocalizedString(@"registerbutton",@"") forState:UIControlStateHighlighted];
     
     [self.backbutton setTitle:NSLocalizedString(@"backbutton", @"") forState:UIControlStateNormal];
     [self.backbutton setTitle:NSLocalizedString(@"backbutton", @"") forState:UIControlStateHighlighted];
-}
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    if (textField == self.username){
-        [self.password becomeFirstResponder];
-    }else if (textField == self.password){
-        [self.passwordConfirm becomeFirstResponder];
-    }else{
-        [textField resignFirstResponder];
-    }
-    return YES;
-}
-
--(void) textFieldDidBeginEditing:(UITextField *)textField{
-    if(!IS_IPHONE_5){
-        if(textField == self.password){
-            [CommonFunctions animateView:self.view withHeight:25 up:YES];
-        }
-        if(textField == self.passwordConfirm){
-            [CommonFunctions animateView:self.view withHeight:80 up:YES];
-        }
-    }
-}
--(void) textFieldDidEndEditing:(UITextField *)textField{
-    if(!IS_IPHONE_5){
-        if(textField == self.password){
-            [CommonFunctions animateView:self.view withHeight:25 up:NO];
-        }
-        if(textField == self.passwordConfirm){
-            [CommonFunctions animateView:self.view withHeight:80 up:NO];
-        }
-    }
-    
 }
 
 - (IBAction)register:(id)sender {
@@ -154,4 +126,100 @@
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    _scrollView.contentInset = contentInsets;
+    _scrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your app might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, _activeField.frame.origin) ) {
+        [self.scrollView scrollRectToVisible:_activeField.frame animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    _scrollView.contentInset = contentInsets;
+    _scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+
+#pragma mark - TextfieldDelegate
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    if(textField == self.username){
+        [self.password becomeFirstResponder];
+    }else if (textField == self.password){
+        [self.passwordConfirm becomeFirstResponder];
+    }else{
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if(textField == self.city){
+        [textField resignFirstResponder];
+        CityPickerViewController * c = [[CityPickerViewController alloc] init];
+        c.countryID = self.countryID;
+        c.delegate = self;
+        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:c] animated:YES completion:nil];
+        return;
+    }
+    if(textField == self.country){
+        [textField resignFirstResponder];
+        CountryPickerViewController * c = [[CountryPickerViewController alloc] init];
+        c.delegate = self;
+        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:c] animated:YES completion:nil];
+        return;
+    }
+    _activeField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    _activeField = nil;
+}
+
+
+-(void) userDidPickCountry:(Country *)country{
+    self.countryID = country.id;
+    self.country.text = country.name;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) userDidPickCity:(City *)city{
+    self.cityID = city.id;
+    self.city.text = city.name;
+    Country *c = [[DataParser sharedInstance] getCountryWithId:city.country_id];
+    self.country.text = c.name;
+    self.countryID = c.id;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 @end

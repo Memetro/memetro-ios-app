@@ -12,6 +12,8 @@
 #import "NormalMenuCell.h"
 #import "ProfileMenuCell.h"
 #import "AppDelegate.h"
+#import "SettingsViewController.h"
+#import "AlertsViewController.h"
 @interface LeftViewController ()
 
 @end
@@ -50,29 +52,23 @@
             break;
         }
         case 1:{
+            self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[[AlertsViewController alloc] initWithNibName:@"AlertsViewController" bundle:nil]];
             break;
         }
         case 2:{
             break;
         }
         case 3:{
+            self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[[SettingsViewController alloc] init]];
             break;
         }
         case 4:{
             break;
         }
         case 5:{
-            break;
-        }
-        case 6:{
-            break;
-        }
-        case 7:{
             [((AppDelegate *)[[UIApplication sharedApplication] delegate]) logout];
             break;
-        }
-            
-            
+        }           
             
         default:
             break;
@@ -88,19 +84,6 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row == 1){
-        static NSString *simpleTableIdentifier = @"ProfileMenuCell";
-        ProfileMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        if (cell == nil){
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ProfileMenuCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        cell.alert.text = @"7";
-        cell.memetrol.text = @"250";
-        cell.rankImage.image = [UIImage imageNamed:@"ninja-menu-icon"];
-        return cell;
-        
-    }else{
         static NSString *simpleTableIdentifier = @"NormalMenuCell";
         NormalMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         if (cell == nil){
@@ -112,32 +95,28 @@
                 cell.label.text = NSLocalizedString(@"username",@"");
                 break;
             }
-            case 2:{
+            case 1:{
                 cell.label.text = NSLocalizedString(@"menualerts",@"");
                 cell.image.image = [UIImage imageNamed:@"alert-menu-icon"];
                 break;
             }
-            case 3:{
-                cell.label.text = NSLocalizedString(@"menuparticipants",@"");
-                cell.image.image = [UIImage imageNamed:@"ranking-menu-icon"];
-                break;
-            }
-            case 4:{
+
+            case 2:{
                 cell.label.text = NSLocalizedString(@"menuaorg",@"");
                 cell.image.image = [UIImage imageNamed:@"asoc-menu-icon"];
                 break;
             }
-            case 5:{
+            case 3:{
                 cell.label.text = NSLocalizedString(@"menusettings",@"");
                 cell.image.image = [UIImage imageNamed:@"settings-menu-icon"];
                 break;
             }
-            case 6:{
+            case 4:{
                 cell.label.text = NSLocalizedString(@"menuappinfo",@"");
                 cell.image.image = [UIImage imageNamed:@"appinfo-menu-icon"];
                 break;
             }
-            case 7:{
+            case 5:{
                 cell.label.text = NSLocalizedString(@"menulogout",@"");
                 cell.image.image = [UIImage imageNamed:@"logout-menu-icon"];
                 break;
@@ -146,15 +125,12 @@
                 break;
         }
         return cell;
-        
-    }
-    
     
     
 
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 8;
+    return 6;
     
 }
 

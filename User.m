@@ -2,7 +2,7 @@
 //  User.m
 //  Memetro
 //
-//  Created by Christian Bongardt on 25/09/13.
+//  Created by Christian Bongardt on 30/11/13.
 //  Copyright (c) 2013 memetro. All rights reserved.
 //
 
@@ -17,5 +17,6 @@
 @dynamic name;
 @dynamic twittername;
 @dynamic username;
+@dynamic city_id;
 
 @end

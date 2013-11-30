@@ -26,20 +26,11 @@
 
 
 -(void) setupLayout{
-    for(UITextField *t in self.textfields){
-        t.font = TEXTFIELD_FONT;
-        t.textColor = TEXTFIELD_COLOR;
-        t.attributedPlaceholder = TEXTFIELD_PLACEHOLDER;
-    }
+
 
     self.username.placeholder = NSLocalizedString(@"username",@"");
     self.password.placeholder = NSLocalizedString(@"password",@"");
-    self.forgottenPassword.font = [UIFont fontWithName:@"Roboto-Light" size:12];
     self.forgottenPassword.text = NSLocalizedString(@"forgottenpassword", @"contraseña olvidada");
-    
-    for (UIButton *b in self.buttons){
-        b.titleLabel.font = BUTTON_FONT;
-    }
     
     [self.loginButton setTitle: NSLocalizedString(@"loginbutton", @"boton login") forState:UIControlStateNormal];
     [self.loginButton setTitle: NSLocalizedString(@"loginbutton", @"boton login") forState:UIControlStateHighlighted];

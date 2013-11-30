@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 @class ListViewController;
 @class MapViewController;
 @class TweetViewController;
-@interface AlertsViewController : UIViewController
+@interface AlertsViewController : BaseViewController
 @property (strong,nonatomic) ListViewController *listView;
 @property (strong,nonatomic) MapViewController  *mapView;
 @property (strong,nonatomic) TweetViewController *tweetView;

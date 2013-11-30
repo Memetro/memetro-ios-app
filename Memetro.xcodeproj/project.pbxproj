@@ -44,7 +44,6 @@
 		AAAB3F6F17EB848900290E68 /* Memetro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAAB3F6D17EB848900290E68 /* Memetro.xcdatamodeld */; };
 		AAAB3F7217EB890700290E68 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAB3F7117EB890700290E68 /* CoreData.framework */; };
 		AAAB3F7717EB8A3000290E68 /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAB3F7617EB8A3000290E68 /* DataParser.m */; };
-		AAAB3F7A17EB907700290E68 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAB3F7917EB907700290E68 /* User.m */; };
 		AAB664E217E78BAC00FFEE7F /* anim-bar-9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB664CE17E78BAC00FFEE7F /* anim-bar-9@2x.png */; };
 		AAB664E317E78BAC00FFEE7F /* anim-bar-6.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB664CF17E78BAC00FFEE7F /* anim-bar-6.png */; };
 		AAB664E417E78BAC00FFEE7F /* anim-bar-7.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB664D017E78BAC00FFEE7F /* anim-bar-7.png */; };
@@ -177,6 +176,24 @@
 		AAF53FDB17D7D01A0039F1D4 /* cat-menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF53FCB17D7D01A0039F1D4 /* cat-menu-icon@2x.png */; };
 		AAF53FDC17D7D01A0039F1D4 /* memetrol-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF53FCC17D7D01A0039F1D4 /* memetrol-icon.png */; };
 		AAF53FDD17D7D01A0039F1D4 /* memetrol-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF53FCD17D7D01A0039F1D4 /* memetrol-icon@2x.png */; };
+		C967A2051849F68F00A241B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C967A2041849F68F00A241B9 /* Images.xcassets */; };
+		C967A26C1849FE3D00A241B9 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A26A1849FE3D00A241B9 /* SettingsViewController.m */; };
+		C967A26D1849FE3D00A241B9 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C967A26B1849FE3D00A241B9 /* SettingsViewController.xib */; };
+		C967A272184A00F000A241B9 /* RobotoRegular.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A271184A00F000A241B9 /* RobotoRegular.m */; };
+		C967A275184A01E500A241B9 /* Darkbutton.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A274184A01E500A241B9 /* Darkbutton.m */; };
+		C967A278184A025C00A241B9 /* RedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A277184A025C00A241B9 /* RedButton.m */; };
+		C967A27B184A026B00A241B9 /* RobotoLight.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A27A184A026B00A241B9 /* RobotoLight.m */; };
+		C967A27E184A027400A241B9 /* RobotoBold.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A27D184A027400A241B9 /* RobotoBold.m */; };
+		C967A281184A028600A241B9 /* RobotoTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A280184A028600A241B9 /* RobotoTextfield.m */; };
+		C967A284184A062D00A241B9 /* TextfieldBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A283184A062D00A241B9 /* TextfieldBackground.m */; };
+		C967A287184A207400A241B9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A286184A207400A241B9 /* BaseViewController.m */; };
+		C967A28C184A2C1800A241B9 /* CreateAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A28A184A2C1800A241B9 /* CreateAlertViewController.m */; };
+		C967A28D184A2C1800A241B9 /* CreateAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C967A28B184A2C1800A241B9 /* CreateAlertViewController.xib */; };
+		C967A291184A4E7D00A241B9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A290184A4E7D00A241B9 /* User.m */; };
+		C967A295184A72EE00A241B9 /* CountryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A294184A72EE00A241B9 /* CountryPickerViewController.m */; };
+		C967A29B184A732600A241B9 /* CityPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A29A184A732600A241B9 /* CityPickerViewController.m */; };
+		C967A29E184A733E00A241B9 /* PickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A29D184A733E00A241B9 /* PickerCell.m */; };
+		C967A2A0184A734E00A241B9 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C967A29F184A734E00A241B9 /* PickerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,7 +255,6 @@
 		AA9D44FC17DFB87600C0CCE9 /* RegisterStepTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterStepTwoViewController.xib; sourceTree = "<group>"; };
 		AA9D450017DFBBBE00C0CCE9 /* input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input.png; sourceTree = "<group>"; };
 		AA9D450117DFBBBE00C0CCE9 /* input@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input@2x.png"; sourceTree = "<group>"; };
-		AA9D450417DFBE4400C0CCE9 /* Memetro-FCsettings.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Memetro-FCsettings.pch"; sourceTree = "<group>"; };
 		AA9D450517DFC3B200C0CCE9 /* SIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIAlertView.h; sourceTree = "<group>"; };
 		AA9D450617DFC3B200C0CCE9 /* SIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAlertView.m; sourceTree = "<group>"; };
 		AA9D450917DFC3C400C0CCE9 /* button-cancel-d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-cancel-d.png"; sourceTree = "<group>"; };
@@ -260,8 +276,6 @@
 		AAAB3F7117EB890700290E68 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AAAB3F7517EB8A3000290E68 /* DataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataParser.h; sourceTree = "<group>"; };
 		AAAB3F7617EB8A3000290E68 /* DataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataParser.m; sourceTree = "<group>"; };
-		AAAB3F7817EB907700290E68 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		AAAB3F7917EB907700290E68 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		AAB664CE17E78BAC00FFEE7F /* anim-bar-9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anim-bar-9@2x.png"; sourceTree = "<group>"; };
 		AAB664CF17E78BAC00FFEE7F /* anim-bar-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anim-bar-6.png"; sourceTree = "<group>"; };
 		AAB664D017E78BAC00FFEE7F /* anim-bar-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anim-bar-7.png"; sourceTree = "<group>"; };
@@ -417,6 +431,39 @@
 		AAF53FCB17D7D01A0039F1D4 /* cat-menu-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat-menu-icon@2x.png"; sourceTree = "<group>"; };
 		AAF53FCC17D7D01A0039F1D4 /* memetrol-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetrol-icon.png"; sourceTree = "<group>"; };
 		AAF53FCD17D7D01A0039F1D4 /* memetrol-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetrol-icon@2x.png"; sourceTree = "<group>"; };
+		C967A2041849F68F00A241B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C967A2691849FE3D00A241B9 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		C967A26A1849FE3D00A241B9 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		C967A26B1849FE3D00A241B9 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		C967A270184A00F000A241B9 /* RobotoRegular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotoRegular.h; sourceTree = "<group>"; };
+		C967A271184A00F000A241B9 /* RobotoRegular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotoRegular.m; sourceTree = "<group>"; };
+		C967A273184A01E500A241B9 /* Darkbutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Darkbutton.h; sourceTree = "<group>"; };
+		C967A274184A01E500A241B9 /* Darkbutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Darkbutton.m; sourceTree = "<group>"; };
+		C967A276184A025C00A241B9 /* RedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedButton.h; sourceTree = "<group>"; };
+		C967A277184A025C00A241B9 /* RedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedButton.m; sourceTree = "<group>"; };
+		C967A279184A026B00A241B9 /* RobotoLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotoLight.h; sourceTree = "<group>"; };
+		C967A27A184A026B00A241B9 /* RobotoLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotoLight.m; sourceTree = "<group>"; };
+		C967A27C184A027400A241B9 /* RobotoBold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotoBold.h; sourceTree = "<group>"; };
+		C967A27D184A027400A241B9 /* RobotoBold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotoBold.m; sourceTree = "<group>"; };
+		C967A27F184A028600A241B9 /* RobotoTextfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotoTextfield.h; sourceTree = "<group>"; };
+		C967A280184A028600A241B9 /* RobotoTextfield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotoTextfield.m; sourceTree = "<group>"; };
+		C967A282184A062D00A241B9 /* TextfieldBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextfieldBackground.h; sourceTree = "<group>"; };
+		C967A283184A062D00A241B9 /* TextfieldBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextfieldBackground.m; sourceTree = "<group>"; };
+		C967A285184A207400A241B9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		C967A286184A207400A241B9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		C967A289184A2C1800A241B9 /* CreateAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAlertViewController.h; sourceTree = "<group>"; };
+		C967A28A184A2C1800A241B9 /* CreateAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAlertViewController.m; sourceTree = "<group>"; };
+		C967A28B184A2C1800A241B9 /* CreateAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAlertViewController.xib; sourceTree = "<group>"; };
+		C967A28E184A4DD200A241B9 /* Memetro 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Memetro 2.xcdatamodel"; sourceTree = "<group>"; };
+		C967A28F184A4E7D00A241B9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
+		C967A290184A4E7D00A241B9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
+		C967A293184A72EE00A241B9 /* CountryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryPickerViewController.h; sourceTree = "<group>"; };
+		C967A294184A72EE00A241B9 /* CountryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryPickerViewController.m; sourceTree = "<group>"; };
+		C967A299184A732600A241B9 /* CityPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityPickerViewController.h; sourceTree = "<group>"; };
+		C967A29A184A732600A241B9 /* CityPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityPickerViewController.m; sourceTree = "<group>"; };
+		C967A29C184A733E00A241B9 /* PickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerCell.h; sourceTree = "<group>"; };
+		C967A29D184A733E00A241B9 /* PickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerCell.m; sourceTree = "<group>"; };
+		C967A29F184A734E00A241B9 /* PickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,7 +557,6 @@
 				AAB71D5117BEAEAF001B16CF /* main.m */,
 				AAB71D5317BEAEAF001B16CF /* Memetro-Prefix.pch */,
 				AAB71DBF17BFF6D7001B16CF /* Localizable.strings */,
-				AA9D450417DFBE4400C0CCE9 /* Memetro-FCsettings.pch */,
 				AACEA76B17E10E79009E8826 /* AppAuth.pch */,
 			);
 			name = other;
@@ -640,8 +686,8 @@
 		AAAB3F7B17EB907B00290E68 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				AAAB3F7817EB907700290E68 /* User.h */,
-				AAAB3F7917EB907700290E68 /* User.m */,
+				C967A28F184A4E7D00A241B9 /* User.h */,
+				C967A290184A4E7D00A241B9 /* User.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -680,6 +726,7 @@
 		AAB71D4B17BEAEAF001B16CF /* Memetro */ = {
 			isa = PBXGroup;
 			children = (
+				C967A26F184A00C100A241B9 /* CustomViews */,
 				AAAB3F6C17EB844600290E68 /* Model */,
 				AAF53F6C17D7A3100039F1D4 /* Lib */,
 				AAF53F6B17D7A2FA0039F1D4 /* Controllers */,
@@ -691,6 +738,7 @@
 		AAB71D4C17BEAEAF001B16CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C967A2041849F68F00A241B9 /* Images.xcassets */,
 				AA8ECC3E17D7E4D900F36061 /* appicon@2x.png */,
 				AA8ECC3C17D7E4D400F36061 /* appicon.png */,
 				AAB71DC317C1098C001B16CF /* OAuth2Client.xcodeproj */,
@@ -851,10 +899,13 @@
 		AAF53F6B17D7A2FA0039F1D4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C967A292184A72C500A241B9 /* Pickers */,
+				C967A288184A2C0900A241B9 /* CreateAlert */,
 				AA7D4DB417C11EFE00A70ED1 /* Alerts */,
 				AA7D4D9C17C11BDB00A70ED1 /* AppDelegate */,
 				AA7D4D9D17C11BE200A70ED1 /* Login */,
 				AA9D44F717DFB84C00C0CCE9 /* Register */,
+				C967A26E1849FE4C00A241B9 /* SettingsViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -867,6 +918,8 @@
 				AAC8D52117DE690E0051CE77 /* CBProgressPanel */,
 				AAF53F7317D7A4040039F1D4 /* JASidePanel */,
 				AAAB3F7317EB89F200290E68 /* CommonFunctions */,
+				C967A285184A207400A241B9 /* BaseViewController.h */,
+				C967A286184A207400A241B9 /* BaseViewController.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -1025,6 +1078,85 @@
 			name = menu;
 			sourceTree = "<group>";
 		};
+		C967A26E1849FE4C00A241B9 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C967A2691849FE3D00A241B9 /* SettingsViewController.h */,
+				C967A26A1849FE3D00A241B9 /* SettingsViewController.m */,
+				C967A26B1849FE3D00A241B9 /* SettingsViewController.xib */,
+			);
+			name = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		C967A26F184A00C100A241B9 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				C967A270184A00F000A241B9 /* RobotoRegular.h */,
+				C967A271184A00F000A241B9 /* RobotoRegular.m */,
+				C967A273184A01E500A241B9 /* Darkbutton.h */,
+				C967A274184A01E500A241B9 /* Darkbutton.m */,
+				C967A276184A025C00A241B9 /* RedButton.h */,
+				C967A277184A025C00A241B9 /* RedButton.m */,
+				C967A279184A026B00A241B9 /* RobotoLight.h */,
+				C967A27A184A026B00A241B9 /* RobotoLight.m */,
+				C967A27C184A027400A241B9 /* RobotoBold.h */,
+				C967A27D184A027400A241B9 /* RobotoBold.m */,
+				C967A27F184A028600A241B9 /* RobotoTextfield.h */,
+				C967A280184A028600A241B9 /* RobotoTextfield.m */,
+				C967A282184A062D00A241B9 /* TextfieldBackground.h */,
+				C967A283184A062D00A241B9 /* TextfieldBackground.m */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		C967A288184A2C0900A241B9 /* CreateAlert */ = {
+			isa = PBXGroup;
+			children = (
+				C967A289184A2C1800A241B9 /* CreateAlertViewController.h */,
+				C967A28A184A2C1800A241B9 /* CreateAlertViewController.m */,
+				C967A28B184A2C1800A241B9 /* CreateAlertViewController.xib */,
+			);
+			name = CreateAlert;
+			sourceTree = "<group>";
+		};
+		C967A292184A72C500A241B9 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				C967A298184A731700A241B9 /* Cell */,
+				C967A297184A730100A241B9 /* CityPicker */,
+				C967A296184A72F600A241B9 /* CountryPicker */,
+			);
+			name = Pickers;
+			sourceTree = "<group>";
+		};
+		C967A296184A72F600A241B9 /* CountryPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C967A293184A72EE00A241B9 /* CountryPickerViewController.h */,
+				C967A294184A72EE00A241B9 /* CountryPickerViewController.m */,
+			);
+			name = CountryPicker;
+			sourceTree = "<group>";
+		};
+		C967A297184A730100A241B9 /* CityPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C967A299184A732600A241B9 /* CityPickerViewController.h */,
+				C967A29A184A732600A241B9 /* CityPickerViewController.m */,
+			);
+			name = CityPicker;
+			sourceTree = "<group>";
+		};
+		C967A298184A731700A241B9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C967A29C184A733E00A241B9 /* PickerCell.h */,
+				C967A29D184A733E00A241B9 /* PickerCell.m */,
+				C967A29F184A734E00A241B9 /* PickerCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1114,6 +1246,7 @@
 				AAB71D8A17BFEB42001B16CF /* dark-button-pressed.png in Resources */,
 				AAB71D8B17BFEB42001B16CF /* dark-button-pressed@2x.png in Resources */,
 				AAB71D8C17BFEB42001B16CF /* dark-button@2x.png in Resources */,
+				C967A26D1849FE3D00A241B9 /* SettingsViewController.xib in Resources */,
 				AAB71D8D17BFEB42001B16CF /* dark-button.png in Resources */,
 				AAB71D9217BFEBC3001B16CF /* red-button-pressed@2x.png in Resources */,
 				AAB71D9317BFEBC3001B16CF /* red-button@2x.png in Resources */,
@@ -1181,6 +1314,7 @@
 				AAC8D54D17DE89B30051CE77 /* logout-menu-icon@2x.png in Resources */,
 				AAC8D54E17DE89B30051CE77 /* appinfo-menu-icon@2x.png in Resources */,
 				AAC8D54F17DE89B30051CE77 /* appinfo-menu-icon.png in Resources */,
+				C967A2A0184A734E00A241B9 /* PickerCell.xib in Resources */,
 				AAC8D55017DE89B30051CE77 /* logout-menu-icon.png in Resources */,
 				AA9D44F617DFB84500C0CCE9 /* RegisterStepOneViewController.xib in Resources */,
 				AA65E24217F2139400BBDBE9 /* navbar-ios6.png in Resources */,
@@ -1215,6 +1349,7 @@
 				AACEA76617E0E923009E8826 /* memetro-anim-6@2x.png in Resources */,
 				AACEA76717E0E923009E8826 /* memetro-anim-6.png in Resources */,
 				AACEA76817E0E923009E8826 /* memetro-anim-5.png in Resources */,
+				C967A2051849F68F00A241B9 /* Images.xcassets in Resources */,
 				AACEA76917E0E923009E8826 /* memetro-anim-8.png in Resources */,
 				AACEA76A17E0E923009E8826 /* memetro-anim-8@2x.png in Resources */,
 				AAB664E217E78BAC00FFEE7F /* anim-bar-9@2x.png in Resources */,
@@ -1237,6 +1372,7 @@
 				AAB664F317E78BAC00FFEE7F /* anim-bar-3.png in Resources */,
 				AAB664F417E78BAC00FFEE7F /* anim-bar-1.png in Resources */,
 				AAB664F517E78BAC00FFEE7F /* anim-bar-0.png in Resources */,
+				C967A28D184A2C1800A241B9 /* CreateAlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1247,33 +1383,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C967A291184A4E7D00A241B9 /* User.m in Sources */,
 				AABF71FF17F22422003D277C /* CitiesTransports.m in Sources */,
+				C967A287184A207400A241B9 /* BaseViewController.m in Sources */,
 				AAB71D5217BEAEAF001B16CF /* main.m in Sources */,
 				AAB71D5617BEAEAF001B16CF /* AppDelegate.m in Sources */,
+				C967A295184A72EE00A241B9 /* CountryPickerViewController.m in Sources */,
 				AAB71DBA17BFF6AE001B16CF /* LoginViewController.m in Sources */,
 				AA7D4DB817C11F1300A70ED1 /* AlertsViewController.m in Sources */,
 				AA5FF08817F37F0500F7F73D /* Line.m in Sources */,
+				C967A284184A062D00A241B9 /* TextfieldBackground.m in Sources */,
 				AAF53F7117D7A3FC0039F1D4 /* JASidePanelController.m in Sources */,
+				C967A29B184A732600A241B9 /* CityPickerViewController.m in Sources */,
 				AAF53F7217D7A3FC0039F1D4 /* UIViewController+JASidePanel.m in Sources */,
+				C967A29E184A733E00A241B9 /* PickerCell.m in Sources */,
 				AAF53F7817D7A4990039F1D4 /* LeftViewController.m in Sources */,
 				AA5FF08217F37F0500F7F73D /* Transport.m in Sources */,
 				AA5FF09417F37F0600F7F73D /* Country.m in Sources */,
+				C967A272184A00F000A241B9 /* RobotoRegular.m in Sources */,
 				AAF53F8C17D7AC050039F1D4 /* MapViewController.m in Sources */,
 				AAF53F9117D7AC1E0039F1D4 /* ListViewController.m in Sources */,
 				AAF53F9617D7AC2F0039F1D4 /* TweetViewController.m in Sources */,
 				AAF53FB417D7CBA10039F1D4 /* NormalMenuCell.m in Sources */,
+				C967A281184A028600A241B9 /* RobotoTextfield.m in Sources */,
 				AAF53FBA17D7CD570039F1D4 /* ProfileMenuCell.m in Sources */,
+				C967A27E184A027400A241B9 /* RobotoBold.m in Sources */,
+				C967A275184A01E500A241B9 /* Darkbutton.m in Sources */,
 				AAC8D52417DE69280051CE77 /* CBProgressPanel.m in Sources */,
 				AA5FF08E17F37F0500F7F73D /* City.m in Sources */,
 				AA9D44F517DFB84500C0CCE9 /* RegisterStepOneViewController.m in Sources */,
+				C967A27B184A026B00A241B9 /* RobotoLight.m in Sources */,
 				AA9D44FD17DFB87600C0CCE9 /* RegisterStepTwoViewController.m in Sources */,
 				AA9D450717DFC3B200C0CCE9 /* SIAlertView.m in Sources */,
+				C967A28C184A2C1800A241B9 /* CreateAlertViewController.m in Sources */,
 				AABF71FC17F22422003D277C /* LinesStations.m in Sources */,
+				C967A278184A025C00A241B9 /* RedButton.m in Sources */,
 				AA9D452417DFC9EB00C0CCE9 /* CommonFunctions.m in Sources */,
 				AAAB3F6F17EB848900290E68 /* Memetro.xcdatamodeld in Sources */,
 				AAAB3F7717EB8A3000290E68 /* DataParser.m in Sources */,
 				AA5FF09117F37F0500F7F73D /* Station.m in Sources */,
-				AAAB3F7A17EB907700290E68 /* User.m in Sources */,
+				C967A26C1849FE3D00A241B9 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1370,6 +1519,8 @@
 		AAB71D6617BEAEAF001B16CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Bongardt (5D6E2XP9JK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1389,6 +1540,8 @@
 		AAB71D6717BEAEAF001B16CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Bongardt (5D6E2XP9JK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1432,10 +1585,11 @@
 		AAAB3F6D17EB848900290E68 /* Memetro.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C967A28E184A4DD200A241B9 /* Memetro 2.xcdatamodel */,
 				AAAB3F7017EB849900290E68 /* Memetro 1.xcdatamodel */,
 				AAAB3F6E17EB848900290E68 /* Memetro.xcdatamodel */,
 			);
-			currentVersion = AAAB3F6E17EB848900290E68 /* Memetro.xcdatamodel */;
+			currentVersion = C967A28E184A4DD200A241B9 /* Memetro 2.xcdatamodel */;
 			path = Memetro.xcdatamodeld;
 			sourceTree = SOURCE_ROOT;
 			versionGroupType = wrapper.xcdatamodel;

@@ -20,7 +20,6 @@
 }
 +(NSURL *) generateUrlWithParams:(NSString *)string{
     NSString *urlstring =[BASE_URL stringByAppendingFormat:@"%@",string];
-    NSLog(@"URL STRING: %@",urlstring);
     return [NSURL URLWithString:urlstring];
 }
 

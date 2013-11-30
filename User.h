@@ -2,7 +2,7 @@
 //  User.h
 //  Memetro
 //
-//  Created by Christian Bongardt on 25/09/13.
+//  Created by Christian Bongardt on 30/11/13.
 //  Copyright (c) 2013 memetro. All rights reserved.
 //
 
@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * twittername;
 @property (nonatomic, retain) NSString * username;
+@property (nonatomic, retain) NSNumber * city_id;
 
 @end
