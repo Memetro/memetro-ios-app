@@ -194,6 +194,7 @@
 		C967A29B184A732600A241B9 /* CityPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A29A184A732600A241B9 /* CityPickerViewController.m */; };
 		C967A29E184A733E00A241B9 /* PickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A29D184A733E00A241B9 /* PickerCell.m */; };
 		C967A2A0184A734E00A241B9 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C967A29F184A734E00A241B9 /* PickerCell.xib */; };
+		C9AC8C68184AA5DB00B2734C /* ImageToData.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC8C67184AA5DB00B2734C /* ImageToData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -454,7 +455,7 @@
 		C967A289184A2C1800A241B9 /* CreateAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAlertViewController.h; sourceTree = "<group>"; };
 		C967A28A184A2C1800A241B9 /* CreateAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAlertViewController.m; sourceTree = "<group>"; };
 		C967A28B184A2C1800A241B9 /* CreateAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAlertViewController.xib; sourceTree = "<group>"; };
-		C967A28E184A4DD200A241B9 /* Memetro 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Memetro 2.xcdatamodel"; sourceTree = "<group>"; };
+		C967A28E184A4DD200A241B9 /* Memetro 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Memetro 2.xcdatamodel"; sourceTree = "<group>"; };
 		C967A28F184A4E7D00A241B9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
 		C967A290184A4E7D00A241B9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
 		C967A293184A72EE00A241B9 /* CountryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryPickerViewController.h; sourceTree = "<group>"; };
@@ -464,6 +465,9 @@
 		C967A29C184A733E00A241B9 /* PickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerCell.h; sourceTree = "<group>"; };
 		C967A29D184A733E00A241B9 /* PickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerCell.m; sourceTree = "<group>"; };
 		C967A29F184A734E00A241B9 /* PickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
+		C9AC8C65184AA59000B2734C /* Memetro 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Memetro 3.xcdatamodel"; sourceTree = "<group>"; };
+		C9AC8C66184AA5DB00B2734C /* ImageToData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageToData.h; sourceTree = "<group>"; };
+		C9AC8C67184AA5DB00B2734C /* ImageToData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageToData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -652,6 +656,7 @@
 		AAAB3F6C17EB844600290E68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C9AC8C69184AA64200B2734C /* ImageToData */,
 				AA5FF09817F37F2C00F7F73D /* Country */,
 				AA5FF09917F37F3300F7F73D /* Station */,
 				AA5FF09A17F37F3B00F7F73D /* City */,
@@ -1157,6 +1162,15 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		C9AC8C69184AA64200B2734C /* ImageToData */ = {
+			isa = PBXGroup;
+			children = (
+				C9AC8C66184AA5DB00B2734C /* ImageToData.h */,
+				C9AC8C67184AA5DB00B2734C /* ImageToData.m */,
+			);
+			name = ImageToData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1395,6 +1409,7 @@
 				C967A284184A062D00A241B9 /* TextfieldBackground.m in Sources */,
 				AAF53F7117D7A3FC0039F1D4 /* JASidePanelController.m in Sources */,
 				C967A29B184A732600A241B9 /* CityPickerViewController.m in Sources */,
+				C9AC8C68184AA5DB00B2734C /* ImageToData.m in Sources */,
 				AAF53F7217D7A3FC0039F1D4 /* UIViewController+JASidePanel.m in Sources */,
 				C967A29E184A733E00A241B9 /* PickerCell.m in Sources */,
 				AAF53F7817D7A4990039F1D4 /* LeftViewController.m in Sources */,
@@ -1585,11 +1600,12 @@
 		AAAB3F6D17EB848900290E68 /* Memetro.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C9AC8C65184AA59000B2734C /* Memetro 3.xcdatamodel */,
 				C967A28E184A4DD200A241B9 /* Memetro 2.xcdatamodel */,
 				AAAB3F7017EB849900290E68 /* Memetro 1.xcdatamodel */,
 				AAAB3F6E17EB848900290E68 /* Memetro.xcdatamodel */,
 			);
-			currentVersion = C967A28E184A4DD200A241B9 /* Memetro 2.xcdatamodel */;
+			currentVersion = C9AC8C65184AA59000B2734C /* Memetro 3.xcdatamodel */;
 			path = Memetro.xcdatamodeld;
 			sourceTree = SOURCE_ROOT;
 			versionGroupType = wrapper.xcdatamodel;

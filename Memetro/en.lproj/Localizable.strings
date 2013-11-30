@@ -40,7 +40,7 @@
 /* MODALS */
 
 "incorrectdatatitle" = "Empty fields";
-"loginemptypassuser" = "Username and password can't be empty!";
+"loginemptypassuser" = "All fields are mandatory! Please complete the missing data and try again!";
 "okbutton" = "Ok";
 "passmissmatch" = "Password missmatch";
 "passmissmatchextended" = "Please check your password and try again!";

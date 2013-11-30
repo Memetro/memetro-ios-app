@@ -143,10 +143,7 @@
                                 JSONObjectWithData:data
                                 options:0
                                 error:&error];
-
-
         if (error )return NO;
-
         if([[parsed objectForKey:@"success"] boolValue]){
             self.parsedData = @{@"user":[parsed objectForKey:@"data"]};
             return [self parseUser];
@@ -335,9 +332,23 @@
     user.aboutme = NULL_TO_NIL([userData objectForKey:@"aboutme"]);
     user.email = NULL_TO_NIL([userData objectForKey:@"email"]);
     user.twittername = NULL_TO_NIL([userData objectForKey:@"twittername"]);
+    if([user.twittername length] != 0){
+        [self getUserAvatar];
+    }
     self.user = user;
     return YES;
 }
+
+-(void) getUserAvatar{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://twitter.com/api/users/profile_image?size=bigger&screen_name=%@",self.user.twittername]];
+        NSData *imageData = [NSData dataWithContentsOfURL: url];
+        self.user.avatar = [UIImage imageWithData:imageData];
+        [self save];
+    });
+}
+
+
 
 -(BOOL) parseHabtmRelations{
     self.LinesStations = [NSMutableArray array];

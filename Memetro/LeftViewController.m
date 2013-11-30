@@ -14,6 +14,8 @@
 #import "AppDelegate.h"
 #import "SettingsViewController.h"
 #import "AlertsViewController.h"
+#import "DataParser.h"
+#import "User.h"
 @interface LeftViewController ()
 
 @end
@@ -83,6 +85,8 @@
 }
 
 
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
         static NSString *simpleTableIdentifier = @"NormalMenuCell";
         NormalMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -90,9 +94,23 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NormalMenuCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
         }
+        [cell.separatorLine setHidden:YES];
         switch (indexPath.row) {
             case 0:{
-                cell.label.text = NSLocalizedString(@"username",@"");
+                User *u = [[DataParser sharedInstance] user];
+                NSString *name;
+                if([u.twittername length] != 0){
+                    name = [NSString stringWithFormat:@"@%@",u.twittername];
+                }else if([u.name length] != 0) {
+                    name = u.name;
+                }else{
+                    name = u.username;
+                }
+                if(u.avatar !=nil){
+                    cell.image.image = u.avatar;
+                }
+                cell.label.text = name;
+                [cell.separatorLine setHidden:NO];
                 break;
             }
             case 1:{

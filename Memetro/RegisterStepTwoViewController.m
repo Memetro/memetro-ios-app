@@ -63,7 +63,8 @@
 }
 
 - (IBAction)register:(id)sender {
-    if([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""] || [self.passwordConfirm.text isEqualToString:@""]){
+    [self resignFirstResponder];
+    if([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""] || [self.passwordConfirm.text isEqualToString:@""] || self.cityID == nil){
         [CommonFunctions showError:NSLocalizedString(@"loginemptypassuser", @"") withTitle:NSLocalizedString(@"incorrectdatatitle", @"") withDismissHandler:nil];
         return;
     }
@@ -83,6 +84,7 @@
     [postData setObject:self.passwordConfirm.text forKey:@"password2"];
     [postData setObject:self.name forKey:@"name"];
     [postData setObject:self.email forKey:@"email"];
+    [postData setObject:self.cityID forKey:@"city_id"];
     [postData setObject:self.twitter forKey:@"twittername"];
     [postData setObject:self.aboutme forKey:@"aboutme"];
     [postData setObject:lan forKey:@"locale"];
@@ -182,8 +184,9 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+
     if(textField == self.city){
-        [textField resignFirstResponder];
+        [self resignFirstResponder];
         CityPickerViewController * c = [[CityPickerViewController alloc] init];
         c.countryID = self.countryID;
         c.delegate = self;
@@ -191,7 +194,7 @@
         return;
     }
     if(textField == self.country){
-        [textField resignFirstResponder];
+        [self resignFirstResponder];
         CountryPickerViewController * c = [[CountryPickerViewController alloc] init];
         c.delegate = self;
         [self presentViewController:[[UINavigationController alloc] initWithRootViewController:c] animated:YES completion:nil];
@@ -199,6 +202,8 @@
     }
     _activeField = textField;
 }
+
+
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
@@ -209,6 +214,15 @@
 -(void) userDidPickCountry:(Country *)country{
     self.countryID = country.id;
     self.country.text = country.name;
+    if(self.cityID != nil){
+        City *c = [[DataParser sharedInstance] getCity:self.cityID];
+        if(c.country_id != country.id){
+            self.cityID = nil;
+            self.city.text = nil;
+        
+        }
+    }
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

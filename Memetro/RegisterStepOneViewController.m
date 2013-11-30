@@ -40,7 +40,14 @@
     r.twitter = self.twittername.text;
     r.email = self.email.text;
     r.aboutme = self.aboutme.text;
-    [self.navigationController pushViewController:r animated:YES];
+    if([self.email.text length] == 0){
+        [CommonFunctions showError:NSLocalizedString(@"Please be advised that if you don't provide an E-mail address you won't be able to restore your password in case of loosing it. You can also provide your E-mail adress later on.", @"") withTitle:NSLocalizedString(@"Warning!", @"") withDismissHandler:^(SIAlertView *alertView) {
+                [self.navigationController pushViewController:r animated:YES];
+        }];
+    }else{
+            [self.navigationController pushViewController:r animated:YES];
+    }
+
 }
 
 -(void) setupLayout{
@@ -49,8 +56,8 @@
     }else{
         self.formContainerHeightConstraint.constant = 478;
     }
-
-
+    
+    
     self.name.placeholder = NSLocalizedString(@"registername", @"");
     self.twittername.placeholder = NSLocalizedString(@"registertwitter", @"");
     self.email.placeholder =NSLocalizedString(@"registeremail", @"");
@@ -60,7 +67,7 @@
     
     [self.cancelButton setTitle:NSLocalizedString(@"cancelbutton", @"") forState:UIControlStateNormal];
     [self.cancelButton setTitle:NSLocalizedString(@"cancelbutton", @"") forState:UIControlStateHighlighted];
-
+    
 }
 
 
@@ -114,6 +121,11 @@
 #pragma mark - TextfieldDelegate
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    if(textField == self.twittername) self.twittername.text = [self.twittername.text stringByReplacingOccurrencesOfString:@"@" withString:@""];
+    if(textField.text.length != 0){
+        [self.nextButton setTitle:NSLocalizedString(@"Next", @"") forState:UIControlStateNormal];
+        [self.nextButton setTitle:NSLocalizedString(@"Next", @"") forState:UIControlStateHighlighted];
+    }
     [textField resignFirstResponder];
     return YES;
 }

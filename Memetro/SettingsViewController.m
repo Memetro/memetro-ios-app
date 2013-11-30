@@ -10,6 +10,8 @@
 #import "DataParser.h"
 #import "User.h"
 #import "City.h"
+#import "Country.h"
+
 @interface SettingsViewController ()
 
 @end
@@ -44,7 +46,12 @@
     self.name.text = u.name;
     self.email.text = u.email;
     self.twitter.text = u.twittername;
-    City *c = [[DataParser sharedInstance] getCity:@1];
+    City *city = [[DataParser sharedInstance] getCity:u.city_id];
+    Country *country = [[DataParser sharedInstance] getCountryWithId:city.country_id];
+    self.cityID = city.id;
+    self.countryID = country.id;
+    self.country.text = country.name;
+    self.city.text = city.name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,18 +61,18 @@
 }
 
 - (IBAction)save:(id)sender {
+    if(self.cityID == nil){
+        [CommonFunctions showError:NSLocalizedString(@"You must pick a City!", @"") withTitle:NSLocalizedString(@"Empty fields!", @"") withDismissHandler:nil];
+        return;
+    }
     [NXOAuth2Request performMethod:@"POST"
                         onResource:[CommonFunctions generateUrlWithParams:@"users/edit_user_data"]
-                   usingParameters:@{@"name":self.name.text,@"email":self.email.text,@"twittername":self.twitter.text,@"city_id":@""}
+                   usingParameters:@{@"name":self.name.text,@"email":self.email.text,@"twittername":self.twitter.text,@"city_id":self.cityID}
                        withAccount:[CommonFunctions useraccount]
                sendProgressHandler:nil
                    responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
-                       NSLog(@"full response %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
                        [[CBProgressPanel sharedInstance] hide];
                        if(error !=nil){
-                           NSLog(@"error user info: %@",[error userInfo]);
-                           
-                           
                            if([error code] == -1009){
                                [CommonFunctions showNoInternetError];
                            }else{
@@ -73,12 +80,10 @@
                            }
                            
                        }else{
-                           
                            if([[DataParser sharedInstance] parseUserEdit:responseData]){
-                               
+                               [CommonFunctions showError:NSLocalizedString(@"Your data has been updated", @"") withTitle:NSLocalizedString(@"Succesful", @"") withDismissHandler:nil];
                                
                            }else{
-                               
                                [CommonFunctions showGenericFetchError];
                                
                            }
@@ -130,12 +135,25 @@
 #pragma mark - TextfieldDelegate
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    if(textField == self.twitter) self.twitter.text = [self.twitter.text stringByReplacingOccurrencesOfString:@"@" withString:@""];
     [textField resignFirstResponder];
     return YES;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    if(textField == self.city){
+        [self resignFirstResponder];
+        CityPickerViewController *c = [[CityPickerViewController alloc] init];
+        c.delegate = self;
+        c.countryID = self.countryID;
+        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:c] animated:YES completion:nil];
+    }else if(textField == self.country){
+        [self resignFirstResponder];
+        CountryPickerViewController *c = [[CountryPickerViewController alloc] init];
+        c.delegate = self;
+        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:c] animated:YES completion:nil];
+    }
     _activeField = textField;
 }
 
@@ -144,6 +162,30 @@
     _activeField = nil;
 }
 
+
+
+-(void) userDidPickCountry:(Country *)country{
+    self.countryID = country.id;
+    self.country.text = country.name;
+    if(self.cityID != nil){
+        City *c = [[DataParser sharedInstance] getCity:self.cityID];
+        if(c.country_id != country.id){
+            self.cityID = nil;
+            self.city.text = nil;
+        }
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) userDidPickCity:(City *)city{
+    self.cityID = city.id;
+    self.city.text = city.name;
+    Country *c = [[DataParser sharedInstance] getCountryWithId:city.country_id];
+    self.country.text = c.name;
+    self.countryID = c.id;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 @end
