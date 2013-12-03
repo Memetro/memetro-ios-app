@@ -82,11 +82,24 @@
     [postData setObject:self.username.text forKey:@"username"];
     [postData setObject:self.password.text forKey:@"password"];
     [postData setObject:self.passwordConfirm.text forKey:@"password2"];
-    [postData setObject:self.name forKey:@"name"];
-    [postData setObject:self.email forKey:@"email"];
+    
+    if(self.name != nil){
+        [postData setObject:self.name forKey:@"name"];
+    }
+    if(self.email != nil){
+        [postData setObject:self.email forKey:@"email"];
+    }
+    if (self.twitter != nil){
+        [postData setObject:self.twitter forKey:@"twittername"];
+        
+    }
+    if(self.aboutme != nil){
+        [postData setObject:self.aboutme forKey:@"aboutme"];
+    }
+    
     [postData setObject:self.cityID forKey:@"city_id"];
-    [postData setObject:self.twitter forKey:@"twittername"];
-    [postData setObject:self.aboutme forKey:@"aboutme"];
+    
+    
     [postData setObject:lan forKey:@"locale"];
     [[CBProgressPanel sharedInstance] displayInView:self.view];
     [NXOAuth2Request performMethod:@"POST"
@@ -94,36 +107,36 @@
                    usingParameters:postData
                        withAccount:nil
                sendProgressHandler:nil
-               responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
-                   [[CBProgressPanel sharedInstance] hide];
-                   if(error !=nil){
-                       NSLog(@"error user info: %@",[error userInfo]);
-                       NSLog(@"full response %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
-                       if([error code] == -1009){
-                           [CommonFunctions showNoInternetError];
-                       }else{
-                           [CommonFunctions showGenericFetchError];
-                       }
-                   }else{
-                       NSError *parseError = nil;
-                       NSDictionary *parsedResponse = [NSJSONSerialization
-                                          JSONObjectWithData:responseData
-                                          options:0
-                                          error:&error];
-                       if(parseError){
-                           [CommonFunctions showGenericFetchError];
-                       }else{
-                           NSLog(@"Parsed response: %@",parsedResponse);
-                           if([[parsedResponse objectForKey:@"success"] boolValue]){
-                               [CommonFunctions showError:NSLocalizedString(@"registercompleted", @"") withTitle:NSLocalizedString(@"registercompletedtitle", @"")  withDismissHandler:^(SIAlertView * alertView){
-                                   [self dismissViewControllerAnimated:YES completion:nil];
-                               }];
+                   responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
+                       [[CBProgressPanel sharedInstance] hide];
+                       if(error !=nil){
+                           NSLog(@"error user info: %@",[error userInfo]);
+                           NSLog(@"full response %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+                           if([error code] == -1009){
+                               [CommonFunctions showNoInternetError];
                            }else{
-                               [CommonFunctions showError:[parsedResponse objectForKey:@"message"] withTitle:[parsedResponse objectForKey:@"error_code"] withDismissHandler:nil];
+                               [CommonFunctions showGenericFetchError];
+                           }
+                       }else{
+                           NSError *parseError = nil;
+                           NSDictionary *parsedResponse = [NSJSONSerialization
+                                                           JSONObjectWithData:responseData
+                                                           options:0
+                                                           error:&error];
+                           if(parseError){
+                               [CommonFunctions showGenericFetchError];
+                           }else{
+                               NSLog(@"Parsed response: %@",parsedResponse);
+                               if([[parsedResponse objectForKey:@"success"] boolValue]){
+                                   [CommonFunctions showError:NSLocalizedString(@"registercompleted", @"") withTitle:NSLocalizedString(@"registercompletedtitle", @"")  withDismissHandler:^(SIAlertView * alertView){
+                                       [self dismissViewControllerAnimated:YES completion:nil];
+                                   }];
+                               }else{
+                                   [CommonFunctions showError:[parsedResponse objectForKey:@"message"] withTitle:[parsedResponse objectForKey:@"error_code"] withDismissHandler:nil];
+                               }
                            }
                        }
-                   }
-               }];
+                   }];
 }
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -184,7 +197,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-
+    
     if(textField == self.city){
         [self resignFirstResponder];
         CityPickerViewController * c = [[CityPickerViewController alloc] init];
@@ -219,10 +232,10 @@
         if(c.country_id != country.id){
             self.cityID = nil;
             self.city.text = nil;
-        
+            
         }
     }
-
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

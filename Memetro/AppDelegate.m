@@ -195,8 +195,7 @@
                        withAccount:[CommonFunctions useraccount]
                sendProgressHandler:nil
                responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
-                   NSLog(@"error %@",error);
-                   if(error != nil){
+                   if(error!=nil){
                        if(afterLogin){
                            [[CBProgressPanel sharedInstance] hide];
                            if([error code] == -1009){

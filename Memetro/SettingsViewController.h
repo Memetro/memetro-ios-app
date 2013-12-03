@@ -21,6 +21,7 @@
 @property (strong,nonatomic) UITextField *activeField;
 @property (strong,nonatomic) NSNumber *countryID;
 @property (strong,nonatomic) NSNumber *cityID;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 - (IBAction)save:(id)sender;
 @end

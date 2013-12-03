@@ -19,8 +19,6 @@
 		AA7D4DB317C11CFA00A70ED1 /* libOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7D4DAE17C11C2500A70ED1 /* libOAuth2Client.a */; };
 		AA7D4DB817C11F1300A70ED1 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7D4DB617C11F1300A70ED1 /* AlertsViewController.m */; };
 		AA7D4DB917C11F1300A70ED1 /* AlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7D4DB717C11F1300A70ED1 /* AlertsViewController.xib */; };
-		AA8ECC3D17D7E4D400F36061 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8ECC3C17D7E4D400F36061 /* appicon.png */; };
-		AA8ECC3F17D7E4D900F36061 /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8ECC3E17D7E4D900F36061 /* appicon@2x.png */; };
 		AA9D44F517DFB84500C0CCE9 /* RegisterStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9D44F317DFB84500C0CCE9 /* RegisterStepOneViewController.m */; };
 		AA9D44F617DFB84500C0CCE9 /* RegisterStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9D44F417DFB84500C0CCE9 /* RegisterStepOneViewController.xib */; };
 		AA9D44FD17DFB87600C0CCE9 /* RegisterStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9D44FB17DFB87600C0CCE9 /* RegisterStepTwoViewController.m */; };
@@ -194,6 +192,9 @@
 		C967A29B184A732600A241B9 /* CityPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A29A184A732600A241B9 /* CityPickerViewController.m */; };
 		C967A29E184A733E00A241B9 /* PickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A29D184A733E00A241B9 /* PickerCell.m */; };
 		C967A2A0184A734E00A241B9 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C967A29F184A734E00A241B9 /* PickerCell.xib */; };
+		C97252B9184E8F45001D3CCB /* TransportPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97252B8184E8F45001D3CCB /* TransportPickerViewController.m */; };
+		C97252BE184E9707001D3CCB /* StationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97252BD184E9707001D3CCB /* StationPickerViewController.m */; };
+		C97252C1184E9713001D3CCB /* LinePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97252C0184E9713001D3CCB /* LinePickerViewController.m */; };
 		C9AC8C68184AA5DB00B2734C /* ImageToData.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC8C67184AA5DB00B2734C /* ImageToData.m */; };
 /* End PBXBuildFile section */
 
@@ -246,8 +247,6 @@
 		AA7D4DB517C11F1300A70ED1 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
 		AA7D4DB617C11F1300A70ED1 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
 		AA7D4DB717C11F1300A70ED1 /* AlertsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertsViewController.xib; sourceTree = "<group>"; };
-		AA8ECC3C17D7E4D400F36061 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appicon.png; path = ../appicon.png; sourceTree = "<group>"; };
-		AA8ECC3E17D7E4D900F36061 /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon@2x.png"; path = "../appicon@2x.png"; sourceTree = "<group>"; };
 		AA9D44F217DFB84500C0CCE9 /* RegisterStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterStepOneViewController.h; sourceTree = "<group>"; };
 		AA9D44F317DFB84500C0CCE9 /* RegisterStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterStepOneViewController.m; sourceTree = "<group>"; };
 		AA9D44F417DFB84500C0CCE9 /* RegisterStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterStepOneViewController.xib; sourceTree = "<group>"; };
@@ -465,7 +464,13 @@
 		C967A29C184A733E00A241B9 /* PickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerCell.h; sourceTree = "<group>"; };
 		C967A29D184A733E00A241B9 /* PickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerCell.m; sourceTree = "<group>"; };
 		C967A29F184A734E00A241B9 /* PickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
-		C9AC8C65184AA59000B2734C /* Memetro 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Memetro 3.xcdatamodel"; sourceTree = "<group>"; };
+		C97252B7184E8F45001D3CCB /* TransportPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransportPickerViewController.h; sourceTree = "<group>"; };
+		C97252B8184E8F45001D3CCB /* TransportPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransportPickerViewController.m; sourceTree = "<group>"; };
+		C97252BC184E9707001D3CCB /* StationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationPickerViewController.h; sourceTree = "<group>"; };
+		C97252BD184E9707001D3CCB /* StationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationPickerViewController.m; sourceTree = "<group>"; };
+		C97252BF184E9713001D3CCB /* LinePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinePickerViewController.h; sourceTree = "<group>"; };
+		C97252C0184E9713001D3CCB /* LinePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinePickerViewController.m; sourceTree = "<group>"; };
+		C9AC8C65184AA59000B2734C /* Memetro 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Memetro 3.xcdatamodel"; sourceTree = "<group>"; };
 		C9AC8C66184AA5DB00B2734C /* ImageToData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageToData.h; sourceTree = "<group>"; };
 		C9AC8C67184AA5DB00B2734C /* ImageToData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageToData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -744,8 +749,6 @@
 			isa = PBXGroup;
 			children = (
 				C967A2041849F68F00A241B9 /* Images.xcassets */,
-				AA8ECC3E17D7E4D900F36061 /* appicon@2x.png */,
-				AA8ECC3C17D7E4D400F36061 /* appicon.png */,
 				AAB71DC317C1098C001B16CF /* OAuth2Client.xcodeproj */,
 				AA7D4DA617C11BFB00A70ED1 /* other */,
 				AAB71DC217BFF9D9001B16CF /* fonts */,
@@ -1127,9 +1130,12 @@
 		C967A292184A72C500A241B9 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				C97252BB184E96F9001D3CCB /* StationPicker */,
 				C967A298184A731700A241B9 /* Cell */,
 				C967A297184A730100A241B9 /* CityPicker */,
 				C967A296184A72F600A241B9 /* CountryPicker */,
+				C97252BA184E907B001D3CCB /* TransportPicker */,
+				C97252C2184E9716001D3CCB /* LinePicker */,
 			);
 			name = Pickers;
 			sourceTree = "<group>";
@@ -1160,6 +1166,33 @@
 				C967A29F184A734E00A241B9 /* PickerCell.xib */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		C97252BA184E907B001D3CCB /* TransportPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C97252B7184E8F45001D3CCB /* TransportPickerViewController.h */,
+				C97252B8184E8F45001D3CCB /* TransportPickerViewController.m */,
+			);
+			name = TransportPicker;
+			sourceTree = "<group>";
+		};
+		C97252BB184E96F9001D3CCB /* StationPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C97252BC184E9707001D3CCB /* StationPickerViewController.h */,
+				C97252BD184E9707001D3CCB /* StationPickerViewController.m */,
+			);
+			name = StationPicker;
+			sourceTree = "<group>";
+		};
+		C97252C2184E9716001D3CCB /* LinePicker */ = {
+			isa = PBXGroup;
+			children = (
+				C97252BF184E9713001D3CCB /* LinePickerViewController.h */,
+				C97252C0184E9713001D3CCB /* LinePickerViewController.m */,
+			);
+			name = LinePicker;
 			sourceTree = "<group>";
 		};
 		C9AC8C69184AA64200B2734C /* ImageToData */ = {
@@ -1315,8 +1348,6 @@
 				AAF53FDB17D7D01A0039F1D4 /* cat-menu-icon@2x.png in Resources */,
 				AAF53FDC17D7D01A0039F1D4 /* memetrol-icon.png in Resources */,
 				AAF53FDD17D7D01A0039F1D4 /* memetrol-icon@2x.png in Resources */,
-				AA8ECC3D17D7E4D400F36061 /* appicon.png in Resources */,
-				AA8ECC3F17D7E4D900F36061 /* appicon@2x.png in Resources */,
 				AAC8D53B17DE86C90051CE77 /* alert-menu-icon.png in Resources */,
 				AAC8D53C17DE86C90051CE77 /* alert-menu-icon@2x.png in Resources */,
 				AAC8D53F17DE88740051CE77 /* ranking-menu-icon@2x.png in Resources */,
@@ -1401,6 +1432,7 @@
 				AABF71FF17F22422003D277C /* CitiesTransports.m in Sources */,
 				C967A287184A207400A241B9 /* BaseViewController.m in Sources */,
 				AAB71D5217BEAEAF001B16CF /* main.m in Sources */,
+				C97252B9184E8F45001D3CCB /* TransportPickerViewController.m in Sources */,
 				AAB71D5617BEAEAF001B16CF /* AppDelegate.m in Sources */,
 				C967A295184A72EE00A241B9 /* CountryPickerViewController.m in Sources */,
 				AAB71DBA17BFF6AE001B16CF /* LoginViewController.m in Sources */,
@@ -1410,11 +1442,13 @@
 				AAF53F7117D7A3FC0039F1D4 /* JASidePanelController.m in Sources */,
 				C967A29B184A732600A241B9 /* CityPickerViewController.m in Sources */,
 				C9AC8C68184AA5DB00B2734C /* ImageToData.m in Sources */,
+				C97252C1184E9713001D3CCB /* LinePickerViewController.m in Sources */,
 				AAF53F7217D7A3FC0039F1D4 /* UIViewController+JASidePanel.m in Sources */,
 				C967A29E184A733E00A241B9 /* PickerCell.m in Sources */,
 				AAF53F7817D7A4990039F1D4 /* LeftViewController.m in Sources */,
 				AA5FF08217F37F0500F7F73D /* Transport.m in Sources */,
 				AA5FF09417F37F0600F7F73D /* Country.m in Sources */,
+				C97252BE184E9707001D3CCB /* StationPickerViewController.m in Sources */,
 				C967A272184A00F000A241B9 /* RobotoRegular.m in Sources */,
 				AAF53F8C17D7AC050039F1D4 /* MapViewController.m in Sources */,
 				AAF53F9117D7AC1E0039F1D4 /* ListViewController.m in Sources */,

@@ -13,6 +13,7 @@
                 <outlet property="name" destination="mKa-Sc-oG9" id="6km-2z-6JZ"/>
                 <outlet property="saveButton" destination="JKB-O2-7tE" id="s5o-IH-sxL"/>
                 <outlet property="scrollView" destination="IvK-nL-tJX" id="CLk-lw-NaW"/>
+                <outlet property="titleLabel" destination="FOZ-cP-Tcc" id="JYC-hv-4Yv"/>
                 <outlet property="twitter" destination="C3F-wE-s0V" id="Ang-qv-KF8"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -38,7 +39,7 @@
                                         <constraint firstAttribute="height" constant="100" id="y2y-gT-Iyw"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOZ-cP-Tcc" customClass="RobotoRegular">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOZ-cP-Tcc" customClass="RobotoRegular">
                                     <rect key="frame" x="20" y="118" width="280" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <constraints>

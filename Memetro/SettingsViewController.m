@@ -39,6 +39,7 @@
     self.twitter.placeholder = NSLocalizedString(@"Twitter", @"");
     self.country.placeholder = NSLocalizedString(@"Country", @"");
     self.city.placeholder = NSLocalizedString(@"City", @"");
+    self.titleLabel.text = NSLocalizedString(@"SETTINGS", @"");
     [self.saveButton setTitle:NSLocalizedString(@"Save", @"") forState:UIControlStateNormal];
     [self.saveButton setTitle:NSLocalizedString(@"Save", @"") forState:UIControlStateHighlighted];
     
@@ -65,9 +66,22 @@
         [CommonFunctions showError:NSLocalizedString(@"You must pick a City!", @"") withTitle:NSLocalizedString(@"Empty fields!", @"") withDismissHandler:nil];
         return;
     }
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    if(self.name.text != nil){
+        [params setObject:self.name.text forKey:@"name"];
+    }
+    if(self.email.text != nil){
+        [params setObject:self.email.text forKey:@"email"];
+    }
+    if(self.twitter.text != nil){
+        [params setObject:self.twitter.text forKey:@"twittername"];
+    }
+    
+
+    [params setObject:self.cityID forKey:@"city_id"];
     [NXOAuth2Request performMethod:@"POST"
                         onResource:[CommonFunctions generateUrlWithParams:@"users/edit_user_data"]
-                   usingParameters:@{@"name":self.name.text,@"email":self.email.text,@"twittername":self.twitter.text,@"city_id":self.cityID}
+                usingParameters:params
                        withAccount:[CommonFunctions useraccount]
                sendProgressHandler:nil
                    responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
@@ -118,16 +132,18 @@
     // Your app might not need or want this behavior.
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
-    if (!CGRectContainsPoint(aRect, _activeField.frame.origin) ) {
+//    if (!CGRectContainsPoint(aRect, _activeField.frame.origin) ) {
         [self.scrollView scrollRectToVisible:_activeField.frame animated:YES];
-    }
+//    }
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    _scrollView.contentInset = contentInsets;
+    [UIView animateWithDuration:0.4 animations:^{
+        _scrollView.contentInset = contentInsets;
+    }];
     _scrollView.scrollIndicatorInsets = contentInsets;
 }
 

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LeftViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
-
+@property (weak,nonatomic) IBOutlet UITableView *tableview;
 @end
