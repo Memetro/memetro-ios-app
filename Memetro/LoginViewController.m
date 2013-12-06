@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "CBProgressPanel.h"
 #import "RegisterStepOneViewController.h"
+#import "ForgottenPasswordViewController.h"
 @interface LoginViewController ()
 
 @end
@@ -31,12 +32,18 @@
     self.username.placeholder = NSLocalizedString(@"username",@"");
     self.password.placeholder = NSLocalizedString(@"password",@"");
     self.forgottenPassword.text = NSLocalizedString(@"forgottenpassword", @"contraseña olvidada");
+    self.forgottenPassword.userInteractionEnabled = YES;
+    [self.forgottenPassword addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showForgottenPassword)]];
     
     [self.loginButton setTitle: NSLocalizedString(@"loginbutton", @"boton login") forState:UIControlStateNormal];
     [self.loginButton setTitle: NSLocalizedString(@"loginbutton", @"boton login") forState:UIControlStateHighlighted];
     [self.registerButton setTitle:NSLocalizedString(@"registerbutton", @"boton de registro") forState:UIControlStateNormal];
     [self.registerButton setTitle:NSLocalizedString(@"registerbutton", @"boton de registro") forState:UIControlStateHighlighted];    
     
+}
+
+-(void) showForgottenPassword{
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:[[ForgottenPasswordViewController alloc] init]] animated:YES completion:nil];
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
