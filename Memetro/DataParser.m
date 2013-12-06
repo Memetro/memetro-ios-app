@@ -25,6 +25,7 @@
     @property (strong,nonatomic) NSMutableArray *Stations;
     @property (strong,nonatomic) NSMutableArray *Lines;
     @property (strong,nonatomic) NSMutableArray *Transports;
+    
 @end
 
 @implementation DataParser
@@ -68,8 +69,6 @@
         }
         NSLog(@"self.CitiesTransports %@",self.CitiesTransports);
         NSLog(@"self.LinesStations %@",self.LinesStations);
-
-
         
         if(![self parseStation]){
             NSLog(@"Ha fallado parseStation");
@@ -212,6 +211,7 @@
                 l.id = [NSNumber numberWithInt:[[d objectForKey:@"id"] intValue]];
                 l.name = [d objectForKey:@"name"];
                 l.number = [NSNumber numberWithInt:[[d objectForKey:@"number"] intValue] ];
+                l.city_id =[NSNumber numberWithInt:[[d objectForKey:@"city_id"] intValue]];
                 l.transport_id = [NSNumber numberWithInt:[[d objectForKey:@"transport_id"] intValue]];
                 [self.Lines addObject:l];
             }
@@ -238,11 +238,12 @@
                 [self.managedObjectContext deleteObject:o];
             }
             for (NSDictionary *d in[stationData objectForKey:@"data"]){
+                NSNumberFormatter *nf =[[NSNumberFormatter alloc] init];
                 Station *s = [NSEntityDescription insertNewObjectForEntityForName:@"Station" inManagedObjectContext:[self managedObjectContext]];
                 s.id = [NSNumber numberWithInt:[[d objectForKey:@"id"] intValue]];
                 s.name = [d objectForKey:@"name"];
-                s.longitude = [ NSNumber numberWithFloat:[[d objectForKey:@"longitude"] floatValue] ];
-                s.latitude = [ NSNumber numberWithFloat:[[d objectForKey:@"latitude"] floatValue] ];
+                s.longitude = [ nf numberFromString:[d objectForKey:@"longitude"]];
+                s.latitude = [nf numberFromString:[d objectForKey:@"latitude"]];
                 [self.Stations addObject:s];
             }
             return YES;
@@ -327,8 +328,8 @@
 
     }else{
         user = [fetchedObjects objectAtIndex:0];
-
     }
+    NSLog(@"userData %@",userData);
     user.city_id = [NSNumber numberWithInt:[NULL_TO_NIL([userData objectForKey:@"city_id"]) intValue]];
     user.username = NULL_TO_NIL([userData objectForKey:@"username"]);
     user.name = NULL_TO_NIL([userData objectForKey:@"name"]);
@@ -364,8 +365,9 @@
 
 
 -(BOOL) parseHabtmRelations{
-    self.LinesStations = [NSMutableArray array];
+
     self.CitiesTransports = [NSMutableArray array];
+        self.LinesStations = [NSMutableArray array];
     NSError *error = nil;
     NSFetchRequest *LinesStationsfetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *LinesStationsEntity = [NSEntityDescription entityForName:@"LinesStations"
@@ -392,11 +394,11 @@
     }
     
     NSFetchRequest *CitiesTranportsfetchRequest  = [[NSFetchRequest alloc] init];
-    NSEntityDescription *CitiesTransportsEntity = [NSEntityDescription insertNewObjectForEntityForName:@"CitiesTransports"
+    NSEntityDescription *CitiesTransportsEntity = [NSEntityDescription entityForName:@"CitiesTransports"
                                                                             inManagedObjectContext:[self managedObjectContext]];
     NSArray *CitiesTransportsData = [[self.parsedData objectForKey:@"citiestransport"] objectForKey:@"data"];
     [CitiesTranportsfetchRequest setEntity:CitiesTransportsEntity];
-    NSArray *fetchedCitiesTransports = [[self managedObjectContext]executeFetchRequest:LinesStationsfetchRequest error:&error];
+    NSArray *fetchedCitiesTransports = [[self managedObjectContext]executeFetchRequest:CitiesTranportsfetchRequest error:&error];
     if(error == nil){
         for(NSManagedObject *o in fetchedCitiesTransports ){
             [self.managedObjectContext deleteObject:o];
@@ -484,6 +486,12 @@
     }
     return nil;
 }
+-(NSArray *) getLinesOfTransportId:(NSNumber *) id andCityId:(NSNumber *) cityId{
+    NSArray *lines = [self getLines];
+    NSArray *filteredLines = [lines filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(self.transport_id == %@ AND self.city_id == %@)",id,cityId]];
+    return filteredLines;
+}
+
 -(NSArray *) getLinesOfTransportId:(NSNumber *) id{
     NSArray *lines = [self getLines];
     NSArray *filteredLines = [lines filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(self.transport_id == %@)",id]];
@@ -530,12 +538,14 @@
 }
 
 -(NSArray *) getStationsOfLines:(NSArray *)lineIds{
+
     NSArray *stations = [self getStations];
-        NSLog(@"stations %@",stations);
+
     NSArray *linesStations = [self getLinesStations];
-        NSLog(@"linesStations %@",linesStations);
-    NSArray *filteredLinesStations = [linesStations filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(self.line == %@)",lineIds]];
-    NSLog(@"filteredLinesStations %@",filteredLinesStations);
+
+    NSArray *filteredLinesStations = [linesStations filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:
+                                                                                 @"(line IN %@)",lineIds]];
+
     NSMutableArray *stationIds = [NSMutableArray array];
     for(LinesStations *l in filteredLinesStations){
         [stationIds addObject:l.station];
@@ -547,7 +557,11 @@
 
 -(NSArray *) getStationsOfTransportId:(NSNumber *) id{
     NSArray * lines = [self getLinesOfTransportId:id];
-    return [self getStationsOfLines:lines];
+    NSMutableArray *lineIds = [NSMutableArray new];
+    for(Line *l in lines){
+        [lineIds addObject:l.id];
+    }
+    return [self getStationsOfLines:lineIds];
 }
 
 
@@ -637,7 +651,7 @@
     if(self.CitiesTransports ==  nil){
         NSError *error = nil;
         NSFetchRequest *CitiesTranportsfetchRequest  = [[NSFetchRequest alloc] init];
-        NSEntityDescription *CitiesTransportsEntity = [NSEntityDescription insertNewObjectForEntityForName:@"CitiesTransports"                                                                                    inManagedObjectContext:[self managedObjectContext]];
+        NSEntityDescription *CitiesTransportsEntity = [NSEntityDescription entityForName:@"CitiesTransports"                                                                                    inManagedObjectContext:[self managedObjectContext]];
         [CitiesTranportsfetchRequest setEntity:CitiesTransportsEntity];
         NSArray *fetchedCitiesTransports = [[self managedObjectContext] executeFetchRequest:CitiesTranportsfetchRequest error:&error];
         if(error == nil){

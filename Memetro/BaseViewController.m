@@ -36,6 +36,7 @@
     if(![self isKindOfClass:[CreateAlertViewController class]]){
         [self addAlertCreationButton];
     }
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 }
 
 -(void) addAlertsViewButton{

@@ -12,6 +12,7 @@
 @implementation Line
 
 @dynamic transport_id;
+@dynamic city_id;
 @dynamic number;
 @dynamic name;
 @dynamic id;

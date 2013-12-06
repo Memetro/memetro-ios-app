@@ -33,6 +33,7 @@
     [self initNavbar];
     [self initChilds];
     [self addFirstChild];
+    [self.view setBackgroundColor:[UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1.00f]];
 }
 
 -(void) initNavbar{
@@ -231,6 +232,26 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [self.presentedView viewWillAppear:animated];
+    
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    [self.presentedView viewDidAppear:animated];
+    
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    [self.presentedView viewWillDisappear:animated];
+    
+}
+
+-(void) viewDidDisappear:(BOOL)animated{
+    [self.presentedView viewDidDisappear:animated];
+    
 }
 
 @end

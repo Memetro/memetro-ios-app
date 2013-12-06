@@ -13,6 +13,7 @@
 @interface Line : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * transport_id;
+@property (nonatomic, retain) NSNumber * city_id;
 @property (nonatomic, retain) NSNumber * number;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * id;

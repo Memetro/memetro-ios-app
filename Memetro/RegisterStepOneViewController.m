@@ -9,7 +9,8 @@
 #import "RegisterStepOneViewController.h"
 #import "RegisterStepTwoViewController.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 @implementation RegisterStepOneViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -56,8 +57,6 @@
     }else{
         self.formContainerHeightConstraint.constant = 478;
     }
-    
-    
     self.name.placeholder = NSLocalizedString(@"registername", @"");
     self.twittername.placeholder = NSLocalizedString(@"registertwitter", @"");
     self.email.placeholder =NSLocalizedString(@"registeremail", @"");
@@ -67,21 +66,19 @@
     
     [self.cancelButton setTitle:NSLocalizedString(@"cancelbutton", @"") forState:UIControlStateNormal];
     [self.cancelButton setTitle:NSLocalizedString(@"cancelbutton", @"") forState:UIControlStateHighlighted];
-    
 }
 
 
 
 
-- (IBAction)cancel:(id)sender {
+- (IBAction)cancel:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 
 
-- (void)registerForKeyboardNotifications
-{
+- (void)registerForKeyboardNotifications{
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWasShown:)
                                                  name:UIKeyboardDidShowNotification object:nil];
@@ -91,8 +88,7 @@
 }
 
 // Called when the UIKeyboardDidShowNotification is sent.
-- (void)keyboardWasShown:(NSNotification*)aNotification
-{
+- (void)keyboardWasShown:(NSNotification*)aNotification{
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
@@ -110,8 +106,7 @@
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-{
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification{
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     _scrollView.contentInset = contentInsets;
     _scrollView.scrollIndicatorInsets = contentInsets;
@@ -130,13 +125,44 @@
     return YES;
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    _activeField = textField;
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    if(textField == self.twittername){
+        [self resignFirstResponder];
+        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+        ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error){
+            [self resignFirstResponder];
+            if (granted) {
+                NSArray *accounts = [accountStore accountsWithAccountType:accountType];
+                // Check if the users has setup at least one Twitter account
+                if (accounts.count > 0){
+                    ACAccount *twitterAccount = [accounts objectAtIndex:0];
+                    [self setTwitternameText:twitterAccount.username];
+                }else{
+                    [CommonFunctions showError:NSLocalizedString(@"You do not have any twitter accounts. Please add them from the iPhone settings.", @"") withTitle:NSLocalizedString(@"No twitter account!", @"") withDismissHandler:nil];
+                }
+            }else{
+                [CommonFunctions showError:NSLocalizedString(@"You declined the access to your Twitter Account. You can revise this settings in the Privacy settings of your phone.", @"") withTitle:NSLocalizedString(@"Access denied", @"") withDismissHandler:nil];
+            }
+        }];
+    }else{
+        _activeField = textField;
+    }
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
+-(void) setTwitternameText:(NSString *) twittername{
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [CommonFunctions showError:NSLocalizedString(@"For security reasons we'll take your Twitter username from your Twitter Profile linked to your iPhone.", @"") withTitle:NSLocalizedString(@"Twitter username obtained!", @"") withDismissHandler:^(SIAlertView *alertView) {
+            [self.nextButton setTitle:NSLocalizedString(@"Next", @"") forState:UIControlStateNormal];
+            [self.nextButton setTitle:NSLocalizedString(@"Next", @"") forState:UIControlStateHighlighted];
+            self.twittername.text = twittername;
+        }];
+    });
+    NSLog(@"twittername %@",twittername);
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [textField resignFirstResponder];
     _activeField = nil;
 }
 

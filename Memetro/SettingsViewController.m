@@ -11,7 +11,8 @@
 #import "User.h"
 #import "City.h"
 #import "Country.h"
-
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 @interface SettingsViewController ()
 
 @end
@@ -76,7 +77,7 @@
     if(self.twitter.text != nil){
         [params setObject:self.twitter.text forKey:@"twittername"];
     }
-    
+    [[CBProgressPanel sharedInstance] displayInView:self.view];
 
     [params setObject:self.cityID forKey:@"city_id"];
     [NXOAuth2Request performMethod:@"POST"
@@ -170,7 +171,39 @@
         c.delegate = self;
         [self presentViewController:[[UINavigationController alloc] initWithRootViewController:c] animated:YES completion:nil];
     }
-    _activeField = textField;
+    if(textField == self.twitter){
+        [textField resignFirstResponder];
+        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+        ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error){
+            if (granted) {
+                NSArray *accounts = [accountStore accountsWithAccountType:accountType];
+                // Check if the users has setup at least one Twitter account
+                if (accounts.count > 0){
+                    ACAccount *twitterAccount = [accounts objectAtIndex:0];
+                    [self setTwitternameText:twitterAccount.username];
+                }else{
+                    [CommonFunctions showError:NSLocalizedString(@"You do not have any twitter accounts. Please add them from the iPhone settings.", @"") withTitle:NSLocalizedString(@"No twitter account!", @"") withDismissHandler:nil];
+                }
+            }else{
+                [CommonFunctions showError:NSLocalizedString(@"You declined the access to your Twitter Account. You can revise this settings in the Privacy settings of your phone.", @"") withTitle:NSLocalizedString(@"Access denied", @"") withDismissHandler:nil];
+            }
+        }];
+        
+    }
+        _activeField = textField;
+
+    
+}
+
+-(void) setTwitternameText:(NSString *) twittername{
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [CommonFunctions showError:NSLocalizedString(@"For security reasons we'll take your Twitter username from your Twitter Profile linked to your iPhone.", @"") withTitle:NSLocalizedString(@"Twitter username obtained!", @"") withDismissHandler:^(SIAlertView *alertView) {
+            self.twitter.text = twittername;
+        }];
+    });
+    NSLog(@"twittername %@",twittername);
+    
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField

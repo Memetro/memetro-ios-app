@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TweetViewController : UIViewController
+@interface TweetViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @end

@@ -94,6 +94,7 @@
 
 -(void) hide{
     [self.animationView removeFromSuperview];
+    [self.timer invalidate];
     [self removeFromSuperview];
 }
 

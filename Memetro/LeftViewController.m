@@ -16,6 +16,8 @@
 #import "AlertsViewController.h"
 #import "DataParser.h"
 #import "User.h"
+#import "WebViewController.h"
+#import "MemetroOrgViewController.h"
 @interface LeftViewController ()
 
 @end
@@ -62,6 +64,7 @@
             break;
         }
         case 2:{
+            self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[[MemetroOrgViewController alloc] init]];
             break;
         }
         case 3:{
@@ -69,6 +72,9 @@
             break;
         }
         case 4:{
+            WebViewController *w = [[WebViewController alloc] init];
+            w.url = [NSURL URLWithString:@"http://www.memetro.net/infoapp"];
+            self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:w];
             break;
         }
         case 5:{

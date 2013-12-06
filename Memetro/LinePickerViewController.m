@@ -10,6 +10,7 @@
 #import "PickerCell.h"
 #import "Line.h"
 #import "DataParser.h"
+#import "ODRefreshControl.h"
 
 @interface LinePickerViewController ()
 
@@ -29,7 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
+    
 }
 
 -(void) cancel{
@@ -43,15 +46,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    Line *l;
-    if(self.stationId != nil){
-        l  = [[[DataParser sharedInstance] getLinesOfStations:self.stationId] objectAtIndex:indexPath.row];
-    }
-    else if(self.transportId!=nil){
-        l  = [[[DataParser sharedInstance] getLinesOfTransportId:self.transportId] objectAtIndex:indexPath.row];
-    }else{
-        l  = [[[DataParser sharedInstance] getLines] objectAtIndex:indexPath.row];
-    }
+    Line *l =[[[DataParser sharedInstance] getLinesOfTransportId:self.transportId andCityId:self.cityId] objectAtIndex:indexPath.row];
     [_delegate userDidPickLine:l];
 }
 
@@ -68,27 +63,12 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PickerCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    Line *l;
-    if(self.stationId != nil){
-        l  = [[[DataParser sharedInstance] getLinesOfStations:self.stationId] objectAtIndex:indexPath.row];
-    }
-    else if(self.transportId!=nil){
-        l  = [[[DataParser sharedInstance] getLinesOfTransportId:self.transportId] objectAtIndex:indexPath.row];
-    }else{
-        l  = [[[DataParser sharedInstance] getLines] objectAtIndex:indexPath.row];
-    }
+    Line *l =[[[DataParser sharedInstance] getLinesOfTransportId:self.transportId andCityId:self.cityId] objectAtIndex:indexPath.row];
     cell.label.text = l.name;
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(self.stationId != nil){
-        return [[[DataParser sharedInstance] getLinesOfStations:self.stationId] count];
-    }
-    else if(self.transportId!=nil){
-        return [[[DataParser sharedInstance] getLinesOfTransportId:self.transportId] count];
-    }else{
-        return [[[DataParser sharedInstance] getLines] count];
-    }
+    return [[[DataParser sharedInstance] getLinesOfTransportId:self.transportId andCityId:self.cityId] count];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

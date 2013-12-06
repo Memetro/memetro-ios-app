@@ -195,6 +195,25 @@
 		C97252B9184E8F45001D3CCB /* TransportPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97252B8184E8F45001D3CCB /* TransportPickerViewController.m */; };
 		C97252BE184E9707001D3CCB /* StationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97252BD184E9707001D3CCB /* StationPickerViewController.m */; };
 		C97252C1184E9713001D3CCB /* LinePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97252C0184E9713001D3CCB /* LinePickerViewController.m */; };
+		C98BBB2418510C6800ADDCA4 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BBB2318510C6800ADDCA4 /* ODRefreshControl.m */; };
+		C98BBB271851102D00ADDCA4 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BBB261851102D00ADDCA4 /* TweetCell.m */; };
+		C98BBB291851105000ADDCA4 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98BBB281851105000ADDCA4 /* TweetCell.xib */; };
+		C98BBB571851174100ADDCA4 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98BBB561851174100ADDCA4 /* SDWebImage.framework */; };
+		C98BBB591851177800ADDCA4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98BBB581851177800ADDCA4 /* ImageIO.framework */; };
+		C98BBB5D1851207400ADDCA4 /* MemetroOrgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BBB5B1851207400ADDCA4 /* MemetroOrgViewController.m */; };
+		C98BBB5E1851207400ADDCA4 /* MemetroOrgViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98BBB5C1851207400ADDCA4 /* MemetroOrgViewController.xib */; };
+		C98BBB611851273600ADDCA4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98BBB601851273600ADDCA4 /* Social.framework */; };
+		C98BBB631851282B00ADDCA4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98BBB621851282B00ADDCA4 /* Accounts.framework */; };
+		C98BBB671851389000ADDCA4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BBB651851389000ADDCA4 /* WebViewController.m */; };
+		C98BBB681851389000ADDCA4 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98BBB661851389000ADDCA4 /* WebViewController.xib */; };
+		C98BBB6C185142C700ADDCA4 /* TemperatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BBB6B185142C700ADDCA4 /* TemperatureCell.m */; };
+		C98BBB6E185142D600ADDCA4 /* TemperatureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98BBB6D185142D600ADDCA4 /* TemperatureCell.xib */; };
+		C98BBB711851FF4300ADDCA4 /* PlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BBB701851FF4300ADDCA4 /* PlaceholderView.m */; };
+		C98BBB741852179C00ADDCA4 /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BBB731852179C00ADDCA4 /* AnnotationView.m */; };
+		C98BBB76185217B800ADDCA4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98BBB75185217B800ADDCA4 /* CoreLocation.framework */; };
+		C98BBB7E1852415800ADDCA4 /* push-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = C98BBB7D1852415800ADDCA4 /* push-sound.caf */; };
+		C98BBB821852465000ADDCA4 /* ForgottenPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BBB801852465000ADDCA4 /* ForgottenPasswordViewController.m */; };
+		C98BBB831852465000ADDCA4 /* ForgottenPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98BBB811852465000ADDCA4 /* ForgottenPasswordViewController.xib */; };
 		C9AC8C68184AA5DB00B2734C /* ImageToData.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC8C67184AA5DB00B2734C /* ImageToData.m */; };
 /* End PBXBuildFile section */
 
@@ -470,6 +489,33 @@
 		C97252BD184E9707001D3CCB /* StationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationPickerViewController.m; sourceTree = "<group>"; };
 		C97252BF184E9713001D3CCB /* LinePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinePickerViewController.h; sourceTree = "<group>"; };
 		C97252C0184E9713001D3CCB /* LinePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinePickerViewController.m; sourceTree = "<group>"; };
+		C98BBB2218510C6800ADDCA4 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		C98BBB2318510C6800ADDCA4 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
+		C98BBB251851102D00ADDCA4 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
+		C98BBB261851102D00ADDCA4 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
+		C98BBB281851105000ADDCA4 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		C98BBB561851174100ADDCA4 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		C98BBB581851177800ADDCA4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		C98BBB5A1851207400ADDCA4 /* MemetroOrgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemetroOrgViewController.h; sourceTree = "<group>"; };
+		C98BBB5B1851207400ADDCA4 /* MemetroOrgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemetroOrgViewController.m; sourceTree = "<group>"; };
+		C98BBB5C1851207400ADDCA4 /* MemetroOrgViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemetroOrgViewController.xib; sourceTree = "<group>"; };
+		C98BBB601851273600ADDCA4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		C98BBB621851282B00ADDCA4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		C98BBB641851389000ADDCA4 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		C98BBB651851389000ADDCA4 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		C98BBB661851389000ADDCA4 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		C98BBB6A185142C700ADDCA4 /* TemperatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureCell.h; sourceTree = "<group>"; };
+		C98BBB6B185142C700ADDCA4 /* TemperatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureCell.m; sourceTree = "<group>"; };
+		C98BBB6D185142D600ADDCA4 /* TemperatureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TemperatureCell.xib; sourceTree = "<group>"; };
+		C98BBB6F1851FF4300ADDCA4 /* PlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderView.h; sourceTree = "<group>"; };
+		C98BBB701851FF4300ADDCA4 /* PlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderView.m; sourceTree = "<group>"; };
+		C98BBB721852179C00ADDCA4 /* AnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
+		C98BBB731852179C00ADDCA4 /* AnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
+		C98BBB75185217B800ADDCA4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C98BBB7D1852415800ADDCA4 /* push-sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "push-sound.caf"; sourceTree = "<group>"; };
+		C98BBB7F1852465000ADDCA4 /* ForgottenPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgottenPasswordViewController.h; sourceTree = "<group>"; };
+		C98BBB801852465000ADDCA4 /* ForgottenPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgottenPasswordViewController.m; sourceTree = "<group>"; };
+		C98BBB811852465000ADDCA4 /* ForgottenPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgottenPasswordViewController.xib; sourceTree = "<group>"; };
 		C9AC8C65184AA59000B2734C /* Memetro 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Memetro 3.xcdatamodel"; sourceTree = "<group>"; };
 		C9AC8C66184AA5DB00B2734C /* ImageToData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageToData.h; sourceTree = "<group>"; };
 		C9AC8C67184AA5DB00B2734C /* ImageToData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageToData.m; sourceTree = "<group>"; };
@@ -480,13 +526,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB71D6917BEAEEA001B16CF /* MapKit.framework in Frameworks */,
+				C98BBB76185217B800ADDCA4 /* CoreLocation.framework in Frameworks */,
+				C98BBB631851282B00ADDCA4 /* Accounts.framework in Frameworks */,
+				C98BBB611851273600ADDCA4 /* Social.framework in Frameworks */,
+				C98BBB591851177800ADDCA4 /* ImageIO.framework in Frameworks */,
 				AAAB3F7217EB890700290E68 /* CoreData.framework in Frameworks */,
 				AAF53F7B17D7A5950039F1D4 /* QuartzCore.framework in Frameworks */,
 				AA7D4DB317C11CFA00A70ED1 /* libOAuth2Client.a in Frameworks */,
 				AAB71DD017C10A4C001B16CF /* Security.framework in Frameworks */,
-				AAB71D6917BEAEEA001B16CF /* MapKit.framework in Frameworks */,
 				AAB71D4617BEAEAF001B16CF /* UIKit.framework in Frameworks */,
 				AAB71D4817BEAEAF001B16CF /* Foundation.framework in Frameworks */,
+				C98BBB571851174100ADDCA4 /* SDWebImage.framework in Frameworks */,
 				AAB71D4A17BEAEAF001B16CF /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -722,6 +773,11 @@
 		AAB71D4417BEAEAF001B16CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C98BBB75185217B800ADDCA4 /* CoreLocation.framework */,
+				C98BBB621851282B00ADDCA4 /* Accounts.framework */,
+				C98BBB601851273600ADDCA4 /* Social.framework */,
+				C98BBB581851177800ADDCA4 /* ImageIO.framework */,
+				C98BBB561851174100ADDCA4 /* SDWebImage.framework */,
 				AAAB3F7117EB890700290E68 /* CoreData.framework */,
 				AAF53F7A17D7A5940039F1D4 /* QuartzCore.framework */,
 				AAB71DCF17C10A4C001B16CF /* Security.framework */,
@@ -748,6 +804,7 @@
 		AAB71D4C17BEAEAF001B16CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C98BBB7D1852415800ADDCA4 /* push-sound.caf */,
 				C967A2041849F68F00A241B9 /* Images.xcassets */,
 				AAB71DC317C1098C001B16CF /* OAuth2Client.xcodeproj */,
 				AA7D4DA617C11BFB00A70ED1 /* other */,
@@ -914,6 +971,8 @@
 				AA7D4D9D17C11BE200A70ED1 /* Login */,
 				AA9D44F717DFB84C00C0CCE9 /* Register */,
 				C967A26E1849FE4C00A241B9 /* SettingsViewController */,
+				C98BBB5F1851207800ADDCA4 /* MemetroOrg */,
+				C98BBB841852465300ADDCA4 /* ForgottenPassword */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -921,6 +980,10 @@
 		AAF53F6C17D7A3100039F1D4 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				C98BBB6F1851FF4300ADDCA4 /* PlaceholderView.h */,
+				C98BBB701851FF4300ADDCA4 /* PlaceholderView.m */,
+				C98BBB2218510C6800ADDCA4 /* ODRefreshControl.h */,
+				C98BBB2318510C6800ADDCA4 /* ODRefreshControl.m */,
 				AAAB3F7417EB8A1200290E68 /* DataParser */,
 				AA9D450817DFC3B500C0CCE9 /* SIAlertView */,
 				AAC8D52117DE690E0051CE77 /* CBProgressPanel */,
@@ -998,6 +1061,9 @@
 				AAF53F9317D7AC2F0039F1D4 /* TweetViewController.h */,
 				AAF53F9417D7AC2F0039F1D4 /* TweetViewController.m */,
 				AAF53F9517D7AC2F0039F1D4 /* TweetViewController.xib */,
+				C98BBB251851102D00ADDCA4 /* TweetCell.h */,
+				C98BBB281851105000ADDCA4 /* TweetCell.xib */,
+				C98BBB261851102D00ADDCA4 /* TweetCell.m */,
 			);
 			name = Tweet;
 			sourceTree = "<group>";
@@ -1008,6 +1074,9 @@
 				AAF53F8E17D7AC1E0039F1D4 /* ListViewController.h */,
 				AAF53F8F17D7AC1E0039F1D4 /* ListViewController.m */,
 				AAF53F9017D7AC1E0039F1D4 /* ListViewController.xib */,
+				C98BBB6A185142C700ADDCA4 /* TemperatureCell.h */,
+				C98BBB6B185142C700ADDCA4 /* TemperatureCell.m */,
+				C98BBB6D185142D600ADDCA4 /* TemperatureCell.xib */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -1015,6 +1084,8 @@
 		AAF53F8817D7ABF00039F1D4 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				C98BBB721852179C00ADDCA4 /* AnnotationView.h */,
+				C98BBB731852179C00ADDCA4 /* AnnotationView.m */,
 				AAF53F8917D7AC050039F1D4 /* MapViewController.h */,
 				AAF53F8A17D7AC050039F1D4 /* MapViewController.m */,
 				AAF53F8B17D7AC050039F1D4 /* MapViewController.xib */,
@@ -1195,6 +1266,29 @@
 			name = LinePicker;
 			sourceTree = "<group>";
 		};
+		C98BBB5F1851207800ADDCA4 /* MemetroOrg */ = {
+			isa = PBXGroup;
+			children = (
+				C98BBB5A1851207400ADDCA4 /* MemetroOrgViewController.h */,
+				C98BBB5B1851207400ADDCA4 /* MemetroOrgViewController.m */,
+				C98BBB5C1851207400ADDCA4 /* MemetroOrgViewController.xib */,
+				C98BBB641851389000ADDCA4 /* WebViewController.h */,
+				C98BBB651851389000ADDCA4 /* WebViewController.m */,
+				C98BBB661851389000ADDCA4 /* WebViewController.xib */,
+			);
+			name = MemetroOrg;
+			sourceTree = "<group>";
+		};
+		C98BBB841852465300ADDCA4 /* ForgottenPassword */ = {
+			isa = PBXGroup;
+			children = (
+				C98BBB7F1852465000ADDCA4 /* ForgottenPasswordViewController.h */,
+				C98BBB801852465000ADDCA4 /* ForgottenPasswordViewController.m */,
+				C98BBB811852465000ADDCA4 /* ForgottenPasswordViewController.xib */,
+			);
+			name = ForgottenPassword;
+			sourceTree = "<group>";
+		};
 		C9AC8C69184AA64200B2734C /* ImageToData */ = {
 			isa = PBXGroup;
 			children = (
@@ -1284,6 +1378,7 @@
 				AAB71D7117BEB95C001B16CF /* Default.png in Resources */,
 				AAB71D7317BEB960001B16CF /* Default@2x.png in Resources */,
 				AAB71D7517BEB963001B16CF /* Default-568h@2x.png in Resources */,
+				C98BBB681851389000ADDCA4 /* WebViewController.xib in Resources */,
 				AAB71D7B17BFE976001B16CF /* color-bar.png in Resources */,
 				AAB71D7C17BFE976001B16CF /* color-bar@2x.png in Resources */,
 				AAB71D7F17BFE97E001B16CF /* memetro-logo@2x.png in Resources */,
@@ -1302,6 +1397,7 @@
 				AAB71D9A17BFF032001B16CF /* Roboto-Bold.ttf in Resources */,
 				AAB71D9B17BFF032001B16CF /* Roboto-Light.ttf in Resources */,
 				AAB71D9C17BFF032001B16CF /* credit-card.regular.ttf in Resources */,
+				C98BBB831852465000ADDCA4 /* ForgottenPasswordViewController.xib in Resources */,
 				AAB71D9D17BFF032001B16CF /* Roboto-Regular.ttf in Resources */,
 				AAB71DB817BFF6A1001B16CF /* LoginViewController.xib in Resources */,
 				AAB71DC117BFF7E9001B16CF /* Localizable.strings in Resources */,
@@ -1352,21 +1448,25 @@
 				AAC8D53C17DE86C90051CE77 /* alert-menu-icon@2x.png in Resources */,
 				AAC8D53F17DE88740051CE77 /* ranking-menu-icon@2x.png in Resources */,
 				AAC8D54017DE88740051CE77 /* ranking-menu-icon.png in Resources */,
+				C98BBB6E185142D600ADDCA4 /* TemperatureCell.xib in Resources */,
 				AAC8D54317DE89010051CE77 /* asoc-menu-icon.png in Resources */,
 				AAC8D54417DE89010051CE77 /* asoc-menu-icon@2x.png in Resources */,
 				AAC8D54717DE895A0051CE77 /* settings-menu-icon.png in Resources */,
 				AAC8D54817DE895A0051CE77 /* settings-menu-icon@2x.png in Resources */,
 				AAC8D54D17DE89B30051CE77 /* logout-menu-icon@2x.png in Resources */,
+				C98BBB291851105000ADDCA4 /* TweetCell.xib in Resources */,
 				AAC8D54E17DE89B30051CE77 /* appinfo-menu-icon@2x.png in Resources */,
 				AAC8D54F17DE89B30051CE77 /* appinfo-menu-icon.png in Resources */,
 				C967A2A0184A734E00A241B9 /* PickerCell.xib in Resources */,
 				AAC8D55017DE89B30051CE77 /* logout-menu-icon.png in Resources */,
 				AA9D44F617DFB84500C0CCE9 /* RegisterStepOneViewController.xib in Resources */,
+				C98BBB7E1852415800ADDCA4 /* push-sound.caf in Resources */,
 				AA65E24217F2139400BBDBE9 /* navbar-ios6.png in Resources */,
 				AA9D44FE17DFB87600C0CCE9 /* RegisterStepTwoViewController.xib in Resources */,
 				AA9D450217DFBBBE00C0CCE9 /* input.png in Resources */,
 				AA9D450317DFBBBE00C0CCE9 /* input@2x.png in Resources */,
 				AA9D451517DFC3C400C0CCE9 /* button-cancel-d.png in Resources */,
+				C98BBB5E1851207400ADDCA4 /* MemetroOrgViewController.xib in Resources */,
 				AA9D451617DFC3C400C0CCE9 /* button-cancel-d@2x.png in Resources */,
 				AA9D451717DFC3C400C0CCE9 /* button-cancel.png in Resources */,
 				AA9D451817DFC3C400C0CCE9 /* button-cancel@2x.png in Resources */,
@@ -1429,8 +1529,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C967A291184A4E7D00A241B9 /* User.m in Sources */,
+				C98BBB6C185142C700ADDCA4 /* TemperatureCell.m in Sources */,
 				AABF71FF17F22422003D277C /* CitiesTransports.m in Sources */,
 				C967A287184A207400A241B9 /* BaseViewController.m in Sources */,
+				C98BBB741852179C00ADDCA4 /* AnnotationView.m in Sources */,
 				AAB71D5217BEAEAF001B16CF /* main.m in Sources */,
 				C97252B9184E8F45001D3CCB /* TransportPickerViewController.m in Sources */,
 				AAB71D5617BEAEAF001B16CF /* AppDelegate.m in Sources */,
@@ -1438,6 +1540,7 @@
 				AAB71DBA17BFF6AE001B16CF /* LoginViewController.m in Sources */,
 				AA7D4DB817C11F1300A70ED1 /* AlertsViewController.m in Sources */,
 				AA5FF08817F37F0500F7F73D /* Line.m in Sources */,
+				C98BBB2418510C6800ADDCA4 /* ODRefreshControl.m in Sources */,
 				C967A284184A062D00A241B9 /* TextfieldBackground.m in Sources */,
 				AAF53F7117D7A3FC0039F1D4 /* JASidePanelController.m in Sources */,
 				C967A29B184A732600A241B9 /* CityPickerViewController.m in Sources */,
@@ -1451,12 +1554,15 @@
 				C97252BE184E9707001D3CCB /* StationPickerViewController.m in Sources */,
 				C967A272184A00F000A241B9 /* RobotoRegular.m in Sources */,
 				AAF53F8C17D7AC050039F1D4 /* MapViewController.m in Sources */,
+				C98BBB821852465000ADDCA4 /* ForgottenPasswordViewController.m in Sources */,
 				AAF53F9117D7AC1E0039F1D4 /* ListViewController.m in Sources */,
+				C98BBB271851102D00ADDCA4 /* TweetCell.m in Sources */,
 				AAF53F9617D7AC2F0039F1D4 /* TweetViewController.m in Sources */,
 				AAF53FB417D7CBA10039F1D4 /* NormalMenuCell.m in Sources */,
 				C967A281184A028600A241B9 /* RobotoTextfield.m in Sources */,
 				AAF53FBA17D7CD570039F1D4 /* ProfileMenuCell.m in Sources */,
 				C967A27E184A027400A241B9 /* RobotoBold.m in Sources */,
+				C98BBB5D1851207400ADDCA4 /* MemetroOrgViewController.m in Sources */,
 				C967A275184A01E500A241B9 /* Darkbutton.m in Sources */,
 				AAC8D52417DE69280051CE77 /* CBProgressPanel.m in Sources */,
 				AA5FF08E17F37F0500F7F73D /* City.m in Sources */,
@@ -1464,10 +1570,12 @@
 				C967A27B184A026B00A241B9 /* RobotoLight.m in Sources */,
 				AA9D44FD17DFB87600C0CCE9 /* RegisterStepTwoViewController.m in Sources */,
 				AA9D450717DFC3B200C0CCE9 /* SIAlertView.m in Sources */,
+				C98BBB711851FF4300ADDCA4 /* PlaceholderView.m in Sources */,
 				C967A28C184A2C1800A241B9 /* CreateAlertViewController.m in Sources */,
 				AABF71FC17F22422003D277C /* LinesStations.m in Sources */,
 				C967A278184A025C00A241B9 /* RedButton.m in Sources */,
 				AA9D452417DFC9EB00C0CCE9 /* CommonFunctions.m in Sources */,
+				C98BBB671851389000ADDCA4 /* WebViewController.m in Sources */,
 				AAAB3F6F17EB848900290E68 /* Memetro.xcdatamodeld in Sources */,
 				AAAB3F7717EB8A3000290E68 /* DataParser.m in Sources */,
 				AA5FF09117F37F0500F7F73D /* Station.m in Sources */,
@@ -1572,14 +1680,18 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Bongardt (5D6E2XP9JK)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/christian1/workspace/memetro-ios-app",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memetro/Memetro-Prefix.pch";
 				INFOPLIST_FILE = "Memetro/Memetro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4F5B482C-4D46-4A2C-99B3-41CDF10532CC";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4F5B482C-4D46-4A2C-99B3-41CDF10532CC";
+				PROVISIONING_PROFILE = "85ACC834-191B-42D9-B09D-8524482700ED";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "85ACC834-191B-42D9-B09D-8524482700ED";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/OAuth2Client/**";
 				WRAPPER_EXTENSION = app;
@@ -1593,14 +1705,18 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Bongardt (5D6E2XP9JK)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/christian1/workspace/memetro-ios-app",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memetro/Memetro-Prefix.pch";
 				INFOPLIST_FILE = "Memetro/Memetro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4F5B482C-4D46-4A2C-99B3-41CDF10532CC";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4F5B482C-4D46-4A2C-99B3-41CDF10532CC";
+				PROVISIONING_PROFILE = "08396CF9-0A88-49AA-8534-E2A8FD4D2A06";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "08396CF9-0A88-49AA-8534-E2A8FD4D2A06";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/OAuth2Client/**";
 				WRAPPER_EXTENSION = app;

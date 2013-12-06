@@ -75,6 +75,10 @@
      usingBlock:^(NSNotification *aNotification){
          if(aNotification.userInfo != nil){
              NSLog(@"Login correcto. Guardamos el identificador de la cuenta en user defaults");
+             
+             [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+              (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+             
              NXOAuth2Account *a = [aNotification.userInfo objectForKey:NXOAuth2AccountStoreNewAccountUserInfoKey];
              NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
              [prefs setObject:a.identifier forKey:@"accountidentifier"];
@@ -129,12 +133,14 @@
 -(void) appearence{
     //self.window.backgroundColor = [UIColor colorWithRed:0.96f green:0.95f blue:0.95f alpha:1.00f];
     
-    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
-    [[UIBarButtonItem appearance]setTitleTextAttributes:@{UITextAttributeFont:[UIFont fontWithName:@"Roboto-Light" size:12],UITextAttributeTextColor:[UIColor blackColor],UITextAttributeTextShadowColor:[UIColor blackColor], UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0,0.0)]} forState:UIControlStateNormal];
-    [[UIBarButtonItem appearance]setTitleTextAttributes:@{UITextAttributeFont:[UIFont fontWithName:@"Roboto-Light" size:12],UITextAttributeTextColor:[UIColor blackColor],UITextAttributeTextShadowColor:[UIColor blackColor], UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0,0.0)]} forState:UIControlStateHighlighted];
+
     
     if(SYSTEM_VERSION_LESS_THAN(@"7.0")){
             [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar-ios6"] forBarMetrics:UIBarMetricsDefault];
+        [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+        [[UIBarButtonItem appearance]setTitleTextAttributes:@{UITextAttributeFont:[UIFont fontWithName:@"Roboto-Light" size:12],UITextAttributeTextColor:[UIColor blackColor],UITextAttributeTextShadowColor:[UIColor blackColor], UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0,0.0)]} forState:UIControlStateNormal];
+        [[UIBarButtonItem appearance]setTitleTextAttributes:@{UITextAttributeFont:[UIFont fontWithName:@"Roboto-Light" size:12],UITextAttributeTextColor:[UIColor blackColor],UITextAttributeTextShadowColor:[UIColor blackColor], UITextAttributeTextShadowOffset: [NSValue valueWithCGSize:CGSizeMake(0.0,0.0)]} forState:UIControlStateHighlighted];
+            [[UINavigationBar appearance] setShadowImage:[UIImage alloc]];
         
     }else{
             [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarMetrics:UIBarMetricsDefault];
@@ -144,10 +150,9 @@
                                 UITextAttributeTextColor: [UIColor blackColor],
                                      UITextAttributeFont: [UIFont fontWithName:@"Roboto-Regular" size:15.0f],
      }];
-    //[[UINavigationBar appearance] setTitleVerticalPositionAdjustment:4 forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setShadowImage:[UIImage alloc]];
-    //UIImage *image = [UIImage imageNamed:@"nav-bar-nobadge"];
-    //[[UIToolbar appearance] setBackgroundImage:image forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+
+
+
     
     
     [[SIAlertView appearance] setMessageFont:[UIFont fontWithName:@"Roboto-Regular" size:14]];
@@ -195,6 +200,7 @@
                        withAccount:[CommonFunctions useraccount]
                sendProgressHandler:nil
                responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
+                   NSLog(@"responseDATA %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
                    if(error!=nil){
                        if(afterLogin){
                            [[CBProgressPanel sharedInstance] hide];
@@ -305,5 +311,39 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+
+#pragma mark - Push notifications
+
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSLog(@"/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n TOKEN RECEIVED");
+    
+    NSString *ds = [NSString stringWithFormat:@"%@",deviceToken];
+    ds = [ds stringByReplacingOccurrencesOfString:@" " withString:@""];
+    ds = [ds stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    ds = [ds stringByReplacingOccurrencesOfString:@">" withString:@""];
+    
+    NSLog(@"TOKEN %@",ds);
+    
+    [NXOAuth2Request performMethod:@"POST"
+                        onResource:[CommonFunctions generateUrlWithParams:@"devices/register"]
+                   usingParameters:@{@"device":ds,@"type":@"IOS"}
+                       withAccount:[CommonFunctions useraccount]
+               sendProgressHandler:nil
+                   responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error) {
+                       NSLog(@"Response data %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+                   }];
+    
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error{
+	NSLog(@"/n/n/n/n/n/n/n/n/n/n Failed to get token, error: %@", error);
+}
+
+- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo{
+    NSLog(@"/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n RECEIVED A NOTIFICATION");
 }
 @end

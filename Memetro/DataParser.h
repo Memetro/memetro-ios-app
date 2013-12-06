@@ -24,7 +24,7 @@
 
 @property (strong,nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong,nonatomic) NSDictionary *parsedData;
-
+@property (strong,nonatomic) NSArray *alerts;
 @property (strong,nonatomic) User *user;
 
 
@@ -41,7 +41,7 @@
 -(NSArray *) getStationsOfTransportId:(NSNumber *) id;
 -(NSArray *) getLines;
 -(Line *) getLine:(NSNumber *)id;
--(NSArray *) getLinesOfTransportId:(NSNumber *) id;
+-(NSArray *) getLinesOfTransportId:(NSNumber *) id andCityId:(NSNumber *) cityId;
 -(NSArray *) getLinesOfStations:(NSNumber *) id;
 -(NSArray *) getTransports;
 -(Transport *) getTransport:(NSNumber *) id;

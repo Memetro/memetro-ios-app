@@ -18,5 +18,5 @@
 @interface LinePickerViewController : UITableViewController
 @property (assign,nonatomic) id<LinePickerDelegate> delegate;
 @property (strong,nonatomic) NSNumber *transportId;
-@property (strong,nonatomic) NSNumber *stationId;
+@property (strong,nonatomic) NSNumber *cityId;
 @end

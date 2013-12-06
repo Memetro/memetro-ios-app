@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController">
             <connections>
+                <outlet property="activityIndicator" destination="E95-uy-Pny" id="jqe-xj-Z8u"/>
+                <outlet property="tableView" destination="MCg-ZH-fIR" id="Drm-7g-qNX"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -15,30 +17,33 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Listview" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8">
-                    <rect key="frame" x="129" y="20" width="62" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11">
-                    <rect key="frame" x="145" y="318" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MCg-ZH-fIR">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
-                        <action selector="sync:" destination="-1" eventType="touchUpInside" id="15"/>
+                        <outlet property="dataSource" destination="-1" id="GhW-y3-oUN"/>
+                        <outlet property="delegate" destination="-1" id="A56-27-rUA"/>
                     </connections>
-                </button>
+                </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="E95-uy-Pny">
+                    <rect key="frame" x="141" y="265" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="4bl-Kx-ryL"/>
+                        <constraint firstAttribute="width" constant="37" id="5Jn-ZQ-qNA"/>
+                    </constraints>
+                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="8" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" symbolic="YES" id="9"/>
-                <constraint firstItem="8" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="10"/>
-                <constraint firstItem="11" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="12"/>
-                <constraint firstAttribute="bottom" secondItem="11" secondAttribute="bottom" constant="220" id="13"/>
+                <constraint firstAttribute="bottom" secondItem="MCg-ZH-fIR" secondAttribute="bottom" id="5Do-ft-bTc"/>
+                <constraint firstItem="MCg-ZH-fIR" firstAttribute="top" secondItem="1" secondAttribute="top" id="DLi-hH-uMW"/>
+                <constraint firstAttribute="centerY" secondItem="E95-uy-Pny" secondAttribute="centerY" id="LDa-pX-k3y"/>
+                <constraint firstAttribute="centerX" secondItem="E95-uy-Pny" secondAttribute="centerX" id="Vb7-XT-xqJ"/>
+                <constraint firstItem="MCg-ZH-fIR" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="VwG-5m-33R"/>
+                <constraint firstAttribute="trailing" secondItem="MCg-ZH-fIR" secondAttribute="trailing" id="dns-hh-jB1"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

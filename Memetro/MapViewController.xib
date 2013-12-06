@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController">
             <connections>
+                <outlet property="activity" destination="Rte-Yz-8F5" id="wdd-C3-ddq"/>
+                <outlet property="map" destination="7" id="gKT-Q1-AA3"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -15,10 +17,22 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Mfd-B0-0SJ"/>
+                    </connections>
                 </mapView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Rte-Yz-8F5">
+                    <rect key="frame" x="142" y="266" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="4bu-61-sco"/>
+                        <constraint firstAttribute="width" constant="37" id="Drr-6G-X1W"/>
+                    </constraints>
+                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -26,6 +40,8 @@
                 <constraint firstItem="7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="13"/>
                 <constraint firstItem="7" firstAttribute="top" secondItem="1" secondAttribute="top" id="14"/>
                 <constraint firstItem="7" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="15"/>
+                <constraint firstAttribute="centerY" secondItem="Rte-Yz-8F5" secondAttribute="centerY" id="a3z-fC-u4g"/>
+                <constraint firstAttribute="centerX" secondItem="Rte-Yz-8F5" secondAttribute="centerX" id="yqZ-Hm-a2G"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
