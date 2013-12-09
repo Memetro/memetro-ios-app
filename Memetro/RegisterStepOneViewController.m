@@ -57,15 +57,15 @@
     }else{
         self.formContainerHeightConstraint.constant = 478;
     }
-    self.name.placeholder = NSLocalizedString(@"registername", @"");
-    self.twittername.placeholder = NSLocalizedString(@"registertwitter", @"");
-    self.email.placeholder =NSLocalizedString(@"registeremail", @"");
-    self.aboutme.placeholder = NSLocalizedString(@"registeraboutme", @"");
-    [self.nextButton setTitle:NSLocalizedString(@"omitbutton",@"") forState:UIControlStateNormal];
-    [self.nextButton setTitle:NSLocalizedString(@"omitbutton",@"") forState:UIControlStateHighlighted];
+    self.name.placeholder = NSLocalizedString(@"Name", @"");
+    self.twittername.placeholder = NSLocalizedString(@"Twitter username", @"");
+    self.email.placeholder =NSLocalizedString(@"Email", @"");
+    self.aboutme.placeholder = NSLocalizedString(@"Biography", @"");
+    [self.nextButton setTitle:NSLocalizedString(@"Skip this step",@"") forState:UIControlStateNormal];
+    [self.nextButton setTitle:NSLocalizedString(@"Skip this step",@"") forState:UIControlStateHighlighted];
     
-    [self.cancelButton setTitle:NSLocalizedString(@"cancelbutton", @"") forState:UIControlStateNormal];
-    [self.cancelButton setTitle:NSLocalizedString(@"cancelbutton", @"") forState:UIControlStateHighlighted];
+    [self.cancelButton setTitle:NSLocalizedString(@"Cancel", @"") forState:UIControlStateNormal];
+    [self.cancelButton setTitle:NSLocalizedString(@"Cancel", @"") forState:UIControlStateHighlighted];
 }
 
 
@@ -121,6 +121,7 @@
         [self.nextButton setTitle:NSLocalizedString(@"Next", @"") forState:UIControlStateNormal];
         [self.nextButton setTitle:NSLocalizedString(@"Next", @"") forState:UIControlStateHighlighted];
     }
+
     [textField resignFirstResponder];
     return YES;
 }
@@ -139,10 +140,17 @@
                     ACAccount *twitterAccount = [accounts objectAtIndex:0];
                     [self setTwitternameText:twitterAccount.username];
                 }else{
-                    [CommonFunctions showError:NSLocalizedString(@"You do not have any twitter accounts. Please add them from the iPhone settings.", @"") withTitle:NSLocalizedString(@"No twitter account!", @"") withDismissHandler:nil];
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                                            [CommonFunctions showError:NSLocalizedString(@"You do not have any twitter accounts. Please add them from the iPhone settings.", @"") withTitle:NSLocalizedString(@"No twitter account!", @"") withDismissHandler:nil];
+                    });
+
+
                 }
             }else{
-                [CommonFunctions showError:NSLocalizedString(@"You declined the access to your Twitter Account. You can revise this settings in the Privacy settings of your phone.", @"") withTitle:NSLocalizedString(@"Access denied", @"") withDismissHandler:nil];
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                                        [CommonFunctions showError:NSLocalizedString(@"You declined the access to your Twitter Account. You can revise this settings in the Privacy settings of your phone.", @"") withTitle:NSLocalizedString(@"Access denied", @"") withDismissHandler:nil];
+                    });
+
             }
         }];
     }else{
@@ -164,6 +172,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     [textField resignFirstResponder];
     _activeField = nil;
+    if(textField == self.twittername) textField.text = @"";
 }
 
 

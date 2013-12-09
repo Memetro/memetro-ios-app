@@ -12,7 +12,7 @@
 #import "AlertsViewController.h"
 #import "LeftViewController.h"
 #import "DataParser.h"
-
+#import <Crashlytics/Crashlytics.h>
 
 
 @implementation AppDelegate
@@ -21,6 +21,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    [Crashlytics startWithAPIKey:@"8c0f3536a366466bc33dc6774a6b164067b85ec0"];
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self initViewController];
@@ -98,7 +99,7 @@
         if([error code] == -1009){
             [CommonFunctions showNoInternetError];
         }else{
-            [CommonFunctions showError:NSLocalizedString(@"wrongpassdescription", @"") withTitle:NSLocalizedString(@"wrongpasstitle", @"") withDismissHandler:nil];
+            [CommonFunctions showError:NSLocalizedString(@"The username and/or password does not match. Please try again.", @"") withTitle:NSLocalizedString(@"Invalid login", @"") withDismissHandler:nil];
         }
     }];
     
@@ -165,13 +166,13 @@
     [[SIAlertView appearance] setButtonColor:[UIColor whiteColor]];
     [[SIAlertView appearance] setButtonFont:[UIFont fontWithName:@"Roboto-Regular" size:16]];
     
-    [[SIAlertView appearance] setCancelButtonColor:[UIColor whiteColor]];
+    [[SIAlertView appearance] setCancelColor:[UIColor whiteColor]];
     [[SIAlertView appearance] setDestructiveButtonColor:[UIColor whiteColor]];
     
     [[SIAlertView appearance] setDefaultButtonImage:[[UIImage imageNamed:@"button-default"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateNormal];
     [[SIAlertView appearance] setDefaultButtonImage:[[UIImage imageNamed:@"button-default-d"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
-    [[SIAlertView appearance] setCancelButtonImage:[[UIImage imageNamed:@"button-cancel"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateNormal];
-    [[SIAlertView appearance] setCancelButtonImage:[[UIImage imageNamed:@"button-cancel-d"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
+    [[SIAlertView appearance] setCancelImage:[[UIImage imageNamed:@"button-cancel"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateNormal];
+    [[SIAlertView appearance] setCancelImage:[[UIImage imageNamed:@"button-cancel-d"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
     [[SIAlertView appearance] setDestructiveButtonImage:[[UIImage imageNamed:@"button-destructive"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateNormal];
     [[SIAlertView appearance] setDestructiveButtonImage:[[UIImage imageNamed:@"button-destructive-d"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
 

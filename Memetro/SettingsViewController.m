@@ -183,10 +183,15 @@
                     ACAccount *twitterAccount = [accounts objectAtIndex:0];
                     [self setTwitternameText:twitterAccount.username];
                 }else{
-                    [CommonFunctions showError:NSLocalizedString(@"You do not have any twitter accounts. Please add them from the iPhone settings.", @"") withTitle:NSLocalizedString(@"No twitter account!", @"") withDismissHandler:nil];
+                    
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [CommonFunctions showError:NSLocalizedString(@"You do not have any twitter accounts. Please add them from the iPhone settings.", @"") withTitle:NSLocalizedString(@"No twitter account!", @"") withDismissHandler:nil];
+                    });
                 }
             }else{
-                [CommonFunctions showError:NSLocalizedString(@"You declined the access to your Twitter Account. You can revise this settings in the Privacy settings of your phone.", @"") withTitle:NSLocalizedString(@"Access denied", @"") withDismissHandler:nil];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [CommonFunctions showError:NSLocalizedString(@"You declined the access to your Twitter Account. You can revise this settings in the Privacy settings of your phone.", @"") withTitle:NSLocalizedString(@"Access denied", @"") withDismissHandler:nil];
+                });
             }
         }];
         

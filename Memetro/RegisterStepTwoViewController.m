@@ -49,27 +49,27 @@
     }else{
         self.formContainerHeightConstraint.constant = 478;
     }
-    self.username.placeholder = NSLocalizedString(@"username",@"");
-    self.password.placeholder = NSLocalizedString(@"password",@"");
-    self.passwordConfirm.placeholder = NSLocalizedString(@"passwordconfirm",@"");
+    self.username.placeholder = NSLocalizedString(@"Username",@"");
+    self.password.placeholder = NSLocalizedString(@"Password",@"");
+    self.passwordConfirm.placeholder = NSLocalizedString(@"Confirm password",@"");
     self.country.placeholder = NSLocalizedString(@"Chose a country", @"");
     self.city.placeholder = NSLocalizedString(@"Chose a city", @"");
     
-    [self.nextButton setTitle:NSLocalizedString(@"registerbutton",@"") forState:UIControlStateNormal];
-    [self.nextButton setTitle:NSLocalizedString(@"registerbutton",@"") forState:UIControlStateHighlighted];
+    [self.nextButton setTitle:NSLocalizedString(@"Create account",@"") forState:UIControlStateNormal];
+    [self.nextButton setTitle:NSLocalizedString(@"Create account",@"") forState:UIControlStateHighlighted];
     
-    [self.backbutton setTitle:NSLocalizedString(@"backbutton", @"") forState:UIControlStateNormal];
-    [self.backbutton setTitle:NSLocalizedString(@"backbutton", @"") forState:UIControlStateHighlighted];
+    [self.backbutton setTitle:NSLocalizedString(@"Back", @"") forState:UIControlStateNormal];
+    [self.backbutton setTitle:NSLocalizedString(@"Back", @"") forState:UIControlStateHighlighted];
 }
 
 - (IBAction)register:(id)sender {
     [self resignFirstResponder];
     if([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""] || [self.passwordConfirm.text isEqualToString:@""] || self.cityID == nil){
-        [CommonFunctions showError:NSLocalizedString(@"loginemptypassuser", @"") withTitle:NSLocalizedString(@"incorrectdatatitle", @"") withDismissHandler:nil];
+        [CommonFunctions showError:NSLocalizedString(@"Username and pasword are required fields", @"") withTitle:NSLocalizedString(@"Empty fields", @"") withDismissHandler:nil];
         return;
     }
     if(![self.passwordConfirm.text isEqualToString:self.password.text]){
-        [CommonFunctions showError:NSLocalizedString(@"passmissmatchextended", @"") withTitle:NSLocalizedString(@"passmissmatch", @"") withDismissHandler:^(SIAlertView *alertView){
+        [CommonFunctions showError:NSLocalizedString(@"Both password must match. Please try again.", @"") withTitle:NSLocalizedString(@"Password missmatch", @"") withDismissHandler:^(SIAlertView *alertView){
             self.password.text = @"";
             self.passwordConfirm.text = @"";
         }];
@@ -128,7 +128,7 @@
                            }else{
                                NSLog(@"Parsed response: %@",parsedResponse);
                                if([[parsedResponse objectForKey:@"success"] boolValue]){
-                                   [CommonFunctions showError:NSLocalizedString(@"registercompleted", @"") withTitle:NSLocalizedString(@"registercompletedtitle", @"")  withDismissHandler:^(SIAlertView * alertView){
+                                   [CommonFunctions showError:NSLocalizedString(@"Congratulations! Your account has been created and you can now login to Memetro!", @"") withTitle:NSLocalizedString(@"Account created", @"")  withDismissHandler:^(SIAlertView * alertView){
                                        [self dismissViewControllerAnimated:YES completion:nil];
                                    }];
                                }else{

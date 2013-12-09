@@ -174,6 +174,7 @@
 		AAF53FDB17D7D01A0039F1D4 /* cat-menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF53FCB17D7D01A0039F1D4 /* cat-menu-icon@2x.png */; };
 		AAF53FDC17D7D01A0039F1D4 /* memetrol-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF53FCC17D7D01A0039F1D4 /* memetrol-icon.png */; };
 		AAF53FDD17D7D01A0039F1D4 /* memetrol-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF53FCD17D7D01A0039F1D4 /* memetrol-icon@2x.png */; };
+		C9291BD91856250A00A61056 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9291BD81856250A00A61056 /* Crashlytics.framework */; };
 		C967A2051849F68F00A241B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C967A2041849F68F00A241B9 /* Images.xcassets */; };
 		C967A26C1849FE3D00A241B9 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C967A26A1849FE3D00A241B9 /* SettingsViewController.m */; };
 		C967A26D1849FE3D00A241B9 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C967A26B1849FE3D00A241B9 /* SettingsViewController.xib */; };
@@ -450,6 +451,7 @@
 		AAF53FCB17D7D01A0039F1D4 /* cat-menu-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat-menu-icon@2x.png"; sourceTree = "<group>"; };
 		AAF53FCC17D7D01A0039F1D4 /* memetrol-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetrol-icon.png"; sourceTree = "<group>"; };
 		AAF53FCD17D7D01A0039F1D4 /* memetrol-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memetrol-icon@2x.png"; sourceTree = "<group>"; };
+		C9291BD81856250A00A61056 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C967A2041849F68F00A241B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C967A2691849FE3D00A241B9 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		C967A26A1849FE3D00A241B9 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 				C98BBB611851273600ADDCA4 /* Social.framework in Frameworks */,
 				C98BBB591851177800ADDCA4 /* ImageIO.framework in Frameworks */,
 				AAAB3F7217EB890700290E68 /* CoreData.framework in Frameworks */,
+				C9291BD91856250A00A61056 /* Crashlytics.framework in Frameworks */,
 				AAF53F7B17D7A5950039F1D4 /* QuartzCore.framework in Frameworks */,
 				AA7D4DB317C11CFA00A70ED1 /* libOAuth2Client.a in Frameworks */,
 				AAB71DD017C10A4C001B16CF /* Security.framework in Frameworks */,
@@ -773,6 +776,7 @@
 		AAB71D4417BEAEAF001B16CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9291BD81856250A00A61056 /* Crashlytics.framework */,
 				C98BBB75185217B800ADDCA4 /* CoreLocation.framework */,
 				C98BBB621851282B00ADDCA4 /* Accounts.framework */,
 				C98BBB601851273600ADDCA4 /* Social.framework */,
@@ -1308,6 +1312,7 @@
 				AAB71D3E17BEAEAF001B16CF /* Sources */,
 				AAB71D3F17BEAEAF001B16CF /* Frameworks */,
 				AAB71D4017BEAEAF001B16CF /* Resources */,
+				C9291BD7185624F200A61056 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1523,6 +1528,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C9291BD7185624F200A61056 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 8c0f3536a366466bc33dc6774a6b164067b85ec0";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AAB71D3E17BEAEAF001B16CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1637,7 +1658,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "9C303842-190B-4EDC-B45A-711732C25423";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9C303842-190B-4EDC-B45A-711732C25423";
@@ -1664,7 +1685,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "9C303842-190B-4EDC-B45A-711732C25423";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9C303842-190B-4EDC-B45A-711732C25423";

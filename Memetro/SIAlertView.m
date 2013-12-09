@@ -198,7 +198,7 @@ static SIAlertView *__si_alert_current_view;
     appearance.messageFont = [UIFont systemFontOfSize:16];
     appearance.buttonFont = [UIFont systemFontOfSize:[UIFont buttonFontSize]];
     appearance.buttonColor = [UIColor colorWithWhite:0.4 alpha:1];
-    appearance.cancelButtonColor = [UIColor colorWithWhite:0.3 alpha:1];
+    appearance.CancelColor = [UIColor colorWithWhite:0.3 alpha:1];
     appearance.destructiveButtonColor = [UIColor whiteColor];
     appearance.cornerRadius = 2;
     appearance.shadowRadius = 8;
@@ -868,8 +868,8 @@ static SIAlertView *__si_alert_current_view;
 		case SIAlertViewButtonTypeCancel:
 			normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-cancel"];
 			highlightedImage = [UIImage imageNamed:@"SIAlertView.bundle/button-cancel-d"];
-			[button setTitleColor:self.cancelButtonColor forState:UIControlStateNormal];
-            [button setTitleColor:[self.cancelButtonColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
+			[button setTitleColor:self.CancelColor forState:UIControlStateNormal];
+            [button setTitleColor:[self.CancelColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
 			break;
 		case SIAlertViewButtonTypeDestructive:
 			normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-destructive"];
@@ -1006,12 +1006,12 @@ static SIAlertView *__si_alert_current_view;
     [self setColor:buttonColor toButtonsOfType:SIAlertViewButtonTypeDefault];
 }
 
-- (void)setCancelButtonColor:(UIColor *)buttonColor
+- (void)setCancelColor:(UIColor *)buttonColor
 {
-    if (_cancelButtonColor == buttonColor) {
+    if (_CancelColor == buttonColor) {
         return;
     }
-    _cancelButtonColor = buttonColor;
+    _CancelColor = buttonColor;
     [self setColor:buttonColor toButtonsOfType:SIAlertViewButtonTypeCancel];
 }
 
@@ -1031,9 +1031,9 @@ static SIAlertView *__si_alert_current_view;
 }
 
 
-- (void)setCancelButtonImage:(UIImage *)cancelButtonImage forState:(UIControlState)state
+- (void)setCancelImage:(UIImage *)CancelImage forState:(UIControlState)state
 {
-    [self setButtonImage:cancelButtonImage forState:state andButtonType:SIAlertViewButtonTypeCancel];
+    [self setButtonImage:CancelImage forState:state andButtonType:SIAlertViewButtonTypeCancel];
 }
 
 

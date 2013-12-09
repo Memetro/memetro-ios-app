@@ -124,28 +124,28 @@
                 break;
             }
             case 1:{
-                cell.label.text = NSLocalizedString(@"menualerts",@"");
+                cell.label.text = NSLocalizedString(@"ALERTS",@"");
                 cell.image.image = [UIImage imageNamed:@"alert-menu-icon"];
                 break;
             }
 
             case 2:{
-                cell.label.text = NSLocalizedString(@"menuaorg",@"");
+                cell.label.text = NSLocalizedString(@"MEMETRO ORG",@"");
                 cell.image.image = [UIImage imageNamed:@"asoc-menu-icon"];
                 break;
             }
             case 3:{
-                cell.label.text = NSLocalizedString(@"menusettings",@"");
+                cell.label.text = NSLocalizedString(@"SETTINGS",@"");
                 cell.image.image = [UIImage imageNamed:@"settings-menu-icon"];
                 break;
             }
             case 4:{
-                cell.label.text = NSLocalizedString(@"menuappinfo",@"");
+                cell.label.text = NSLocalizedString(@"ABOUT",@"");
                 cell.image.image = [UIImage imageNamed:@"appinfo-menu-icon"];
                 break;
             }
             case 5:{
-                cell.label.text = NSLocalizedString(@"menulogout",@"");
+                cell.label.text = NSLocalizedString(@"LOGOUT",@"");
                 cell.image.image = [UIImage imageNamed:@"logout-menu-icon"];
                 break;
             }

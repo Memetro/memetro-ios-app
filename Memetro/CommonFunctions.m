@@ -25,8 +25,8 @@
 
 
 +(void) showNoInternetError{
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"offlinetitle", @"") andMessage:NSLocalizedString(@"offlinedescription", @"")];
-    [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"Device offline", @"") andMessage:NSLocalizedString(@"Your device seems to be offline. Please try again later.", @"")];
+    [alertView addButtonWithTitle:NSLocalizedString(@"Ok", @"")
                              type:SIAlertViewButtonTypeCancel
                           handler:nil];
     alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
@@ -35,7 +35,7 @@
 
 +(void) showError:(NSString *) error withTitle:(NSString *)title withDismissHandler:(SIAlertViewHandler)handler{
     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:title andMessage:error];
-    [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
+    [alertView addButtonWithTitle:NSLocalizedString(@"Ok", @"")
                              type:SIAlertViewButtonTypeCancel
                           handler:nil];
     alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
@@ -44,8 +44,8 @@
 }
 
 +(void) showGenericFetchError{
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"genericfetcherrortitle", @"") andMessage:NSLocalizedString(@"genericfetcherror", @"")];
-    [alertView addButtonWithTitle:NSLocalizedString(@"okbutton", @"")
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:NSLocalizedString(@"Servers overloaded", @"") andMessage:NSLocalizedString(@"Currently our server are having trouble to process your request. Please try again later.", @"")];
+    [alertView addButtonWithTitle:NSLocalizedString(@"Ok", @"")
                              type:SIAlertViewButtonTypeCancel
                           handler:nil];
     alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;

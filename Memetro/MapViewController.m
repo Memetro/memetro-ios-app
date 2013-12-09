@@ -12,6 +12,7 @@
 #import "User.h"
 @interface MapViewController ()
 @property (strong,nonatomic) NSMutableArray *annotations;
+@property BOOL zoomedToUserPosition;
 @end
 
 @implementation MapViewController
@@ -128,8 +129,25 @@
         [self.annotations addObject:annotation];
 
     }
-    [self.map showAnnotations:self.annotations animated:YES];
+    if(!SYSTEM_VERSION_LESS_THAN(@"7")){
+        [self.map showAnnotations:self.annotations animated:YES];
+    }
+
     [self.activity stopAnimating];
+}
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    if(SYSTEM_VERSION_LESS_THAN(@"7")){
+        if(self.zoomedToUserPosition) return;
+        MKCoordinateRegion mapRegion;
+        mapRegion.center = mapView.userLocation.coordinate;
+        mapRegion.span.latitudeDelta = 0.13;
+        mapRegion.span.longitudeDelta = 0.13;
+        [mapView setRegion:mapRegion animated: YES];
+        self.zoomedToUserPosition = YES;
+    }
+
 }
 
 
