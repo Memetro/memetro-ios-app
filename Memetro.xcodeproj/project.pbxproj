@@ -96,6 +96,7 @@
 		AABF71F317F219FE003D277C /* LeftViewControlleriOS6.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF71F217F219FE003D277C /* LeftViewControlleriOS6.xib */; };
 		AABF71FC17F22422003D277C /* LinesStations.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF71FB17F22422003D277C /* LinesStations.m */; };
 		AABF71FF17F22422003D277C /* CitiesTransports.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF71FE17F22422003D277C /* CitiesTransports.m */; };
+		AAC2B78A1868AE760047E6FA /* RobotoTextfieldReplacementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B7891868AE760047E6FA /* RobotoTextfieldReplacementLabel.m */; };
 		AAC8D52417DE69280051CE77 /* CBProgressPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC8D52317DE69280051CE77 /* CBProgressPanel.m */; };
 		AAC8D53B17DE86C90051CE77 /* alert-menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC8D53917DE86C80051CE77 /* alert-menu-icon.png */; };
 		AAC8D53C17DE86C90051CE77 /* alert-menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC8D53A17DE86C80051CE77 /* alert-menu-icon@2x.png */; };
@@ -363,6 +364,8 @@
 		AABF71FB17F22422003D277C /* LinesStations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinesStations.m; path = ../LinesStations.m; sourceTree = "<group>"; };
 		AABF71FD17F22422003D277C /* CitiesTransports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CitiesTransports.h; path = ../CitiesTransports.h; sourceTree = "<group>"; };
 		AABF71FE17F22422003D277C /* CitiesTransports.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CitiesTransports.m; path = ../CitiesTransports.m; sourceTree = "<group>"; };
+		AAC2B7881868AE760047E6FA /* RobotoTextfieldReplacementLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotoTextfieldReplacementLabel.h; sourceTree = "<group>"; };
+		AAC2B7891868AE760047E6FA /* RobotoTextfieldReplacementLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotoTextfieldReplacementLabel.m; sourceTree = "<group>"; };
 		AAC8D52217DE69280051CE77 /* CBProgressPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBProgressPanel.h; sourceTree = "<group>"; };
 		AAC8D52317DE69280051CE77 /* CBProgressPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBProgressPanel.m; sourceTree = "<group>"; };
 		AAC8D53917DE86C80051CE77 /* alert-menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-menu-icon.png"; sourceTree = "<group>"; };
@@ -1188,6 +1191,8 @@
 				C967A280184A028600A241B9 /* RobotoTextfield.m */,
 				C967A282184A062D00A241B9 /* TextfieldBackground.h */,
 				C967A283184A062D00A241B9 /* TextfieldBackground.m */,
+				AAC2B7881868AE760047E6FA /* RobotoTextfieldReplacementLabel.h */,
+				AAC2B7891868AE760047E6FA /* RobotoTextfieldReplacementLabel.m */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -1333,6 +1338,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = memetro;
+				TargetAttributes = {
+					AAB71D4117BEAEAF001B16CF = {
+						DevelopmentTeam = MR3Q5D6FZ8;
+					};
+				};
 			};
 			buildConfigurationList = AAB71D3D17BEAEAF001B16CF /* Build configuration list for PBXProject "Memetro" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1567,6 +1577,7 @@
 				C967A29B184A732600A241B9 /* CityPickerViewController.m in Sources */,
 				C9AC8C68184AA5DB00B2734C /* ImageToData.m in Sources */,
 				C97252C1184E9713001D3CCB /* LinePickerViewController.m in Sources */,
+				AAC2B78A1868AE760047E6FA /* RobotoTextfieldReplacementLabel.m in Sources */,
 				AAF53F7217D7A3FC0039F1D4 /* UIViewController+JASidePanel.m in Sources */,
 				C967A29E184A733E00A241B9 /* PickerCell.m in Sources */,
 				AAF53F7817D7A4990039F1D4 /* LeftViewController.m in Sources */,
@@ -1700,10 +1711,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Bongardt (5D6E2XP9JK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/christian1/workspace/memetro-ios-app",
+					"/Users/christian/workspace/memetro-ios-app",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memetro/Memetro-Prefix.pch";
@@ -1711,8 +1722,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "85ACC834-191B-42D9-B09D-8524482700ED";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "85ACC834-191B-42D9-B09D-8524482700ED";
+				PROVISIONING_PROFILE = "5917B4E5-06C8-42F6-ADB5-38A85DD9D9C4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5917B4E5-06C8-42F6-ADB5-38A85DD9D9C4";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/OAuth2Client/**";
 				WRAPPER_EXTENSION = app;
@@ -1725,10 +1736,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Bongardt (5D6E2XP9JK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/christian1/workspace/memetro-ios-app",
+					"/Users/christian/workspace/memetro-ios-app",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memetro/Memetro-Prefix.pch";
@@ -1736,8 +1747,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "08396CF9-0A88-49AA-8534-E2A8FD4D2A06";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "08396CF9-0A88-49AA-8534-E2A8FD4D2A06";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "14053677-CD0C-44BB-9BCC-83A058CC04FE";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/OAuth2Client/**";
 				WRAPPER_EXTENSION = app;

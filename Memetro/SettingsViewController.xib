@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController">
             <connections>
-                <outlet property="city" destination="OE9-GY-2Xa" id="nCO-mQ-smO"/>
-                <outlet property="country" destination="3nc-Na-hd9" id="FjG-ri-DaM"/>
+                <outlet property="city" destination="fci-68-9oy" id="ysT-Tg-YZk"/>
+                <outlet property="country" destination="OVc-5U-Xm7" id="gSu-Ie-guZ"/>
                 <outlet property="email" destination="WCn-Sd-z7a" id="xg4-cF-hdX"/>
                 <outlet property="name" destination="mKa-Sc-oG9" id="6km-2z-6JZ"/>
                 <outlet property="saveButton" destination="JKB-O2-7tE" id="s5o-IH-sxL"/>
                 <outlet property="scrollView" destination="IvK-nL-tJX" id="CLk-lw-NaW"/>
                 <outlet property="titleLabel" destination="FOZ-cP-Tcc" id="JYC-hv-4Yv"/>
-                <outlet property="twitter" destination="C3F-wE-s0V" id="Ang-qv-KF8"/>
+                <outlet property="twitter" destination="w7b-AT-anm" id="fN0-ME-olg"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -99,69 +99,60 @@
                                     <rect key="frame" x="20" y="253" width="280" height="39"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3F-wE-s0V" customClass="RobotoTextfield">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7b-AT-anm" customClass="RobotoTextfieldReplacementLabel">
                                             <rect key="frame" x="8" y="0.0" width="264" height="39"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="-1" id="Shx-CW-j3x"/>
-                                            </connections>
-                                        </textField>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="C3F-wE-s0V" secondAttribute="trailing" constant="8" id="5Gc-AX-LEZ"/>
                                         <constraint firstAttribute="height" constant="39" id="CVo-xv-937"/>
-                                        <constraint firstItem="C3F-wE-s0V" firstAttribute="top" secondItem="3S4-a3-uBy" secondAttribute="top" id="DLJ-jO-EBL"/>
-                                        <constraint firstItem="C3F-wE-s0V" firstAttribute="leading" secondItem="3S4-a3-uBy" secondAttribute="leading" constant="8" id="i30-9u-QhX"/>
-                                        <constraint firstAttribute="bottom" secondItem="C3F-wE-s0V" secondAttribute="bottom" id="lhS-dT-tDV"/>
+                                        <constraint firstItem="w7b-AT-anm" firstAttribute="top" secondItem="3S4-a3-uBy" secondAttribute="top" id="Mdd-Go-xMF"/>
+                                        <constraint firstAttribute="trailing" secondItem="w7b-AT-anm" secondAttribute="trailing" constant="8" id="NZ6-QZ-NYR"/>
+                                        <constraint firstAttribute="bottom" secondItem="w7b-AT-anm" secondAttribute="bottom" id="XYT-kC-rYh"/>
+                                        <constraint firstItem="w7b-AT-anm" firstAttribute="leading" secondItem="3S4-a3-uBy" secondAttribute="leading" constant="8" id="yed-p9-H6q"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRs-ht-Edl" userLabel="country" customClass="TextfieldBackground">
                                     <rect key="frame" x="20" y="300" width="280" height="39"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3nc-Na-hd9" customClass="RobotoTextfield">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVc-5U-Xm7" customClass="RobotoTextfieldReplacementLabel">
                                             <rect key="frame" x="8" y="0.0" width="264" height="39"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="-1" id="XUg-We-SIT"/>
-                                            </connections>
-                                        </textField>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="3nc-Na-hd9" secondAttribute="bottom" id="8WK-kx-rLH"/>
-                                        <constraint firstItem="3nc-Na-hd9" firstAttribute="top" secondItem="fRs-ht-Edl" secondAttribute="top" id="8nV-Ad-0I9"/>
-                                        <constraint firstItem="3nc-Na-hd9" firstAttribute="leading" secondItem="fRs-ht-Edl" secondAttribute="leading" constant="8" id="Z6h-bf-Q6t"/>
+                                        <constraint firstAttribute="bottom" secondItem="OVc-5U-Xm7" secondAttribute="bottom" id="0UN-J0-rHi"/>
+                                        <constraint firstItem="OVc-5U-Xm7" firstAttribute="leading" secondItem="fRs-ht-Edl" secondAttribute="leading" constant="8" id="Wug-Nf-wOT"/>
+                                        <constraint firstItem="OVc-5U-Xm7" firstAttribute="top" secondItem="fRs-ht-Edl" secondAttribute="top" id="Xir-bm-GEq"/>
                                         <constraint firstAttribute="height" constant="39" id="l8p-a1-fqq"/>
-                                        <constraint firstAttribute="trailing" secondItem="3nc-Na-hd9" secondAttribute="trailing" constant="8" id="mlg-6u-iAz"/>
+                                        <constraint firstAttribute="trailing" secondItem="OVc-5U-Xm7" secondAttribute="trailing" constant="8" id="v7S-FM-Twi"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmn-Eh-Eab" userLabel="city" customClass="TextfieldBackground">
                                     <rect key="frame" x="20" y="347" width="280" height="39"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OE9-GY-2Xa" customClass="RobotoTextfield">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fci-68-9oy" customClass="RobotoTextfieldReplacementLabel">
                                             <rect key="frame" x="8" y="0.0" width="264" height="39"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="-1" id="SDu-yj-2qg"/>
-                                            </connections>
-                                        </textField>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="OE9-GY-2Xa" firstAttribute="leading" secondItem="nmn-Eh-Eab" secondAttribute="leading" constant="8" id="1i0-UL-z9U"/>
-                                        <constraint firstAttribute="trailing" secondItem="OE9-GY-2Xa" secondAttribute="trailing" constant="8" id="24J-IB-yxS"/>
+                                        <constraint firstItem="fci-68-9oy" firstAttribute="top" secondItem="nmn-Eh-Eab" secondAttribute="top" id="4Y8-To-XpX"/>
                                         <constraint firstAttribute="height" constant="39" id="AEA-Qw-pSI"/>
-                                        <constraint firstItem="OE9-GY-2Xa" firstAttribute="top" secondItem="nmn-Eh-Eab" secondAttribute="top" id="BNk-JN-sxE"/>
-                                        <constraint firstAttribute="bottom" secondItem="OE9-GY-2Xa" secondAttribute="bottom" id="vB1-LN-UFj"/>
+                                        <constraint firstAttribute="trailing" secondItem="fci-68-9oy" secondAttribute="trailing" constant="8" id="DZ3-jM-qyx"/>
+                                        <constraint firstAttribute="bottom" secondItem="fci-68-9oy" secondAttribute="bottom" id="IYj-ob-4bp"/>
+                                        <constraint firstItem="fci-68-9oy" firstAttribute="leading" secondItem="nmn-Eh-Eab" secondAttribute="leading" constant="8" id="Lvk-GX-u7v"/>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKB-O2-7tE" customClass="RedButton">

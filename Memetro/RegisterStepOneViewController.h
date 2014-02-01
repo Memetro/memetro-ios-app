@@ -13,7 +13,7 @@
 - (IBAction)goToStepTwo:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *email;
-@property (weak, nonatomic) IBOutlet UITextField *twittername;
+@property (weak, nonatomic) IBOutlet UILabel *twittername;
 @property (weak, nonatomic) IBOutlet UITextField *aboutme;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 - (IBAction)cancel:(id)sender;

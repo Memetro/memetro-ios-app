@@ -76,37 +76,23 @@
     self.frame = [[UIScreen mainScreen] bounds];
     self.animationView.frame = CGRectMake(0, 0, view.frame.size.width, 2.0f);
     if(IS_IPHONE_5){
-        self.memetroAnimationView.frame = CGRectMake(-20, 200, 59, 63);
+        self.memetroAnimationView.frame = CGRectMake(125, 200, 59, 63);
     }else{
-        self.memetroAnimationView.frame = CGRectMake(-20, 200, 59, 63);
+        self.memetroAnimationView.frame = CGRectMake(125, 200, 59, 63);
     }
     [self addSubview:self.memetroAnimationView];
     [self addSubview:self.animationView];
     [view addSubview:self];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f
-                                                  target:self
-                                                selector:@selector(increasePosition)
-                                                userInfo:nil
-                                                 repeats:YES];
 }
 
 
 
 -(void) hide{
     [self.animationView removeFromSuperview];
-    [self.timer invalidate];
     [self removeFromSuperview];
 }
 
--(void) increasePosition{
-    CGRect  f = self.memetroAnimationView.frame;
-    if(f.origin.x > 330){
-        f.origin.x = -20;
-    }else{
-        f.origin.x = f.origin.x + 2;
-    }
-    self.memetroAnimationView.frame = f;
-}
+
 
 
 @end

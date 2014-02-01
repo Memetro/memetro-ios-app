@@ -1,3 +1,3 @@
 #define CLIENT_ID @"NTFmMDU3YmY2ZDFkMDFl"
 #define CLIENT_SECRET @"2cb128799bb3886281c6b7a89b7ac0047c06b876"
-#define BASE_URL @"http://memetro.bongardt.co/"
+#define BASE_URL @"http://beta.memetro.viabeta.com/"

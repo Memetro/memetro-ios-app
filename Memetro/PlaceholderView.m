@@ -53,7 +53,7 @@
                                                             toItem:self
                                                          attribute:NSLayoutAttributeCenterY
                                                         multiplier:1
-                                                          constant:0]];
+                                                          constant:-30]];
         UILabel *l1 = [UILabel new];
         l1.textAlignment = NSTextAlignmentCenter;
         l1.backgroundColor = [UIColor clearColor];

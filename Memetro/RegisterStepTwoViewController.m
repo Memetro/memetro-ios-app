@@ -89,9 +89,8 @@
     if(self.email != nil){
         [postData setObject:self.email forKey:@"email"];
     }
-    if (self.twitter != nil){
+    if (self.twitter != nil && ![self.twitter isEqualToString:NSLocalizedString(@"Twitter username", @"")]){
         [postData setObject:self.twitter forKey:@"twittername"];
-        
     }
     if(self.aboutme != nil){
         [postData setObject:self.aboutme forKey:@"aboutme"];
@@ -111,7 +110,7 @@
                        [[CBProgressPanel sharedInstance] hide];
                        if(error !=nil){
                            NSLog(@"error user info: %@",[error userInfo]);
-                           NSLog(@"full response %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+
                            if([error code] == -1009){
                                [CommonFunctions showNoInternetError];
                            }else{
@@ -132,7 +131,23 @@
                                        [self dismissViewControllerAnimated:YES completion:nil];
                                    }];
                                }else{
-                                   [CommonFunctions showError:[parsedResponse objectForKey:@"message"] withTitle:[parsedResponse objectForKey:@"error_code"] withDismissHandler:nil];
+                                   NSString * errorCode =[parsedResponse objectForKey:@"error_code"];
+                                   NSString *message;
+                                   NSString *title = @"Error";
+                                   
+                                   if([errorCode isEqualToString:@"R001"]){
+                                       message = NSLocalizedString(@"There is already a user with that username. Please chone another one.", @"");
+                                    
+                                       
+                                   }else if([errorCode isEqualToString:@"R005"]){
+                                       message = NSLocalizedString(@"The password requires a miniminum length of 5.", @"");
+                                   }else if ([errorCode isEqualToString:@"R003"]){
+                                       message = NSLocalizedString(@"Password missmatch.", @"");
+                                   }
+                                   
+                                   [CommonFunctions showError:message withTitle:title withDismissHandler:nil];
+                                   
+                                   
                                }
                            }
                        }

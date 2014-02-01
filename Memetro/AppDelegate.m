@@ -173,8 +173,8 @@
     [[SIAlertView appearance] setDefaultButtonImage:[[UIImage imageNamed:@"button-default-d"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
     [[SIAlertView appearance] setCancelImage:[[UIImage imageNamed:@"button-cancel"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateNormal];
     [[SIAlertView appearance] setCancelImage:[[UIImage imageNamed:@"button-cancel-d"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
-    [[SIAlertView appearance] setDestructiveButtonImage:[[UIImage imageNamed:@"button-destructive"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateNormal];
-    [[SIAlertView appearance] setDestructiveButtonImage:[[UIImage imageNamed:@"button-destructive-d"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
+    [[SIAlertView appearance] setDestructiveButtonImage:[[UIImage imageNamed:@"red-button"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateNormal];
+    [[SIAlertView appearance] setDestructiveButtonImage:[[UIImage imageNamed:@"red-button-pressed"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,5,14,6)] forState:UIControlStateHighlighted];
 
 }
 
@@ -201,7 +201,7 @@
                        withAccount:[CommonFunctions useraccount]
                sendProgressHandler:nil
                responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
-                   NSLog(@"responseDATA %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+
                    if(error!=nil){
                        if(afterLogin){
                            [[CBProgressPanel sharedInstance] hide];
@@ -234,7 +234,7 @@
                        withAccount:nil
                sendProgressHandler:nil
                    responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
-                           NSLog(@"full response %@",[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+
                        if(error != nil){
                            
                        }else{

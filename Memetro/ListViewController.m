@@ -37,6 +37,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSUserDefaults *d = [NSUserDefaults standardUserDefaults];
+    if(![d boolForKey:@"update1MessageShown"]){
+        [d setBool:YES forKey:@"update1MessageShown"];
+        [d synchronize];
+        [CommonFunctions showError:@"A partir de ahora podrás añadir comentarios a las alertas. Visualízalas pinchando sobre la alerta. También podrás borrar aquellas alertas que hayas creado tú mismo." withTitle:@"Actualización" withDismissHandler:nil];
+    }
+    
     self.alerts = nil;
     [[CBProgressPanel sharedInstance] displayInView:self.view];
     ODRefreshControl *r = [[ODRefreshControl alloc] initInScrollView:self.tableView];
@@ -86,7 +94,47 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+        NSDictionary *alert = [self.alerts objectAtIndex:indexPath.row];
+    NSString * comment = [alert objectForKey:@"alert"];
+    if([comment length] == 0 || [comment isEqualToString:@"-"]){
+        comment = NSLocalizedString(@"The user did not provide any comments for this alert", @"");
+    }
+    
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@ %@",NSLocalizedString(@"Alert published by", @""),[alert objectForKey:@"username"]] andMessage:comment];
+    [alertView addButtonWithTitle:NSLocalizedString(@"Cerrar", @"")
+                             type:SIAlertViewButtonTypeCancel
+                          handler:nil];
+    if([[alert objectForKey:@"username"] isEqualToString:[[DataParser sharedInstance] user].username]){
+        [alertView addButtonWithTitle:NSLocalizedString(@"Borrar", @"")
+                                 type:SIAlertViewButtonTypeDestructive
+                              handler:^(SIAlertView *alertView) {
+                                  [NXOAuth2Request performMethod:@"POST"
+                                                      onResource:[CommonFunctions generateUrlWithParams:@"alerts/deleteAlert"]
+                                                 usingParameters:@{@"id":[alert objectForKey:@"id"]}
+                                                     withAccount:[CommonFunctions useraccount]
+                                             sendProgressHandler:nil
+                                                 responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error) {
 
+
+                                                     [CommonFunctions showError:                                                     NSLocalizedString(@"The list will update in a few moments", @"")withTitle:                                                     NSLocalizedString(@"Alert was deleted", @"") withDismissHandler:nil];
+                                                     [self loadData:nil];
+                                                     
+                                                 }];
+
+
+                              }];
+    }
+    
+
+    alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
+    alertView.didDismissHandler =^(SIAlertView *alertView) {
+        [self.tableView reloadData];
+    };
+    [alertView show];
+    
+
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }

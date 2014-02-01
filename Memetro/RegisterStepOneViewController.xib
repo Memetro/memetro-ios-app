@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterStepOneViewController">
@@ -14,7 +14,7 @@
                 <outlet property="name" destination="fbF-9J-6qU" id="nRi-bS-wFu"/>
                 <outlet property="nextButton" destination="sa2-8Y-f5p" id="63M-Za-qBm"/>
                 <outlet property="scrollView" destination="5Lx-5x-EDs" id="9r7-KK-ess"/>
-                <outlet property="twittername" destination="lxd-Fj-vjT" id="JB9-QB-Lnh"/>
+                <outlet property="twittername" destination="Ss2-G4-I7e" id="LJl-zb-Byj"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -88,23 +88,22 @@
                                     <rect key="frame" x="20" y="202" width="280" height="39"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxd-Fj-vjT" customClass="RobotoTextfield">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss2-G4-I7e" customClass="RobotoTextfieldReplacementLabel">
                                             <rect key="frame" x="8" y="0.0" width="264" height="39"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="-1" id="qpd-So-awb"/>
-                                            </connections>
-                                        </textField>
+                                            <gestureRecognizers/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="lxd-Fj-vjT" secondAttribute="bottom" id="5gW-Qw-zgt"/>
-                                        <constraint firstAttribute="trailing" secondItem="lxd-Fj-vjT" secondAttribute="trailing" constant="8" id="KwT-dn-Wmi"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ss2-G4-I7e" secondAttribute="trailing" constant="8" id="Hfa-vg-jKL"/>
                                         <constraint firstAttribute="height" constant="39" id="Kz4-xW-Rav"/>
-                                        <constraint firstItem="lxd-Fj-vjT" firstAttribute="leading" secondItem="daw-BD-LD7" secondAttribute="leading" constant="8" id="dnk-Qu-1mY"/>
-                                        <constraint firstItem="lxd-Fj-vjT" firstAttribute="top" secondItem="daw-BD-LD7" secondAttribute="top" id="viG-le-BDC"/>
+                                        <constraint firstItem="Ss2-G4-I7e" firstAttribute="top" secondItem="daw-BD-LD7" secondAttribute="top" id="Udr-8z-AlH"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ss2-G4-I7e" secondAttribute="bottom" id="jfY-iV-dBJ"/>
+                                        <constraint firstItem="Ss2-G4-I7e" firstAttribute="leading" secondItem="daw-BD-LD7" secondAttribute="leading" constant="8" id="ylT-aT-GQ6"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9K-4b-uad" userLabel="Biography" customClass="TextfieldBackground">

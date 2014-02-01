@@ -39,28 +39,28 @@
 -(void) initNavbar{
     NSMutableArray *rightButtons = [[NSMutableArray alloc]init];
     
-    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 140, 44)];
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 240, 44)];
     
-    UIButton *b3 = [[UIButton alloc] initWithFrame:CGRectMake(110, 12, 19, 23)];
-    [b3 setBackgroundImage:[UIImage imageNamed:@"map-navbar-icon"] forState:UIControlStateNormal];
-    [b3 setBackgroundImage:[UIImage imageNamed:@"map-navbar-icon-active"] forState:UIControlStateHighlighted];
-    [b3 setBackgroundImage:[UIImage imageNamed:@"map-navbar-icon-active"] forState:UIControlStateSelected];
+    UIButton *b3 = [[UIButton alloc] initWithFrame:CGRectMake(196, 0, 44, 44)];
+    [b3 setImage:[UIImage imageNamed:@"map-navbar-icon"] forState:UIControlStateNormal];
+    [b3 setImage:[UIImage imageNamed:@"map-navbar-icon-active"] forState:UIControlStateHighlighted];
+    [b3 setImage:[UIImage imageNamed:@"map-navbar-icon-active"] forState:UIControlStateSelected];
     [b3 addTarget:self action:@selector(changeToMap) forControlEvents:UIControlEventTouchUpInside];
     self.mapButton = b3;
     [v addSubview:b3];
     
-    UIButton *b2 = [[UIButton alloc] initWithFrame:CGRectMake(60, 12, 16, 23)];
-    [b2 setBackgroundImage:[UIImage imageNamed:@"twitter-navbar-icon"] forState:UIControlStateNormal];
-    [b2 setBackgroundImage:[UIImage imageNamed:@"twitter-navbar-icon-active"] forState:UIControlStateHighlighted];
-        [b2 setBackgroundImage:[UIImage imageNamed:@"twitter-navbar-icon-active"] forState:UIControlStateSelected];
+    UIButton *b2 = [[UIButton alloc] initWithFrame:CGRectMake(116, 0, 44, 44)];
+    [b2 setImage:[UIImage imageNamed:@"twitter-navbar-icon"] forState:UIControlStateNormal];
+    [b2 setImage:[UIImage imageNamed:@"twitter-navbar-icon-active"] forState:UIControlStateHighlighted];
+    [b2 setImage:[UIImage imageNamed:@"twitter-navbar-icon-active"] forState:UIControlStateSelected];
     [b2 addTarget:self action:@selector(changeToTweet) forControlEvents:UIControlEventTouchUpInside];
     self.tweetButton = b2;
     [v addSubview:b2];
     
-    UIButton *b1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 12, 24, 24)];
-    [b1 setBackgroundImage:[UIImage imageNamed:@"list-navbar-icon"] forState:UIControlStateNormal];
-    [b1 setBackgroundImage:[UIImage imageNamed:@"list-navbbar-icon-active"] forState:UIControlStateHighlighted];
-    [b1 setBackgroundImage:[UIImage imageNamed:@"list-navbbar-icon-active"] forState:UIControlStateSelected];
+    UIButton *b1 = [[UIButton alloc] initWithFrame:CGRectMake(36, 0, 44, 44)];
+    [b1 setImage:[UIImage imageNamed:@"list-navbar-icon"] forState:UIControlStateNormal];
+    [b1 setImage:[UIImage imageNamed:@"list-navbbar-icon-active"] forState:UIControlStateHighlighted];
+    [b1 setImage:[UIImage imageNamed:@"list-navbbar-icon-active"] forState:UIControlStateSelected];
     [b1 addTarget:self action:@selector(changeToList) forControlEvents:UIControlEventTouchUpInside];
     self.listButton = b1;
     

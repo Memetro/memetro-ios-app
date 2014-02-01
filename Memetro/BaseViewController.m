@@ -40,10 +40,10 @@
 }
 
 -(void) addAlertsViewButton{
-    UIButton *b1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 12, 24, 24)];
-    [b1 setBackgroundImage:[UIImage imageNamed:@"list-navbar-icon"] forState:UIControlStateNormal];
-    [b1 setBackgroundImage:[UIImage imageNamed:@"list-navbbar-icon-active"] forState:UIControlStateHighlighted];
-    [b1 setBackgroundImage:[UIImage imageNamed:@"list-navbbar-icon-active"] forState:UIControlStateSelected];
+    UIButton *b1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [b1 setImage:[UIImage imageNamed:@"list-navbar-icon"] forState:UIControlStateNormal];
+    [b1 setImage:[UIImage imageNamed:@"list-navbbar-icon-active"] forState:UIControlStateHighlighted];
+    [b1 setImage:[UIImage imageNamed:@"list-navbbar-icon-active"] forState:UIControlStateSelected];
     [b1 addTarget:self action:@selector(showAlertsView) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:b1];
 

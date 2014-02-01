@@ -13,6 +13,7 @@
 #import "Country.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+#import "RobotoTextfieldReplacementLabel.h"
 @interface SettingsViewController ()
 
 @end
@@ -37,9 +38,18 @@
 -(void) setupLayout{
     self.name.placeholder = NSLocalizedString(@"Name", @"");
     self.email.placeholder = NSLocalizedString(@"Email", @"");
-    self.twitter.placeholder = NSLocalizedString(@"Twitter", @"");
-    self.country.placeholder = NSLocalizedString(@"Country", @"");
-    self.city.placeholder = NSLocalizedString(@"City", @"");
+    self.twitter.text = NSLocalizedString(@"Twitter", @"");
+    [self.twitter setUserInteractionEnabled:YES];
+    [self.twitter addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadTwitter)]];
+    
+    self.country.text = NSLocalizedString(@"Country", @"");
+    [self.country setUserInteractionEnabled:YES];
+    [self.country addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickCountry)]];
+    
+    self.city.text = NSLocalizedString(@"City", @"");
+    [self.city setUserInteractionEnabled:YES];
+    [self.city addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickCity)]];
+    
     self.titleLabel.text = NSLocalizedString(@"SETTINGS", @"");
     [self.saveButton setTitle:NSLocalizedString(@"Save", @"") forState:UIControlStateNormal];
     [self.saveButton setTitle:NSLocalizedString(@"Save", @"") forState:UIControlStateHighlighted];
@@ -54,6 +64,13 @@
     self.countryID = country.id;
     self.country.text = country.name;
     self.city.text = city.name;
+    
+    NSArray *ls = @[self.city,self.country,self.twitter];
+    for(RobotoTextfieldReplacementLabel *l in ls){
+        if([l.text length] > 0){
+            [l setPlaceholderEnabled:NO];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,13 +85,13 @@
         return;
     }
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    if(self.name.text != nil){
+    if(self.name.text != nil && ![self.name.text isEqualToString:NSLocalizedString(@"Name", @"")]){
         [params setObject:self.name.text forKey:@"name"];
     }
-    if(self.email.text != nil){
+    if(self.email.text != nil && ![self.email.text isEqualToString:NSLocalizedString(@"Email", @"")]){
         [params setObject:self.email.text forKey:@"email"];
     }
-    if(self.twitter.text != nil){
+    if(self.twitter.text != nil && ![self.twitter.text isEqualToString:NSLocalizedString(@"Twitter", @"")]){
         [params setObject:self.twitter.text forKey:@"twittername"];
     }
     [[CBProgressPanel sharedInstance] displayInView:self.view];
@@ -152,61 +169,63 @@
 #pragma mark - TextfieldDelegate
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    if(textField == self.twitter) self.twitter.text = [self.twitter.text stringByReplacingOccurrencesOfString:@"@" withString:@""];
     [textField resignFirstResponder];
     return YES;
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    if(textField == self.city){
-        [self resignFirstResponder];
-        CityPickerViewController *c = [[CityPickerViewController alloc] init];
-        c.delegate = self;
-        c.countryID = self.countryID;
-        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:c] animated:YES completion:nil];
-    }else if(textField == self.country){
-        [self resignFirstResponder];
-        CountryPickerViewController *c = [[CountryPickerViewController alloc] init];
-        c.delegate = self;
-        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:c] animated:YES completion:nil];
-    }
-    if(textField == self.twitter){
-        [textField resignFirstResponder];
-        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
-        ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-        [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error){
-            if (granted) {
-                NSArray *accounts = [accountStore accountsWithAccountType:accountType];
-                // Check if the users has setup at least one Twitter account
-                if (accounts.count > 0){
-                    ACAccount *twitterAccount = [accounts objectAtIndex:0];
-                    [self setTwitternameText:twitterAccount.username];
-                }else{
-                    
-                    dispatch_sync(dispatch_get_main_queue(), ^{
-                        [CommonFunctions showError:NSLocalizedString(@"You do not have any twitter accounts. Please add them from the iPhone settings.", @"") withTitle:NSLocalizedString(@"No twitter account!", @"") withDismissHandler:nil];
-                    });
-                }
+
+-(void) pickCountry{
+    CountryPickerViewController *c = [[CountryPickerViewController alloc] init];
+    c.delegate = self;
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:c] animated:YES completion:nil];
+}
+
+-(void) pickCity{
+    CityPickerViewController *c = [[CityPickerViewController alloc] init];
+    c.delegate = self;
+    c.countryID = self.countryID;
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:c] animated:YES completion:nil];
+    
+}
+-(void) loadTwitter{
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error){
+        if (granted) {
+            NSArray *accounts = [accountStore accountsWithAccountType:accountType];
+            // Check if the users has setup at least one Twitter account
+            if (accounts.count > 0){
+                ACAccount *twitterAccount = [accounts objectAtIndex:0];
+                [self setTwitternameText:twitterAccount.username];
             }else{
+                
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    [CommonFunctions showError:NSLocalizedString(@"You declined the access to your Twitter Account. You can revise this settings in the Privacy settings of your phone.", @"") withTitle:NSLocalizedString(@"Access denied", @"") withDismissHandler:nil];
+                    [CommonFunctions showError:NSLocalizedString(@"You do not have any twitter accounts. Please add them from the iPhone settings.", @"") withTitle:NSLocalizedString(@"No twitter account!", @"") withDismissHandler:nil];
                 });
             }
-        }];
-        
-    }
-        _activeField = textField;
+        }else{
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [CommonFunctions showError:NSLocalizedString(@"You declined the access to your Twitter Account. You can revise this settings in the Privacy settings of your phone.", @"") withTitle:NSLocalizedString(@"Access denied", @"") withDismissHandler:nil];
+            });
+        }
+    }];
 
-    
+}
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    _activeField = textField;
 }
 
 -(void) setTwitternameText:(NSString *) twittername{
     dispatch_sync(dispatch_get_main_queue(), ^{
         [CommonFunctions showError:NSLocalizedString(@"For security reasons we'll take your Twitter username from your Twitter Profile linked to your iPhone.", @"") withTitle:NSLocalizedString(@"Twitter username obtained!", @"") withDismissHandler:^(SIAlertView *alertView) {
-            self.twitter.text = twittername;
+            self.twitter.text = [twittername stringByReplacingOccurrencesOfString:@"@" withString:@""];
+            [((RobotoTextfieldReplacementLabel *) self.twitter) setPlaceholderEnabled:NO];
         }];
     });
+    
+    
     NSLog(@"twittername %@",twittername);
     
 }
@@ -221,11 +240,14 @@
 -(void) userDidPickCountry:(Country *)country{
     self.countryID = country.id;
     self.country.text = country.name;
+    [((RobotoTextfieldReplacementLabel *) self.country) setPlaceholderEnabled:NO];
     if(self.cityID != nil){
         City *c = [[DataParser sharedInstance] getCity:self.cityID];
         if(c.country_id != country.id){
             self.cityID = nil;
             self.city.text = nil;
+            [((RobotoTextfieldReplacementLabel *) self.city) setPlaceholderEnabled:YES];
+            self.city.text = NSLocalizedString(@"City", @"");
         }
     }
     
@@ -235,8 +257,10 @@
 -(void) userDidPickCity:(City *)city{
     self.cityID = city.id;
     self.city.text = city.name;
+    [((RobotoTextfieldReplacementLabel *) self.city) setPlaceholderEnabled:NO];
     Country *c = [[DataParser sharedInstance] getCountryWithId:city.country_id];
     self.country.text = c.name;
+    [((RobotoTextfieldReplacementLabel *) self.country) setPlaceholderEnabled:NO];
     self.countryID = c.id;
     [self dismissViewControllerAnimated:YES completion:nil];
 }

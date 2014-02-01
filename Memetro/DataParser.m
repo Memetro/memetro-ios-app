@@ -48,7 +48,7 @@
 
 -(BOOL) parseSync:(NSData *) data{
     @try {
-        NSLog(@"data %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+
         NSError *error = nil;
         self.parsedData = [NSJSONSerialization
                            JSONObjectWithData:data
@@ -62,32 +62,31 @@
             NSLog(@"Ha fallado parseUser");
             return NO;
         }
-        NSLog(@"self.User %@",self.user);
+
         if(![self parseHabtmRelations]){
             NSLog(@"Ha fallado parseHabtmRelations");
             return NO;
         }
-        NSLog(@"self.CitiesTransports %@",self.CitiesTransports);
-        NSLog(@"self.LinesStations %@",self.LinesStations);
+
         
         if(![self parseStation]){
             NSLog(@"Ha fallado parseStation");
             return NO;
         }
-        NSLog(@"self.Stations %@",self.Stations);
+
         
         if(![self parseLine]){
             NSLog(@"Ha fallado parseLine");
             return NO;
         }
-        NSLog(@"self.Lines %@",self.Lines);
+
         
         if(![self parseTransport]){
             NSLog(@"Ha fallado parseTransport");
             return NO;
         }
-                NSLog(@"self.LinesStations %@",self.LinesStations);
-        NSLog(@"self.Transports %@",self.Transports);
+
+
         
         if(![self save]){
             return NO;
@@ -115,13 +114,11 @@
             NSLog(@"Ha fallado parseCountry");
             return NO;
         }
-        NSLog(@"self.Country %@",self.Countries);
         
         if(![self parseCity:[[d objectForKey:@"data"] objectForKey:@"city"]]){
             NSLog(@"Ha fallado parseCity");
             return NO;
         }
-        NSLog(@"self.City %@",self.Cities);
 
         if(![self save]){
             return NO;
@@ -377,7 +374,6 @@
     NSArray *LinesStationsData = [[self.parsedData objectForKey:@"linesstations"] objectForKey:@"data"];
 
     NSArray *fetchedLinesStationsFromCore = [[self managedObjectContext]executeFetchRequest:LinesStationsfetchRequest error:&error];
-    NSLog(@"fetchedLinesStations %@",fetchedLinesStationsFromCore);
     if(error){
         NSLog(@"Error in fetch request");
         return NO;
